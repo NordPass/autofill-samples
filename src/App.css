@@ -1,0 +1,35 @@
+body, html, #root {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.App {
+  display: flex;
+  height: 100%;
+  flex-direction: column;
+}
+
+.autofill-controls {
+  display: flex;
+  flex-direction: column;
+}
+
+.forms {
+  margin-left: 15px;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  margin-top: 10px;
+   > button {
+    font-size: 16px;
+    padding: 4px;
+    width: 15%;
+    border-radius: 3px;
+    border-width: 1px;
+  }
+}
+
