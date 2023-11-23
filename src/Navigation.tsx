@@ -14,5 +14,6 @@ export const Navigation = () => (
     <Link className="btn" to="/subscribe">Subscribe</Link>
     <Link className="btn" to="/mfa">One Time Password</Link>
     <Link className="btn" to="/loginRegister">Login/Register</Link>
+    <Link className="btn" to="/custom">Custom</Link>
   </nav>
 );
