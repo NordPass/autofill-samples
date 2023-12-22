@@ -7,7 +7,7 @@ interface ICustomInput {
   type: 'text' | 'hidden';
 }
 
-export const Custom = () => {
+export const Builder = () => {
   const [customInputs, setCustomInputs] = useState<Array<ICustomInput>>([]);
   const inputFormValue = useRef<HTMLInputElement>(null);
   const hiddenValue = useRef<HTMLInputElement>(null);

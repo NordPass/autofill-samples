@@ -15,7 +15,8 @@ import { PersonalInfo } from './Forms/PersonalInfo.tsx';
 import { Register } from './Forms/Register.tsx';
 import { Subscribe } from './Forms/Subscribe.tsx';
 import { Navigation } from './Navigation.tsx';
-import { Custom } from './Forms/Custom.tsx';
+import { Builder } from './Forms/Builder.tsx';
+import { CustomLogin } from './Forms/CustomLogin.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -34,7 +35,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/subscribe" element={<Subscribe />} />
         <Route path="/mfa" element={<OneTimePassword />} />
         <Route path="/loginRegister" element={<LoginRegister />} />
-        <Route path="/custom" element={<Custom />} />
+        <Route path="/builder" element={<Builder />} />
+        <Route path="/customLogin" element={<CustomLogin />} />
         <Route path="*" element={<AllForms />} />
       </Routes>
     </HashRouter>
