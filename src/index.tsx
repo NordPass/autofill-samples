@@ -17,6 +17,7 @@ import { Subscribe } from './Forms/Subscribe.tsx';
 import { Navigation } from './Navigation.tsx';
 import { Builder } from './Forms/Builder.tsx';
 import { CustomLogin } from './Forms/CustomLogin.tsx';
+import { PersonalInfoSelects } from './Forms/PersonalInfoSelects.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -37,6 +38,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/loginRegister" element={<LoginRegister />} />
         <Route path="/builder" element={<Builder />} />
         <Route path="/customLogin" element={<CustomLogin />} />
+        <Route path="/personalInfoSelects" element={<PersonalInfoSelects />} />
         <Route path="*" element={<AllForms />} />
       </Routes>
     </HashRouter>
