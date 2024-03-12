@@ -18,11 +18,13 @@ import { Navigation } from './Navigation.tsx';
 import { Builder } from './Forms/Builder.tsx';
 import { CustomLogin } from './Forms/CustomLogin.tsx';
 import { PersonalInfoSelects } from './Forms/PersonalInfoSelects.tsx';
+import { MobileNavigation } from './mobileView/MobileNavigation.tsx';
+import { isMobile } from 'react-device-detect';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <HashRouter>
-      <Navigation />
+      {isMobile ? <MobileNavigation /> : <Navigation />}
       <Routes>
         <Route path="/" element={<AllForms />} />
         <Route path="/login" element={<Login />} />

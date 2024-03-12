@@ -1,5 +1,7 @@
+import { isMobile } from "react-device-detect";
+
 export const AllForms = () => (
-  <div className="flex flex-wrap justify-around">
+  <div className={`flex flex-wrap justify-around ${isMobile && 'text-center'}`}>
     <form className="flex text-center flex-col">
       <h1 className="text-4xl mb-3">Login</h1>
       <label>

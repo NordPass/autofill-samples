@@ -7,12 +7,13 @@
   "type": "module",
   "scripts": {
     "build": "tsc && vite build",
-    "dev": "vite",
+    "start": "vite",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0 --fix",
     "preview": "vite preview"
   },
   "dependencies": {
     "react": "^18.2.0",
+    "react-device-detect": "^2.2.3",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.16.0"
   },
