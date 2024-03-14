@@ -1,8 +1,19 @@
 import { useRef } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 export const Login = () => {
   const username = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
+  const successNotification = () => toast.success('Logged in successfully', {
+    position: 'top-center',
+    autoClose: 5000,
+  });
+
+  const errorNotification = () => {toast.error('Error in login', {
+    position: 'top-center',
+    autoClose: 5000,
+  })};
 
   return (
     <div className='ml-6'>
@@ -40,6 +51,16 @@ export const Login = () => {
         className="btn btn-outline ml-3"
         type="button"
         onClick={() => {
+          username.current!.value = 'error@gmail.com';
+          password.current!.value = 'password123';
+        }}
+      >
+        Failed login
+      </button>
+      <button
+        className="btn btn-outline ml-3"
+        type="button"
+        onClick={() => {
           username.current!.value = '';
           password.current!.value = '';
         }}
@@ -65,7 +86,19 @@ export const Login = () => {
             autoComplete="current-password"
           />
         </label>
-        <button className="btn btn-outline mt-3" type="button">Sign In</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="button"
+          onClick={(e) => {
+            if (username.current!.value === 'error@gmail.com') {
+              errorNotification();
+              e.preventDefault();
+              return;
+            }
+            successNotification();
+          }}
+        >Sign In</button>
+        <ToastContainer />
       </form>
     </div>
   );
