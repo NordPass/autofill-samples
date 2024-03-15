@@ -10,12 +10,17 @@ export const Navigation = () => (
     <Link className="btn ml-2" to="/changeEmail">Change Email</Link>
     <Link className="btn ml-2" to="/creditCard">Credit Card</Link>
     <Link className="btn ml-2" to="/identity">Personal Info</Link>
+    <Link className="btn ml-2" to="/personalInfoSelects">Personal Info 2</Link>
     <Link className="btn ml-2" to="/other">Other</Link>
     <Link className="btn ml-2" to="/subscribe">Subscribe</Link>
     <Link className="btn ml-2" to="/mfa">One Time Password</Link>
     <Link className="btn ml-2" to="/loginRegister">Login/Register</Link>
     <Link className="btn ml-2" to="/builder">Builder</Link>
     <Link className="btn ml-2" to="/customLogin">Custom Login</Link>
-    <Link className="btn mt-2" to="/personalInfoSelects">Personal Info 2</Link>
+    <Link className="btn ml-2" to="/customLoginTwoFields">Custom Login 2</Link>
+    <Link className="btn ml-2" to="/secondStepLogin">Second Step Login</Link>
+    <Link className="btn ml-2" to="/hiddenSecondStepLogin">Second Step Login 2</Link>
+    <Link className="btn ml-2" to="/twoLogin">Two Login</Link>
+    <Link className="btn ml-2" to="/modalLogin">Modal Login</Link>
   </nav>
 );
