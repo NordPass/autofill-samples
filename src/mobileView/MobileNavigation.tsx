@@ -26,13 +26,20 @@ export const MobileNavigation = () => {
         <Link className="btn w-2/5" to="/changeEmail">Change Email</Link>
         <Link className="btn w-2/5" to="/creditCard">Credit Card</Link>
         <Link className="btn w-2/5" to="/identity">Personal Info</Link>
+        <Link className="btn w-2/5" to="/identitySelects">Personal Info 2</Link>
+        <Link className="btn w-2/5" to="/identityPhone">Personal Info 3</Link>
         <Link className="btn w-2/5" to="/other">Other</Link>
         <Link className="btn w-2/5" to="/subscribe">Subscribe</Link>
         <Link className="btn w-2/5" to="/mfa">One Time Password</Link>
         <Link className="btn w-2/5" to="/loginRegister">Login/Register</Link>
         <Link className="btn w-2/5" to="/builder">Builder</Link>
         <Link className="btn w-2/5" to="/customLogin">Custom Login</Link>
-        <Link className="btn w-2/5" to="/personalInfoSelects">Personal Info 2</Link></div>}
+        <Link className="btn w-2/5" to="/customLoginTwoFields">Custom Login 2</Link>
+        <Link className="btn w-2/5" to="/secondStepLogin">Second Step Login</Link>
+        <Link className="btn w-2/5" to="/hiddenSecondStepLogin">Second Step Login 2</Link>
+        <Link className="btn w-2/5" to="/twoLogin">Two Login</Link>
+        <Link className="btn w-2/5" to="/modalLogin">Modal Login</Link>
+      </div>}
     </nav>
   )
 };

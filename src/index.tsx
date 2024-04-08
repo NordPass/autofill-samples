@@ -25,6 +25,7 @@ import { HiddenSecondStepLogin } from './Forms/HiddenSecondStepLogin.tsx';
 import { TwoLogin } from './Forms/TwoLogin.tsx';
 import { CustomLoginTwoFields } from './Forms/CustomLoginTwoFields.tsx';
 import { ModalLogin } from './Forms/ModalLogin.tsx';
+import { PersonalInfoPhone } from './Forms/PersonalInfoPhone.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -46,11 +47,12 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/builder" element={<Builder />} />
         <Route path="/customLogin" element={<CustomLogin />} />
         <Route path="/customLoginTwoFields" element={<CustomLoginTwoFields />} />
-        <Route path="/personalInfoSelects" element={<PersonalInfoSelects />} />
+        <Route path="/identitySelects" element={<PersonalInfoSelects />} />
         <Route path="/secondStepLogin" element={<SecondStepLogin />} />
         <Route path="/hiddenSecondStepLogin" element={<HiddenSecondStepLogin />} />
         <Route path="/twoLogin" element={<TwoLogin />} />
         <Route path="/modalLogin" element={<ModalLogin />} />
+        <Route path="/identityPhone" element={<PersonalInfoPhone />} />
         <Route path="*" element={<AllForms />} />
       </Routes>
     </HashRouter>
