@@ -1,4 +1,7 @@
 import { useRef } from 'react';
+import { ToastContainer } from 'react-toastify';
+import { errorToast, successToast } from '../utils/toasts';
+import "react-toastify/dist/ReactToastify.css";
 
 export const CustomLogin = () => {
   const email = useRef<HTMLInputElement>(null);
@@ -44,6 +47,17 @@ export const CustomLogin = () => {
         className="btn btn-outline ml-3"
         type="button"
         onClick={() => {
+          email.current!.value = 'error@gmail.com';
+          password.current!.value = 'password123';
+          companyID.current!.value = '09998881231';
+        }}
+      >
+        Failed login
+      </button>
+      <button
+        className="btn btn-outline ml-3"
+        type="button"
+        onClick={() => {
           email.current!.value = '';
           password.current!.value = '';
           companyID.current!.value = '';
@@ -81,7 +95,19 @@ export const CustomLogin = () => {
             placeholder="Company ID"
           />
         </label>
-        <button className="btn btn-outline mt-3" type="button">Sign In</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="button"
+          onClick={(e) => {
+            if (email.current!.value === 'error@gmail.com') {
+              errorToast();
+              e.preventDefault();
+              return;
+            }
+            successToast();
+          }}
+        >Sign In</button>
+        <ToastContainer />
       </form>
     </div>
   );

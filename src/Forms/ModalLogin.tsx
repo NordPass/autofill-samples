@@ -1,7 +1,12 @@
 import { useState } from "react";
+import { useRef } from 'react';
+import { ToastContainer } from 'react-toastify';
+import { errorToast, successToast } from '../utils/toasts';
+import "react-toastify/dist/ReactToastify.css";
 
 export const ModalLogin = () => {
   const [modal, setModal] = useState(false);
+  const email = useRef<HTMLInputElement>(null);
 
   return (
     <div className="ml-6">
@@ -13,6 +18,7 @@ export const ModalLogin = () => {
           <label>
             <input
               className="input input-bordered w-full max-w-xs"
+              ref={email}
               type="text"
               placeholder="Email Address/Username"
             />
@@ -26,9 +32,18 @@ export const ModalLogin = () => {
             />
           </label>
           <button
-            className="btn btn-outline mt-3"
-            type="button"
-          >Sign In</button>
+          className="btn btn-outline mt-3"
+          type="button"
+          onClick={(e) => {
+            if (email.current!.value === 'error@gmail.com') {
+              errorToast();
+              e.preventDefault();
+              return;
+            }
+            successToast();
+          }}
+        >Sign In</button>
+        <ToastContainer />
         </form>
       )}
     </div>
