@@ -10,7 +10,8 @@ export const Navigation = () => (
     <Link className="btn ml-2" to="/changeEmail">Change Email</Link>
     <Link className="btn ml-2" to="/creditCard">Credit Card</Link>
     <Link className="btn ml-2" to="/identity">Personal Info</Link>
-    <Link className="btn ml-2" to="/personalInfoSelects">Personal Info 2</Link>
+    <Link className="btn ml-2" to="/identitySelects">Personal Info 2</Link>
+    <Link className="btn ml-2" to="/identityPhone">Personal Info 3</Link>
     <Link className="btn ml-2" to="/other">Other</Link>
     <Link className="btn ml-2" to="/subscribe">Subscribe</Link>
     <Link className="btn ml-2" to="/mfa">One Time Password</Link>
