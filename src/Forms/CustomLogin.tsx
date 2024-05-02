@@ -73,7 +73,7 @@ export const CustomLogin = () => {
             ref={email}
             className="input input-bordered w-full max-w-xs"
             type="text"
-            placeholder="Email"
+            placeholder="Login email"
           />
         </label>
         <label htmlFor='loginPassword'>
