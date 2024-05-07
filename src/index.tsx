@@ -27,6 +27,7 @@ import { CustomLoginTwoFields } from './Forms/CustomLoginTwoFields.tsx';
 import { ModalLogin } from './Forms/ModalLogin.tsx';
 import { PersonalInfoPhone } from './Forms/PersonalInfoPhone.tsx';
 import { LoginPhone } from './Forms/LoginPhone.tsx';
+import { CheckoutForm } from './Forms/CheckoutForm.tsx';
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -55,6 +56,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
         <Route path="/modalLogin" element={<ModalLogin />} />
         <Route path="/identityPhone" element={<PersonalInfoPhone />} />
         <Route path="/loginPhone" element={<LoginPhone />} />
+        <Route path="/checkoutForm" element={<CheckoutForm />} />
         <Route path="*" element={<AllForms />} />
       </Routes>
     </HashRouter>
