@@ -39,6 +39,7 @@ export const MobileNavigation = () => {
         <Link className="btn w-2/5" to="/hiddenSecondStepLogin">Second Step Login 2</Link>
         <Link className="btn w-2/5" to="/twoLogin">Two Login</Link>
         <Link className="btn w-2/5" to="/modalLogin">Modal Login</Link>
+        <Link className="btn w-2/5" to="/checkoutForm">Modal Login</Link>
       </div>}
     </nav>
   )
