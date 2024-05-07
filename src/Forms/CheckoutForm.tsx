@@ -84,7 +84,7 @@ export const CheckoutForm = () => {
           ccCVV.current!.value = '';
           ccZipCode.current!.value = '';
           billingZipCode.current!.value = '';
-          country.current!.value = '';
+          country.current!.value = 'Afghanistan';
           address.current!.value = '';
           address2.current!.value = '';
           city.current!.value = '';
@@ -92,96 +92,92 @@ export const CheckoutForm = () => {
       >
         Clear
       </button>
+
       <form className="flex flex-col items-start mt-3">
         <h1 className="text-4xl mb-3">Checkout Form</h1>
-        <section>
+
+        <section className="flex flex-col items-start mt-3">
           <h1 className="text-3xl mb-3">Credit Card</h1>
-          <div className="mb-1">
-            <p>Name on Card</p>
-            <input
-              ref={ccFullName}
-              className="input input-bordered w-full max-w-xs"
-              type="text"
-            />
-          </div>
-          <div className="flex flex-col">
-            <p>Card number</p>
-            <input
-              ref={ccNumber}
-              className="input input-bordered w-full max-w-xs mb-1"
-              type="text"
-              placeholder="0000 0000 0000 0000"
-            />
-            <p>Expiration Date</p>
-            <input
-              ref={ccExpirationFull}
-              className="input input-bordered w-full max-w-xs mb-1"
-              type="text"
-              placeholder="MM/YY"
-            />
-            <p>Security Code</p>
-            <input
-              ref={ccCVV}
-              className="input input-bordered w-full max-w-xs mb-1"
-              type="text"
-              placeholder="000"
-            />
-            <p>Zip Code</p>
-            <input
-              ref={ccZipCode}
-              className="input input-bordered w-full max-w-xs mb-1"
-              type="text"
-            />
-          </div>
+          <label>Name on Card</label>
+          <input
+            ref={ccFullName}
+            className="input input-bordered w-full max-w-xs"
+            type="text"
+          />
+          <label>Credit card number</label>
+          <input
+            ref={ccNumber}
+            className="input input-bordered w-full max-w-xs mb-1"
+            type="text"
+            placeholder="0000 0000 0000 0000"
+          />
+          <label>Expiration Date</label>
+          <input
+            ref={ccExpirationFull}
+            className="input input-bordered w-full max-w-xs mb-1"
+            type="text"
+            placeholder="MM/YY"
+          />
+          <label>Security Code</label>
+          <input
+            ref={ccCVV}
+            className="input input-bordered w-full max-w-xs mb-1"
+            type="text"
+            placeholder="000"
+          />
+          <label>Zip Code</label>
+          <input
+            ref={ccZipCode}
+            className="input input-bordered w-full max-w-xs mb-1"
+            type="text"
+          />
         </section>
 
-        <section>
-          <form className="flex flex-col items-start mt-3">
-            <h1 className="text-3xl mb-3">Billing Address</h1>
-            <p>Country</p>
-            <select
-              ref={country}
-              name="countries"
-              id="select-country"
-              className="select select-bordered w-full max-w-xs"
-            >
-              {countryOptions.map((countryOption, index) => (
-                <option key={index} value={countryOption}>
-                  {countryOption}
-                </option>
-              ))}
-            </select>
-            <p>Street Address</p>
-            <input
-              ref={address}
-              className="input input-bordered w-full max-w-xs mb-1"
-              type="text"
-            />
-            <p>Apt/Suite/Other (Optional)</p>
-            <input
-              ref={address2}
-              className="input input-bordered w-full max-w-xs mb-1"
-              type="text"
-            />
-            <p>Zip or Postal Code</p>
-            <input
-              ref={billingZipCode}
-              className="input input-bordered w-full max-w-xs mb-1"
-              type="text"
-            />
-            <p>Full Name</p>
-            <input
-              ref={billingFullName}
-              className="input input-bordered w-full max-w-xs mb-1"
-              type="text"
-            />
-            City
-            <input
-              ref={city}
-              className="input input-bordered w-full max-w-xs mb-1"
-              type="text"
-            />
-          </form>
+        <section className="flex flex-col items-start mt-3">
+          <h1 className="text-3xl mb-3">Billing Address</h1>
+          <label>Country</label>
+          <select
+            ref={country}
+            name="countries"
+            id="select-country"
+            className="select select-bordered w-full max-w-xs"
+          >
+            {countryOptions.map((countryOption, index) => (
+              <option key={index} value={countryOption}>
+                {countryOption}
+              </option>
+            ))}
+          </select>
+          <label>City</label>
+          <input
+            ref={city}
+            className="input input-bordered w-full max-w-xs mb-1"
+            type="text"
+          />
+          <label>Street Address</label>
+          <input
+            ref={address}
+            className="input input-bordered w-full max-w-xs mb-1"
+            type="text"
+          />
+          <label>Apt/Suite/Other (Optional)</label>
+          <input
+            ref={address2}
+            className="input input-bordered w-full max-w-xs mb-1"
+            type="text"
+          />
+          <label>Zip or Postal Code</label>
+          <input
+            ref={billingZipCode}
+            className="input input-bordered w-full max-w-xs mb-1"
+            type="text"
+          />
+          <label>Full Name</label>
+          <input
+            ref={billingFullName}
+            className="input input-bordered w-full max-w-xs mb-1"
+            type="text"
+          />
         </section>
         <button className="btn btn-outline mt-3" type="button">Checkout</button>
       </form>
