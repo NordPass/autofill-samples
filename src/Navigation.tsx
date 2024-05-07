@@ -24,5 +24,6 @@ export const Navigation = () => (
     <Link className="btn ml-2" to="/hiddenSecondStepLogin">Second Step Login 2</Link>
     <Link className="btn ml-2" to="/twoLogin">Two Login</Link>
     <Link className="btn ml-2" to="/modalLogin">Modal Login</Link>
+    <Link className="btn ml-2" to="/checkoutForm">Checkout Form</Link>
   </nav>
 );
