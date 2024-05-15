@@ -61,14 +61,16 @@ export const SecondStepLogin = () => {
       >
         Clear
       </button>
+      <h1 className="text-4xl mb-3">Password field is not in DOM</h1>
+
       <form className="flex flex-col items-start mt-3">
-        <h1 className="text-4xl mb-3">Login when password field is not in DOM</h1>
+      <h1 className="text-2xl mb-3">Login Form</h1>
         <label>
           <input
             ref={username}
             className="input input-bordered w-full max-w-xs"
             type="text"
-            placeholder="Email Address/Username"
+            placeholder="Login email or username"
           />
         </label>
         {!submit && <button className="btn btn-outline mt-3" type="button" onClick={() => setSubmit(true)}>Continue</button>}
