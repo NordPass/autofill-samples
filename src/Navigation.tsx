@@ -9,6 +9,7 @@ export const Navigation = () => (
     <Link className="btn ml-2" to="/forgotPassword">Forgot Password</Link>
     <Link className="btn ml-2" to="/changePassword">Change Password</Link>
     <Link className="btn ml-2" to="/changeEmail">Change Email</Link>
+    <Link className="btn ml-2" to="/changeEmailWithPassword">Change Email 2</Link>
     <Link className="btn ml-2" to="/creditCard">Credit Card</Link>
     <Link className="btn ml-2" to="/identity">Personal Info</Link>
     <Link className="btn ml-2" to="/identitySelects">Personal Info 2</Link>

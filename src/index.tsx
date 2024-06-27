@@ -29,6 +29,7 @@ import { ModalLogin } from './Forms/ModalLogin.tsx';
 import { PersonalInfoPhone } from './Forms/PersonalInfoPhone.tsx';
 import { LoginPhone } from './Forms/LoginPhone.tsx';
 import { CheckoutForm } from './Forms/CheckoutForm.tsx';
+import { ChangeEmailWithPassword } from './Forms/ChangeEmailWithPassword.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -58,6 +59,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="/identityPhone" element={<PersonalInfoPhone />} />
         <Route path="/loginPhone" element={<LoginPhone />} />
         <Route path="/checkoutForm" element={<CheckoutForm />} />
+        <Route path="/changeEmailWithPassword" element={<ChangeEmailWithPassword />} />
         <Route path="*" element={<AllForms />} />
       </Routes>
     </HashRouter>
