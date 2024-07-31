@@ -63,7 +63,7 @@ export const SecondStepLogin = () => {
       <h1 className="text-4xl mb-3">Password field is not in DOM</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <h1 className="text-2xl mb-3">Enter email or username to login</h1>
+        <h1 className="text-2xl mb-3">Login</h1>
         <input
           ref={username}
           className="input input-bordered w-full max-w-xs"
