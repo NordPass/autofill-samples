@@ -11,5 +11,7 @@ export const TOTP = () => (
       <input className="input input-bordered w-[40px]" maxLength={1} />
       <input className="input input-bordered w-[40px]" maxLength={1} />
     </div>
+
+    <button className="btn btn-outline mt-3 w-[15%]" type="button">Submit</button>
   </form>
 );
