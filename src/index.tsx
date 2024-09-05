@@ -31,6 +31,7 @@ import { LoginPhone } from './Forms/LoginPhone.tsx';
 import { CheckoutForm } from './Forms/CheckoutForm.tsx';
 import { ChangeEmailWithPassword } from './Forms/ChangeEmailWithPassword.tsx';
 import { TOTP } from './Forms/TOTP.tsx';
+import { TOTPOneField } from './Forms/TOTPOneField.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -49,6 +50,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="/subscribe" element={<Subscribe />} />
         <Route path="/mfa" element={<OneTimePassword />} />
         <Route path='/totp' element={<TOTP />} />
+        <Route path='/totpOneField' element={<TOTPOneField />} />
         <Route path="/loginRegister" element={<LoginRegister />} />
         <Route path="/builder" element={<Builder />} />
         <Route path="/customLogin" element={<CustomLogin />} />

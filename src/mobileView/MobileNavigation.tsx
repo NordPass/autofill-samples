@@ -66,6 +66,7 @@ export const MobileNavigation = () => {
           <Link className="btn w-2/5" to="/subscribe">Subscribe</Link>
           <Link className="btn w-2/5" to="/mfa">One Time Password</Link>
           <Link className="btn w-2/5" to="/totp">TOTP</Link>
+          <Link className="btn w-2/5" to="/totpOneField">TOTPOneField</Link>
           <Link className="btn w-2/5" to="/loginRegister">Login/Register</Link>
           <Link className="btn w-2/5" to="/builder">Builder</Link>
           <Link className="btn w-2/5" to="/customLogin">Custom Login</Link>

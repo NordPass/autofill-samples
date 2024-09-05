@@ -18,6 +18,7 @@ export const Navigation = () => (
     <Link className="btn" to="/subscribe">Subscribe</Link>
     <Link className="btn" to="/mfa">One Time Password</Link>
     <Link className="btn" to="/totp">TOTP</Link>
+    <Link className="btn" to="/totpOneField">TOTP 2</Link>
     <Link className="btn" to="/loginRegister">Login/Register</Link>
     <Link className="btn" to="/builder">Builder</Link>
     <Link className="btn" to="/customLogin">Custom Login</Link>
