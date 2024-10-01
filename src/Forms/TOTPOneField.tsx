@@ -12,7 +12,7 @@ export const TOTPOneField = () => (
       <input value="0" autoComplete="off" type="hidden" name="user[remember_me]" id="user_remember_me" />
     </div>
     <button data-testid="verify-code-button" type="submit" className="btn btn-outline mt-3 w-[7%]">
-      <span className="gl-button-text"> Verify code </span>
+      <span className="gl-button-text"> Confirm </span>
     </button>
   </form>
 );
