@@ -53,6 +53,7 @@ export const MobileNavigation = () => {
         >
           <Link className="btn w-2/5" to="/all">All Forms</Link>
           <Link className="btn w-2/5" to="/login">Login</Link>
+          <Link className="btn" to="/loginTotp">Login with TOTP</Link>
           <Link className="btn w-2/5" to="/register">Register</Link>
           <Link className="btn w-2/5" to="/forgotPassword">Forgot Password</Link>
           <Link className="btn w-2/5" to="/changePassword">Change Password</Link>

@@ -5,6 +5,7 @@ export const Navigation = () => (
     <Link className="btn" to="/all">All Forms</Link>
     <Link className="btn" to="/login">Login</Link>
     <Link className="btn" to="/loginPhone">Login 2</Link>
+    <Link className="btn" to="/loginTotp">Login with TOTP</Link>
     <Link className="btn" to="/register">Register</Link>
     <Link className="btn" to="/forgotPassword">Forgot Password</Link>
     <Link className="btn" to="/changePassword">Change Password</Link>
