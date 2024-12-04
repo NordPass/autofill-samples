@@ -62,7 +62,7 @@ export const SecondStepLoginTotp = () => {
         Clear
       </button>
 
-      <h1 className="text-4xl mb-3">Login form with password field that is not in DOM</h1>
+      <h1 className="text-4xl mb-3">Login form with TOTP field that is not in DOM</h1>
 
       <form className="flex flex-col items-start mt-3">
         <p className='pb-2'>Enter your credentials to login.</p>
