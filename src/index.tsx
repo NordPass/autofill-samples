@@ -33,6 +33,9 @@ import { ChangeEmailWithPassword } from './Forms/ChangeEmailWithPassword.tsx';
 import { TOTP } from './Forms/TOTP.tsx';
 import { TOTPOneField } from './Forms/TOTPOneField.tsx';
 import { LoginTotp } from './Forms/LoginTotp.tsx';
+import { SecondStepLoginTotp } from './Forms/SecondStepLoginTotp.tsx';
+import { ThreeStepLoginTotp } from './Forms/ThreeStepLoginTotp.tsx';
+import { LoginSixFieldsTotp } from './Forms/LoginSixFieldsTotp.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -66,6 +69,9 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="/checkoutForm" element={<CheckoutForm />} />
         <Route path="/changeEmailWithPassword" element={<ChangeEmailWithPassword />} />
         <Route path="/loginTotp" element={<LoginTotp />} />
+        <Route path="/secondStepLoginTotp" element={<SecondStepLoginTotp />} />
+        <Route path="/threeStepLoginTotp" element={<ThreeStepLoginTotp />} />
+        <Route path="/loginSixFieldsTotp" element={<LoginSixFieldsTotp />} />
         <Route path="*" element={<AllForms />} />
       </Routes>
     </HashRouter>

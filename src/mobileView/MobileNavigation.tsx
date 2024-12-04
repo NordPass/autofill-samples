@@ -53,7 +53,8 @@ export const MobileNavigation = () => {
         >
           <Link className="btn w-2/5" to="/all">All Forms</Link>
           <Link className="btn w-2/5" to="/login">Login</Link>
-          <Link className="btn" to="/loginTotp">Login with TOTP</Link>
+          <Link className="btn w-2/5" to="/loginTotp">Login with TOTP</Link>
+          <Link className="btn w-2/5" to="/loginSixFieldsTotp>">Login with Totp 2</Link>
           <Link className="btn w-2/5" to="/register">Register</Link>
           <Link className="btn w-2/5" to="/forgotPassword">Forgot Password</Link>
           <Link className="btn w-2/5" to="/changePassword">Change Password</Link>
@@ -74,6 +75,8 @@ export const MobileNavigation = () => {
           <Link className="btn w-2/5" to="/customLoginTwoFields">Custom Login 2</Link>
           <Link className="btn w-2/5" to="/secondStepLogin">Second Step Login</Link>
           <Link className="btn w-2/5" to="/hiddenSecondStepLogin">Second Step Login 2</Link>
+          <Link className='btn w-2/5' to="/secondStepLoginTotp">Second Step Login Totp</Link>
+          <Link className='btn w-2/5' to="/threeStepLoginTotp">Three Step Login Totp</Link>
           <Link className="btn w-2/5" to="/twoLogin">Two Login</Link>
           <Link className="btn w-2/5" to="/modalLogin">Modal Login</Link>
           <Link className="btn w-2/5" to="/checkoutForm">Modal Login</Link>

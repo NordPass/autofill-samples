@@ -6,6 +6,7 @@ export const Navigation = () => (
     <Link className="btn" to="/login">Login</Link>
     <Link className="btn" to="/loginPhone">Login 2</Link>
     <Link className="btn" to="/loginTotp">Login with TOTP</Link>
+    <Link className="btn" to="/loginSixFieldsTotp">Login with Totp 2</Link>
     <Link className="btn" to="/register">Register</Link>
     <Link className="btn" to="/forgotPassword">Forgot Password</Link>
     <Link className="btn" to="/changePassword">Change Password</Link>
@@ -26,6 +27,8 @@ export const Navigation = () => (
     <Link className="btn" to="/customLoginTwoFields">Custom Login 2</Link>
     <Link className="btn" to="/secondStepLogin">Second Step Login</Link>
     <Link className="btn" to="/hiddenSecondStepLogin">Second Step Login 2</Link>
+    <Link className='btn' to="/secondStepLoginTotp">Second Step Login Totp</Link>
+    <Link className='btn' to="/threeStepLoginTotp">Three Step Login Totp</Link>
     <Link className="btn" to="/twoLogin">Two Login</Link>
     <Link className="btn" to="/modalLogin">Modal Login</Link>
     <Link className="btn" to="/checkoutForm">Checkout Form</Link>
