@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 export const SecondStepLoginTotp = () => {
   const username = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
+  const totp = useRef<HTMLInputElement>(null);
   const [submit, setSubmit] = useState(false);
 
   return (
@@ -54,8 +55,9 @@ export const SecondStepLoginTotp = () => {
         className="btn btn-outline ml-3"
         type="button"
         onClick={() => {
-          username.current!.value = '';
-          password.current!.value = '';
+          username.current ? username.current.value = '' : '';
+          password.current ? password.current.value = '' : '';
+          totp.current ? totp.current.value = '' : '';
           setSubmit(false);
         }}
       >
@@ -65,52 +67,63 @@ export const SecondStepLoginTotp = () => {
       <h1 className="text-4xl mb-3">Login form with TOTP field that is not in DOM</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Enter your credentials to login.</p>
 
-        <input
-          ref={username}
-          className="input input-bordered w-full max-w-xs"
-          type="text"
-          placeholder="Email or username"
-        />
-        <input
-          ref={password}
-          className="input input-bordered w-full max-w-xs"
-          type="password"
-          placeholder="Password"
-          autoComplete="current-password"
-        />
-        <ToastContainer />
         {!submit &&
-          <button
-            className="btn btn-outline mt-3"
-            type="button"
-            onClick={() => setSubmit(true)}>
-            Continue
-          </button>}
+          <>
+            <p className='pb-2'>Enter your credentials to login.</p>
+
+            <input
+              ref={username}
+              className="input input-bordered w-full max-w-xs"
+              type="text"
+              placeholder="Email or username"
+            />
+            <input
+              ref={password}
+              className="input input-bordered w-full max-w-xs"
+              type="password"
+              placeholder="Password"
+              autoComplete="current-password"
+            />
+            <button
+              className="btn btn-outline mt-3"
+              type="button"
+              onClick={() => setSubmit(true)}>
+              Continue
+            </button>
+          </>
+        }
+
         {submit && (
           <>
             <input
               id="totp"
               className="input input-bordered w-full max-w-xs"
               type="text"
+              ref={totp}
               placeholder="Code from authenticator app"
             />
-            <button
-              className="btn btn-outline mt-3"
-              type="button"
-              onClick={event => {
-                if (username.current?.value === 'error@gmail.com') {
-                  errorToast();
-                  event.preventDefault();
+            <div className='pt-3 gap-2 flex'>
+              <button
+                className="btn btn-outline btn-secondary"
+                onClick={() => setSubmit(false)}
+              >Back</button>
+              <button
+                className="btn btn-outline btn-primary"
+                type="button"
+                onClick={event => {
+                  if (username.current?.value === 'error@gmail.com') {
+                    errorToast();
+                    event.preventDefault();
 
-                  return;
-                }
-                successToast();
-              }}
-            >Sign In
-            </button>
-            <ToastContainer />
+                    return;
+                  }
+                  successToast();
+                }}
+              >Sign In
+              </button>
+              <ToastContainer />
+            </div>
           </>
         )}
         <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
