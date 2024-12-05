@@ -66,41 +66,49 @@ export const ThreeStepLoginTotp = () => {
       <h1 className="text-4xl mb-3">Login form with password and TOTP fields that are not in DOM</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Enter your credentials to login.</p>
 
-        <input
-          ref={username}
-          className="input input-bordered w-full max-w-xs"
-          type="text"
-          placeholder="Email or username"
-        />
 
-        {!showPassword &&
-          <button
-            className="btn btn-outline mt-3"
-            type="button"
-            onClick={() => setShowPassword(true)}>
-            Continue
-          </button>}
 
-        {showPassword && <input
-          ref={password}
-          className="input input-bordered w-full max-w-xs"
-          type="password"
-          placeholder="Password"
-          autoComplete="current-password"
-        />}
+        {!showPassword && !submit &&
+          <>
+            <p className='pb-2'>Enter your credentials to login.</p>
+
+            <input
+              ref={username}
+              className="input input-bordered w-full max-w-xs"
+              type="text"
+              placeholder="Email or username"
+            />
+            <button
+              className="btn btn-outline mt-3"
+              type="button"
+              onClick={() => setShowPassword(true)}>
+              Continue
+            </button>
+          </>
+        }
 
         {!submit && showPassword &&
-          <button
-            className="btn btn-outline mt-3"
-            type="button"
-            onClick={() => setSubmit(true)}>
-            Continue
-          </button>}
+          <>
+            <p className='pb-2'>Enter your credentials to login.</p>
+            <input
+              ref={password}
+              className="input input-bordered w-full max-w-xs"
+              type="password"
+              placeholder="Password"
+              autoComplete="current-password"
+            />
+            <button
+              className="btn btn-outline mt-3"
+              type="button"
+              onClick={() => setSubmit(true)}>
+              Continue
+            </button>
+          </>}
 
         {submit && (
           <>
+            <p className='pb-2'>Enter the code from your authenticator app.</p>
             <input
               id="totp"
               className="input input-bordered w-full max-w-xs"

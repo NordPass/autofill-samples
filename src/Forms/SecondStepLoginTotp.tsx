@@ -96,6 +96,7 @@ export const SecondStepLoginTotp = () => {
 
         {submit && (
           <>
+            <p className='pb-2'>Enter the code from your authenticator app.</p>
             <input
               id="totp"
               className="input input-bordered w-full max-w-xs"
