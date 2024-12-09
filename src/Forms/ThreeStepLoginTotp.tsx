@@ -101,7 +101,9 @@ export const ThreeStepLoginTotp = () => {
             <button
               className="btn btn-outline mt-3"
               type="button"
-              onClick={() => setSubmit(true)}>
+              onClick={() => {
+                new Promise(resolve => setTimeout(() => resolve(setSubmit(true)), 500))
+              }}>
               Continue
             </button>
           </>}
