@@ -66,7 +66,7 @@ export const SecondStepLoginTotp = () => {
 
       <h1 className="text-4xl mb-3">Login form with TOTP field that is not in DOM</h1>
 
-      <form className="flex flex-col items-start mt-3">
+      <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`}>
 
         {!submit &&
           <>

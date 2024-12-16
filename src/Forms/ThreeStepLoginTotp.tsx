@@ -65,7 +65,7 @@ export const ThreeStepLoginTotp = () => {
 
       <h1 className="text-4xl mb-3">Login form with password and TOTP fields that are not in DOM</h1>
 
-      <form className="flex flex-col items-start mt-3">
+      <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`}>
 
 
 
@@ -129,7 +129,7 @@ export const ThreeStepLoginTotp = () => {
                 }
                 successToast();
               }}
-            >Sign In
+            >Submit
             </button>
             <ToastContainer />
           </>
