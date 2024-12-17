@@ -111,12 +111,16 @@ export const ThreeStepLoginTotp = () => {
         {submit && (
           <>
             <p className='pb-2'>Enter the code from your authenticator app.</p>
-            <input
-              id="totp"
-              className="input input-bordered w-full max-w-xs"
-              type="text"
-              placeholder="Code from authenticator app"
-            />
+            <label>
+              2FA code
+              <input
+                id="totpField"
+                className="input input-bordered w-full max-w-xs"
+                type="text"
+                placeholder="Code from authenticator app"
+              />
+            </label>
+
             <button
               className="btn btn-outline mt-3"
               type="button"
@@ -129,13 +133,17 @@ export const ThreeStepLoginTotp = () => {
                 }
                 successToast();
               }}
-            >Submit
+            >Sign in
             </button>
             <ToastContainer />
           </>
         )}
-        <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-        <Link className='pt-2 underline' to="/register">Sign up</Link>
+        {!submit && (
+          <>
+            <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
+            <Link className='pt-2 underline' to="/register">Sign up</Link>
+          </>
+        )}
       </form>
     </div>
   );

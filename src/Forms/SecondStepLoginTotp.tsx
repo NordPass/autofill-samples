@@ -100,7 +100,7 @@ export const SecondStepLoginTotp = () => {
           <>
             <p className='pb-2'>Enter the code from your authenticator app.</p>
             <input
-              id="totp"
+              id="totpField"
               className="input input-bordered w-full max-w-xs"
               type="text"
               ref={totp}
@@ -129,8 +129,12 @@ export const SecondStepLoginTotp = () => {
             </div>
           </>
         )}
-        <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-        <Link className='pt-2 underline' to="/register">Sign up</Link>
+        {!submit && (
+          <>
+            <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
+            <Link className='pt-2 underline' to="/register">Sign up</Link>
+          </>
+        )}
       </form>
     </div>
   );
