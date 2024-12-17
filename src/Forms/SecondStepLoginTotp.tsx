@@ -98,14 +98,16 @@ export const SecondStepLoginTotp = () => {
 
         {submit && (
           <>
-            <p className='pb-2'>Enter the code from your authenticator app.</p>
-            <input
-              id="totpField"
-              className="input input-bordered w-full max-w-xs"
-              type="text"
-              ref={totp}
-              placeholder="Code from authenticator app"
-            />
+            <p className='pb-2'>Enter the code from your authenticator device.</p>
+            <label>
+              2FA code
+              <input
+                id="totpField"
+                className="input input-bordered w-full max-w-xs"
+                type="text"
+                placeholder="Verification code"
+              />
+            </label>
             <div className='pt-3 gap-2 flex'>
               <button
                 className="btn btn-outline btn-secondary"
@@ -123,7 +125,7 @@ export const SecondStepLoginTotp = () => {
                   }
                   successToast();
                 }}
-              >Sign In
+              >Submit
               </button>
               <ToastContainer />
             </div>
