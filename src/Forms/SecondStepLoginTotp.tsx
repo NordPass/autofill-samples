@@ -105,7 +105,7 @@ export const SecondStepLoginTotp = () => {
                 id="totpField"
                 className="input input-bordered w-full max-w-xs"
                 type="text"
-                placeholder="Verification code"
+                placeholder="Code from authenticator app"
               />
             </label>
             <div className='pt-3 gap-2 flex'>
