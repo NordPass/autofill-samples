@@ -55,6 +55,7 @@ export const MobileNavigation = () => {
           <Link className="btn w-2/5" to="/login">Login</Link>
           <Link className="btn w-2/5" to="/loginTotp">Login with TOTP</Link>
           <Link className="btn w-2/5" to="/loginSixFieldsTotp>">Login with Totp 2</Link>
+          <Link className="btn w-2/5" to="/rightToLeft">Right to Left Login</Link>
           <Link className="btn w-2/5" to="/register">Register</Link>
           <Link className="btn w-2/5" to="/forgotPassword">Forgot Password</Link>
           <Link className="btn w-2/5" to="/changePassword">Change Password</Link>
@@ -79,7 +80,7 @@ export const MobileNavigation = () => {
           <Link className='btn w-2/5' to="/threeStepLoginTotp">Three Step Login Totp</Link>
           <Link className="btn w-2/5" to="/twoLogin">Two Login</Link>
           <Link className="btn w-2/5" to="/modalLogin">Modal Login</Link>
-          <Link className="btn w-2/5" to="/checkoutForm">Modal Login</Link>
+          <Link className="btn w-2/5" to="/checkoutForm">Checkout Form</Link>
         </button>
       )}
     </nav>

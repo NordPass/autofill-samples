@@ -36,6 +36,7 @@ import { LoginTotp } from './Forms/LoginTotp.tsx';
 import { SecondStepLoginTotp } from './Forms/SecondStepLoginTotp.tsx';
 import { ThreeStepLoginTotp } from './Forms/ThreeStepLoginTotp.tsx';
 import { LoginSixFieldsTotp } from './Forms/LoginSixFieldsTotp.tsx';
+import { RightToLeft } from './Forms/RIghtToLeft.tsx';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
@@ -72,6 +73,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         <Route path="/secondStepLoginTotp" element={<SecondStepLoginTotp />} />
         <Route path="/threeStepLoginTotp" element={<ThreeStepLoginTotp />} />
         <Route path="/loginSixFieldsTotp" element={<LoginSixFieldsTotp />} />
+        <Route path='/rightToLeft' element={<RightToLeft />} />
         <Route path="*" element={<AllForms />} />
       </Routes>
     </HashRouter>

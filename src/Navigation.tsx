@@ -7,6 +7,7 @@ export const Navigation = () => (
     <Link className="btn" to="/loginPhone">Login 2</Link>
     <Link className="btn" to="/loginTotp">Login with TOTP</Link>
     <Link className="btn" to="/loginSixFieldsTotp">Login with Totp 2</Link>
+    <Link className="btn" to="/rightToLeft">Right to Left Login</Link>
     <Link className="btn" to="/register">Register</Link>
     <Link className="btn" to="/forgotPassword">Forgot Password</Link>
     <Link className="btn" to="/changePassword">Change Password</Link>
