@@ -47,11 +47,11 @@ export const Register = () => {
       >
         Clear
       </button>
-      
+
       <h1 className="text-4xl mb-3">Register Form</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>To access your account you need to register on our website.</p>
+        <p className="pb-2">To access your account you need to register on our website.</p>
 
         <input
           ref={username}
@@ -67,7 +67,7 @@ export const Register = () => {
           autoComplete="new-password"
         />
         <button className="btn btn-outline mt-3" type="button">Sign Up</button>
-        <Link to='/login' className='underline pt-2'>Already have an account?</Link>
+        <Link to="/login" className="underline pt-2">Already have an account?</Link>
       </form>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
-import { Link } from 'react-router-dom';
 
 export const Login = () => {
   const username = useRef<HTMLInputElement>(null);
@@ -98,8 +98,8 @@ export const Login = () => {
 
       {!phoneLogin && (
         <form className="flex flex-col items-start mt-3">
-          <p className='pb-2'>Welcome!</p>
-          <p className='pb-2'>Enter your credentials to login.</p>
+          <p className="pb-2">Welcome!</p>
+          <p className="pb-2">Enter your credentials to login.</p>
 
           <input
             ref={username}
@@ -117,7 +117,7 @@ export const Login = () => {
           <button
             className="btn btn-outline mt-3"
             type="button"
-            onClick={event => {
+            onClick={(event) => {
               if (username.current?.value === 'error@gmail.com') {
                 errorToast();
                 event.preventDefault();
@@ -126,17 +126,18 @@ export const Login = () => {
               }
               successToast();
             }}
-          >Sign In
+          >
+            Sign In
           </button>
-          <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-          <Link className='pt-2 underline' to="/register">Sign up</Link>
+          <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+          <Link className="pt-2 underline" to="/register">Sign up</Link>
           <ToastContainer />
         </form>
       )}
       {phoneLogin && (
         <form className="flex flex-col items-start mt-3">
-          <p className='pb-2'>Welcome!</p>
-          <p className='pb-2'>Enter your credentials to login.</p>
+          <p className="pb-2">Welcome!</p>
+          <p className="pb-2">Enter your credentials to login.</p>
 
           <input
             ref={phone}
@@ -152,7 +153,7 @@ export const Login = () => {
           <button
             className="btn btn-outline mt-3"
             type="button"
-            onClick={event => {
+            onClick={(event) => {
               if (phone.current?.value === '111111111') {
                 errorToast();
                 event.preventDefault();
@@ -161,10 +162,11 @@ export const Login = () => {
               }
               successToast();
             }}
-          >Sign In
+          >
+            Sign In
           </button>
-          <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-          <Link className='pt-2 underline' to="/register">Sign up</Link>
+          <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+          <Link className="pt-2 underline" to="/register">Sign up</Link>
           <ToastContainer />
         </form>
       )}

@@ -55,8 +55,15 @@ export const ChangeEmail = () => {
       <h1 className="text-4xl pt-2">Change Email Form</h1>
 
       <form className="flex flex-col items-start mt-3">
-      <p>If you want to change your email, </p>
-      <p className='pb-2'>enter your <b>current email</b> and then your <b>new email</b>.</p>
+        <p>If you want to change your email, </p>
+        <p className="pb-2">
+          enter your
+          <b>current email</b>
+          {' '}
+          and then your
+          <b>new email</b>
+          .
+        </p>
 
         <input
           ref={email}

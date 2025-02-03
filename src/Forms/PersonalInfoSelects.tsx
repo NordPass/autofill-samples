@@ -96,8 +96,8 @@ export const PersonalInfoSelects = () => {
       <h1 className="text-4xl mt-3">Personal Info Form With Select Inputs</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Save your address for future transactions.</p>
-  
+        <p className="pb-2">Save your address for future transactions.</p>
+
         <input
           ref={firstName}
           className="input input-bordered w-full max-w-xs"

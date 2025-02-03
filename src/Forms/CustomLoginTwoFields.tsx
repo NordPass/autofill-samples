@@ -62,7 +62,7 @@ export const CustomLoginTwoFields = () => {
 
       <form className="flex flex-col items-start mt-3">
 
-        <p className='pb-2'>Enter your credentials to login into your corporate account.</p>
+        <p className="pb-2">Enter your credentials to login into your corporate account.</p>
 
         <input
           id="email"
@@ -94,8 +94,8 @@ export const CustomLoginTwoFields = () => {
           placeholder="Website"
         />
         <button className="btn btn-outline mt-3" type="button">Sign In</button>
-        <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-        <Link className='pt-2 underline' to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+        <Link className="pt-2 underline" to="/register">Sign up</Link>
       </form>
     </div>
   );

@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
-import { Link } from 'react-router-dom';
 
 export const SecondStepLoginTotp = () => {
   const username = useRef<HTMLInputElement>(null);
@@ -55,9 +55,15 @@ export const SecondStepLoginTotp = () => {
         className="btn btn-outline ml-3"
         type="button"
         onClick={() => {
-          username.current ? username.current.value = '' : '';
-          password.current ? password.current.value = '' : '';
-          totp.current ? totp.current.value = '' : '';
+          if (username.current) {
+            username.current.value = '';
+          }
+          if (password.current) {
+            password.current.value = '';
+          }
+          if (totp.current) {
+            totp.current.value = '';
+          }
           setSubmit(false);
         }}
       >
@@ -68,9 +74,10 @@ export const SecondStepLoginTotp = () => {
 
       <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`}>
 
-        {!submit &&
+        {!submit
+        && (
           <>
-            <p className='pb-2'>Enter your credentials to login.</p>
+            <p className="pb-2">Enter your credentials to login.</p>
 
             <input
               ref={username}
@@ -88,17 +95,16 @@ export const SecondStepLoginTotp = () => {
             <button
               className="btn btn-outline mt-3"
               type="button"
-              onClick={() => {
-                new Promise(resolve => setTimeout(() => resolve(setSubmit(true)), 500))
-              }}>
+              onClick={() => setTimeout(() => setSubmit(true), 500)}
+            >
               Continue
             </button>
           </>
-        }
+        )}
 
         {submit && (
           <>
-            <p className='pb-2'>Enter the code from your authenticator device.</p>
+            <p className="pb-2">Enter the code from your authenticator device.</p>
             <label>
               2FA code
               <input
@@ -108,15 +114,18 @@ export const SecondStepLoginTotp = () => {
                 placeholder="Code from authenticator app"
               />
             </label>
-            <div className='pt-3 gap-2 flex'>
+            <div className="pt-3 gap-2 flex">
               <button
+                type="button"
                 className="btn btn-outline btn-secondary"
                 onClick={() => setSubmit(false)}
-              >Back</button>
+              >
+                Back
+              </button>
               <button
                 className="btn btn-outline btn-primary"
                 type="button"
-                onClick={event => {
+                onClick={(event) => {
                   if (username.current?.value === 'error@gmail.com') {
                     errorToast();
                     event.preventDefault();
@@ -125,7 +134,8 @@ export const SecondStepLoginTotp = () => {
                   }
                   successToast();
                 }}
-              >Submit
+              >
+                Submit
               </button>
               <ToastContainer />
             </div>
@@ -133,8 +143,8 @@ export const SecondStepLoginTotp = () => {
         )}
         {!submit && (
           <>
-            <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-            <Link className='pt-2 underline' to="/register">Sign up</Link>
+            <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+            <Link className="pt-2 underline" to="/register">Sign up</Link>
           </>
         )}
       </form>

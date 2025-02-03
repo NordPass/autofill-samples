@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
-import { Link } from 'react-router-dom';
 
 export const HiddenSecondStepLogin = () => {
   const username = useRef<HTMLInputElement>(null);
@@ -64,7 +64,7 @@ export const HiddenSecondStepLogin = () => {
       <h1 className="text-4xl mb-3">Login form with hidden password field</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Enter your credentials to login.</p>
+        <p className="pb-2">Enter your credentials to login.</p>
 
         <input
           ref={username}
@@ -72,15 +72,17 @@ export const HiddenSecondStepLogin = () => {
           type="text"
           placeholder="Email or username"
         />
-        {!submit ? (
-          <button
-            className="btn btn-outline mt-3"
-            type="button"
-            onClick={() => new Promise(resolve => setTimeout(() => resolve(setSubmit(true)), 500))}
-          >
-            Continue to login
-          </button>
-        ) : ''}
+        {!submit
+          ? (
+              <button
+                className="btn btn-outline mt-3"
+                type="button"
+                onClick={() => new Promise(resolve => setTimeout(() => resolve(setSubmit(true)), 500))}
+              >
+                Continue to login
+              </button>
+            )
+          : ''}
         <div className={`${submit ? 'block' : 'hidden'}`}>
           <input
             ref={password}
@@ -92,7 +94,7 @@ export const HiddenSecondStepLogin = () => {
           <button
             className="btn btn-outline mt-3"
             type="button"
-            onClick={event => {
+            onClick={(event) => {
               if (username.current?.value === 'error@gmail.com') {
                 errorToast();
                 event.preventDefault();
@@ -101,12 +103,13 @@ export const HiddenSecondStepLogin = () => {
               }
               successToast();
             }}
-          >Sign In
+          >
+            Sign In
           </button>
           <ToastContainer />
         </div>
-        <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-        <Link className='pt-2 underline' to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+        <Link className="pt-2 underline" to="/register">Sign up</Link>
       </form>
     </div>
   );

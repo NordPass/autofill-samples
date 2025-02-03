@@ -94,10 +94,10 @@ export const CheckoutForm = () => {
       </button>
 
       <form className="flex flex-col items-start mt-3">
-      <h1 className="text-4xl mt-3">Checkout Form</h1>
+        <h1 className="text-4xl mt-3">Checkout Form</h1>
 
         <section className="flex flex-col items-start mt-3">
-          <p className='pb-2'>To finish buying the product - enter your credentials.</p>
+          <p className="pb-2">To finish buying the product - enter your credentials.</p>
 
           <h1 className="text-3xl mb-3">Credit Card</h1>
           <label htmlFor="ccFullName">Name on Card</label>
@@ -143,7 +143,7 @@ export const CheckoutForm = () => {
         <section className="flex flex-col items-start mt-3">
           <h1 className="text-3xl mb-3">Billing & Shipping Address</h1>
 
-          <p className='pb-2'>We will send your delivery directly to the address.</p>
+          <p className="pb-2">We will send your delivery directly to the address.</p>
 
           <label htmlFor="select-country">Country</label>
           <select

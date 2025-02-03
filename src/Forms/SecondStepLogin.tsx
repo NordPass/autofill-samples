@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
-import { Link } from 'react-router-dom';
 
 export const SecondStepLogin = () => {
   const username = useRef<HTMLInputElement>(null);
@@ -61,11 +61,11 @@ export const SecondStepLogin = () => {
       >
         Clear
       </button>
-      
+
       <h1 className="text-4xl mb-3">Login form with password field that is not in DOM</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Enter your credentials to login.</p>
+        <p className="pb-2">Enter your credentials to login.</p>
 
         <input
           ref={username}
@@ -73,13 +73,16 @@ export const SecondStepLogin = () => {
           type="text"
           placeholder="Email or username"
         />
-        {!submit &&
+        {!submit
+        && (
           <button
             className="btn btn-outline mt-3"
             type="button"
-            onClick={() => setSubmit(true)}>
+            onClick={() => setSubmit(true)}
+          >
             Continue to sign in
-          </button>}
+          </button>
+        )}
         {submit && (
           <>
             <input
@@ -92,11 +95,12 @@ export const SecondStepLogin = () => {
             <button
               className="btn btn-outline mt-3"
               type="button"
-              onClick={event => {
+              onClick={(event) => {
                 if (username.current?.value === 'error@gmail.com') {
                   event.preventDefault();
                   errorToast();
-                } else {
+                }
+                else {
                   successToast();
                 }
               }}
@@ -106,8 +110,8 @@ export const SecondStepLogin = () => {
             <ToastContainer />
           </>
         )}
-        <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-        <Link className='pt-2 underline' to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+        <Link className="pt-2 underline" to="/register">Sign up</Link>
       </form>
     </div>
   );

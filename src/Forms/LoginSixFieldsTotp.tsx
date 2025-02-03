@@ -1,7 +1,7 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
-import { Link } from 'react-router-dom';
 
 export const LoginSixFieldsTotp = () => {
   const email = useRef<HTMLInputElement>(null);
@@ -63,7 +63,7 @@ export const LoginSixFieldsTotp = () => {
       <h1 className="text-4xl mt-3">Login form with Totp</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Enter your credentials to login into your account.</p>
+        <p className="pb-2">Enter your credentials to login into your account.</p>
 
         <input
           id="email"
@@ -82,19 +82,19 @@ export const LoginSixFieldsTotp = () => {
         />
         <div className="flex justify-around gap-3 totp-form pt-3 flex-col">
           Code from authenticator app
-          <div className='gap-3 flex'>
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id='totp' />
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id='totp' />
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id='totp' />
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id='totp' />
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id='totp' />
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id='totp' />
+          <div className="gap-3 flex">
+            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" />
+            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" />
+            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" />
+            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" />
+            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" />
+            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" />
           </div>
         </div>
         <button
           className="btn btn-outline mt-3"
           type="button"
-          onClick={event => {
+          onClick={(event) => {
             if (email.current?.value === 'error@gmail.com') {
               errorToast();
               event.preventDefault();
@@ -103,10 +103,11 @@ export const LoginSixFieldsTotp = () => {
             }
             successToast();
           }}
-        >Sign In
+        >
+          Sign In
         </button>
-        <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-        <Link className='pt-2 underline' to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+        <Link className="pt-2 underline" to="/register">Sign up</Link>
         <ToastContainer />
       </form>
     </div>

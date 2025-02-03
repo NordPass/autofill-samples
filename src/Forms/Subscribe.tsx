@@ -38,8 +38,8 @@ export const Subscribe = () => {
 
       <form className="flex flex-col items-start mt-3">
         <p>Subscribe to our newsletters!</p>
-        <p className='pb-2'>Enter your email to be receive updates.</p>
-        
+        <p className="pb-2">Enter your email to be receive updates.</p>
+
         <input
           ref={emailInput}
           className="input input-bordered w-full max-w-xs"

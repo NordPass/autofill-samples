@@ -37,7 +37,7 @@ export const ForgotPassword = () => {
       <h1 className="text-4xl mt-3">Forgot Password Form</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Enter your email address and we will send you a link to change your password.</p>
+        <p className="pb-2">Enter your email address and we will send you a link to change your password.</p>
 
         <input
           ref={email}
@@ -46,8 +46,8 @@ export const ForgotPassword = () => {
           placeholder="Email Address"
         />
         <button className="btn btn-outline mt-3" type="button">Get Password</button>
-        <Link className='underline pt-2' to='/login'>Log in into your account</Link>
+        <Link className="underline pt-2" to="/login">Log in into your account</Link>
       </form>
-    </div >
+    </div>
   );
 };

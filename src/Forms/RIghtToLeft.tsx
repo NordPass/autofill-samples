@@ -1,7 +1,7 @@
-import { useRef, useState } from "react";
-import { Link } from "react-router-dom";
-import { ToastContainer } from "react-toastify";
-import { errorToast, successToast } from "../utils/toasts";
+import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
+import { ToastContainer } from 'react-toastify';
+import { errorToast, successToast } from '../utils/toasts';
 
 export const RightToLeft = () => {
   const username = useRef<HTMLInputElement>(null);
@@ -17,8 +17,6 @@ export const RightToLeft = () => {
           if (!phoneLogin) {
             username.current!.value = 'naruto.uzumaki@gmail.com';
             password.current!.value = '12345';
-
-            return;
           }
         }}
       >
@@ -31,8 +29,6 @@ export const RightToLeft = () => {
           if (!phoneLogin) {
             username.current!.value = 'brucewayne33112@gmail.com';
             password.current!.value = 'alfredthebutler123';
-
-            return;
           }
         }}
       >
@@ -45,8 +41,6 @@ export const RightToLeft = () => {
           if (!phoneLogin) {
             username.current!.value = 'dragonBorn33112@gmail.com';
             password.current!.value = 'afterdarknessAlwaysComesLight_1';
-
-            return;
           }
         }}
       >
@@ -59,8 +53,6 @@ export const RightToLeft = () => {
           if (!phoneLogin) {
             username.current!.value = 'error@gmail.com';
             password.current!.value = 'password123';
-
-            return;
           }
         }}
       >
@@ -73,8 +65,6 @@ export const RightToLeft = () => {
           if (!phoneLogin) {
             username.current!.value = '';
             password.current!.value = '';
-
-            return;
           }
         }}
       >
@@ -90,8 +80,8 @@ export const RightToLeft = () => {
 
       <h1 className="text-4xl mt-3">Login Form</h1>
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>!Welcome</p>
-        <p className='pb-2'>.Enter your credentials to login</p>
+        <p className="pb-2">!Welcome</p>
+        <p className="pb-2">.Enter your credentials to login</p>
 
         <input
           ref={username}
@@ -109,7 +99,7 @@ export const RightToLeft = () => {
         <button
           className="btn btn-outline mt-3"
           type="button"
-          onClick={event => {
+          onClick={(event) => {
             if (username.current?.value === 'error@gmail.com') {
               errorToast();
               event.preventDefault();
@@ -118,12 +108,13 @@ export const RightToLeft = () => {
             }
             successToast();
           }}
-        >Sign In
+        >
+          Sign In
         </button>
-        <Link className='pt-2 underline' to="/forgotPassword">?Forgot your password</Link>
-        <Link className='pt-2 underline' to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">?Forgot your password</Link>
+        <Link className="pt-2 underline" to="/register">Sign up</Link>
         <ToastContainer />
       </form>
     </div>
-  )
+  );
 };

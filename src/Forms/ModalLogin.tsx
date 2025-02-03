@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useRef, useState } from 'react';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
 
@@ -8,7 +8,7 @@ export const ModalLogin = () => {
 
   return (
     <div className="ml-6">
-      
+
       <h1 className="text-4xl mb-3">Modal Login Form</h1>
 
       <button type="button" className="btn btn-outline" onClick={() => setModal(!modal)}>{modal ? 'Hide modal' : 'Show modal'}</button>
@@ -31,7 +31,7 @@ export const ModalLogin = () => {
           <button
             className="btn btn-outline mt-3"
             type="button"
-            onClick={event => {
+            onClick={(event) => {
               if (email.current?.value === 'error@gmail.com') {
                 errorToast();
                 event.preventDefault();
@@ -40,7 +40,8 @@ export const ModalLogin = () => {
               }
               successToast();
             }}
-          >Sign In
+          >
+            Sign In
           </button>
           <ToastContainer />
         </form>

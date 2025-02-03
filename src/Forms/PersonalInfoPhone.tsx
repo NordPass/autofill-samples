@@ -105,7 +105,7 @@ export const PersonalInfoPhone = () => {
       <h1 className="text-4xl mt-3">Personal Info Form</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Save your credentials for future transactions.</p>
+        <p className="pb-2">Save your credentials for future transactions.</p>
 
         <input
           ref={firstName}

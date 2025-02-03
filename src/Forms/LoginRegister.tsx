@@ -37,7 +37,7 @@ export const LoginRegister = () => {
       <h1 className="text-4xl mt-3">Login or Register Form</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Enter email to login or register to your account.</p>
+        <p className="pb-2">Enter email to login or register to your account.</p>
 
         <input
           ref={email}

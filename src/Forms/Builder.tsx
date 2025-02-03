@@ -22,7 +22,9 @@ export const Builder = () => {
         ref={inputFormValue}
       />
       <div className="flex mt-2">
-        Hidden <input type="checkbox" className="checkbox ml-2" ref={hiddenValue} />
+        Hidden
+        {' '}
+        <input type="checkbox" className="checkbox ml-2" ref={hiddenValue} />
       </div>
       <button
         className="btn btn-outline mt-2 btn-primary"
@@ -63,8 +65,8 @@ export const Builder = () => {
       >
         FIll in (Dragonborn)
       </button>
-      
-      <h1 className='text-4xl pt-2'>Builder Form</h1>
+
+      <h1 className="text-4xl pt-2">Builder Form</h1>
 
       <form className="flex flex-col items-start mt-3">
         <input

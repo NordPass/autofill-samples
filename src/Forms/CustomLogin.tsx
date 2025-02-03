@@ -1,7 +1,7 @@
 import { useRef } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
-import { Link } from 'react-router-dom';
 
 export const CustomLogin = () => {
   const email = useRef<HTMLInputElement>(null);
@@ -69,7 +69,7 @@ export const CustomLogin = () => {
       <h1 className="text-4xl mt-3">Custom Login Form</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className='pb-2'>Enter your credentials to login into your corporate account.</p>
+        <p className="pb-2">Enter your credentials to login into your corporate account.</p>
 
         <input
           id="email"
@@ -96,7 +96,7 @@ export const CustomLogin = () => {
         <button
           className="btn btn-outline mt-3"
           type="button"
-          onClick={event => {
+          onClick={(event) => {
             if (email.current?.value === 'error@gmail.com') {
               errorToast();
               event.preventDefault();
@@ -105,10 +105,11 @@ export const CustomLogin = () => {
             }
             successToast();
           }}
-        >Sign In
+        >
+          Sign In
         </button>
-        <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-        <Link className='pt-2 underline' to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+        <Link className="pt-2 underline" to="/register">Sign up</Link>
         <ToastContainer />
       </form>
     </div>

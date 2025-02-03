@@ -15,8 +15,8 @@ export const AllForms = () => (
       <button className="btn btn-outline mt-3" type="button">Sign In</button>
     </form>
     <form className="flex flex-col items-start mt-3">
-      <p className='pb-2'>Welcome!</p>
-      <p className='pb-2'>Enter your credentials to login.</p>
+      <p className="pb-2">Welcome!</p>
+      <p className="pb-2">Enter your credentials to login.</p>
 
       <input
         className="input input-bordered w-full max-w-xs"
@@ -32,12 +32,13 @@ export const AllForms = () => (
       <button
         className="btn btn-outline mt-3"
         type="button"
-      >Sign In
+      >
+        Sign In
       </button>
     </form>
     <form className="flex flex-col items-start mt-3">
-      <p className='pb-2'>Welcome!</p>
-      <p className='pb-2'>Enter your credentials to login.</p>
+      <p className="pb-2">Welcome!</p>
+      <p className="pb-2">Enter your credentials to login.</p>
 
       <input
         className="input input-bordered w-full max-w-xs"
@@ -52,7 +53,8 @@ export const AllForms = () => (
       <button
         className="btn btn-outline mt-3"
         type="button"
-      >Sign In
+      >
+        Sign In
       </button>
     </form>
     <form className="flex items-center flex-col">
@@ -87,7 +89,14 @@ export const AllForms = () => (
     </form>
     <form className="flex flex-col items-start mt-3">
       <p>To change your email,</p>
-      <p className='pb-2'>enter your <b>new email</b> and then your <b>password</b>.</p>
+      <p className="pb-2">
+        enter your
+        <b>new email</b>
+        {' '}
+        and then your
+        <b>password</b>
+        .
+      </p>
 
       <input
         className="input input-bordered w-full max-w-xs"
@@ -124,7 +133,7 @@ export const AllForms = () => (
       <button className="btn btn-outline mt-3" type="button">Save</button>
     </form>
     <form className="flex flex-col items-start mt-3">
-      <p className='pb-2'>Save your credentials for future transactions.</p>
+      <p className="pb-2">Save your credentials for future transactions.</p>
 
       <input
         className="input input-bordered w-full max-w-xs"
@@ -201,7 +210,7 @@ export const AllForms = () => (
       <button className="btn btn-outline mt-3" type="button">Save</button>
     </form>
     <form className="flex flex-col items-start mt-3">
-      <p className='pb-2'>Save your address for future transactions.</p>
+      <p className="pb-2">Save your address for future transactions.</p>
 
       <input
         className="input input-bordered w-full max-w-xs"
@@ -331,7 +340,7 @@ export const AllForms = () => (
       <button className="btn btn-outline mt-3" type="button">Login/Register</button>
     </form>
     <form className="flex flex-col items-start mt-3">
-      <p className='pb-2'>Enter your credentials to login into your corporate account.</p>
+      <p className="pb-2">Enter your credentials to login into your corporate account.</p>
 
       <input
         id="email"
@@ -355,12 +364,13 @@ export const AllForms = () => (
       <button
         className="btn btn-outline mt-3"
         type="button"
-      >Sign In
+      >
+        Sign In
       </button>
     </form>
     <form className="flex flex-col items-start mt-3">
 
-      <p className='pb-2'>Enter your credentials to login into your corporate account.</p>
+      <p className="pb-2">Enter your credentials to login into your corporate account.</p>
 
       <input
         id="email"
@@ -393,7 +403,7 @@ export const AllForms = () => (
       <h1 className="text-4xl mt-3">Checkout Form</h1>
 
       <section className="flex flex-col items-start mt-3">
-        <p className='pb-2'>To finish buying the product - enter your credentials.</p>
+        <p className="pb-2">To finish buying the product - enter your credentials.</p>
 
         <h1 className="text-3xl mb-3">Credit Card</h1>
         <label htmlFor="ccFullName">Name on Card</label>
@@ -434,7 +444,7 @@ export const AllForms = () => (
       <section className="flex flex-col items-start mt-3">
         <h1 className="text-3xl mb-3">Billing & Shipping Address</h1>
 
-        <p className='pb-2'>We will send your delivery directly to the address.</p>
+        <p className="pb-2">We will send your delivery directly to the address.</p>
 
         <label htmlFor="select-country">Country</label>
         <select

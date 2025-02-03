@@ -1,6 +1,6 @@
 export const TwoLogin = () => (
   <div className="ml-6">
-    
+
     <h1 className="text-xl">First Login Form</h1>
 
     <form className="flex flex-col items-start mt-3">

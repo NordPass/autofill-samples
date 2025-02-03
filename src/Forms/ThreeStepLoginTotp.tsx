@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
+import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
-import { Link } from 'react-router-dom';
 
 export const ThreeStepLoginTotp = () => {
   const username = useRef<HTMLInputElement>(null);
@@ -67,11 +67,10 @@ export const ThreeStepLoginTotp = () => {
 
       <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`}>
 
-
-
-        {!showPassword && !submit &&
+        {!showPassword && !submit
+        && (
           <>
-            <p className='pb-2'>Enter your credentials to login.</p>
+            <p className="pb-2">Enter your credentials to login.</p>
 
             <input
               ref={username}
@@ -82,15 +81,17 @@ export const ThreeStepLoginTotp = () => {
             <button
               className="btn btn-outline mt-3"
               type="button"
-              onClick={() => setShowPassword(true)}>
+              onClick={() => setShowPassword(true)}
+            >
               Continue
             </button>
           </>
-        }
+        )}
 
-        {!submit && showPassword &&
+        {!submit && showPassword
+        && (
           <>
-            <p className='pb-2'>Enter your credentials to login.</p>
+            <p className="pb-2">Enter your credentials to login.</p>
             <input
               ref={password}
               className="input input-bordered w-full max-w-xs"
@@ -101,16 +102,16 @@ export const ThreeStepLoginTotp = () => {
             <button
               className="btn btn-outline mt-3"
               type="button"
-              onClick={() => {
-                new Promise(resolve => setTimeout(() => resolve(setSubmit(true)), 500))
-              }}>
+              onClick={() => setTimeout(() => setSubmit(true), 500)}
+            >
               Continue
             </button>
-          </>}
+          </>
+        )}
 
         {submit && (
           <>
-            <p className='pb-2'>Enter the code from your authenticator app.</p>
+            <p className="pb-2">Enter the code from your authenticator app.</p>
             <label>
               2FA code
               <input
@@ -124,7 +125,7 @@ export const ThreeStepLoginTotp = () => {
             <button
               className="btn btn-outline mt-3"
               type="button"
-              onClick={event => {
+              onClick={(event) => {
                 if (username.current?.value === 'error@gmail.com') {
                   errorToast();
                   event.preventDefault();
@@ -133,15 +134,16 @@ export const ThreeStepLoginTotp = () => {
                 }
                 successToast();
               }}
-            >Sign in
+            >
+              Sign in
             </button>
             <ToastContainer />
           </>
         )}
         {!submit && (
           <>
-            <Link className='pt-2 underline' to="/forgotPassword">Forgot your password?</Link>
-            <Link className='pt-2 underline' to="/register">Sign up</Link>
+            <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+            <Link className="pt-2 underline" to="/register">Sign up</Link>
           </>
         )}
       </form>

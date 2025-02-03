@@ -51,7 +51,14 @@ export const ChangeEmailWithPassword = () => {
 
       <form className="flex flex-col items-start mt-3">
         <p>To change your email,</p>
-        <p className='pb-2'>enter your <b>new email</b> and then your <b>password</b>.</p>
+        <p className="pb-2">
+          enter your
+          <b>new email</b>
+          {' '}
+          and then your
+          <b>password</b>
+          .
+        </p>
 
         <input
           ref={newEmail}
