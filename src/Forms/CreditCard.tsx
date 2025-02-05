@@ -7,7 +7,7 @@ export const CreditCard = () => {
   const cvv = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-6">
+    <div className="ml-3" style={{ justifyItems: 'left'}}>
       <button
         className="btn btn-outline"
         type="button"

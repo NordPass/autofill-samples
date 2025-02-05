@@ -7,11 +7,13 @@ export const ModalLogin = () => {
   const email = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-6">
+    <div className="ml-3">
 
-      <h1 className="text-4xl mb-3">Modal Login Form</h1>
+      <div style={{ justifyItems: 'left' }}>
+        <h1 className="text-4xl mb-3">Modal Login Form</h1>
+        <button type="button" className="btn btn-outline" onClick={() => setModal(!modal)}>{modal ? 'Hide modal' : 'Show modal'}</button>
+      </div>
 
-      <button type="button" className="btn btn-outline" onClick={() => setModal(!modal)}>{modal ? 'Hide modal' : 'Show modal'}</button>
       {modal && (
         <form className="flex flex-col justify-center items-center">
           <p className="mb-3">Enter your credentials to login.</p>

@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { isMobile } from 'react-device-detect';
 
 export const PersonalInfoPhone = () => {
   const firstName = useRef<HTMLInputElement>(null);
@@ -16,7 +17,7 @@ export const PersonalInfoPhone = () => {
   const country = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-6">
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -125,37 +126,72 @@ export const PersonalInfoPhone = () => {
           type="text"
           placeholder="Email"
         />
-        <div className="flex items-center">
-          <input
-            ref={phonePrefix}
-            className="input input-bordered w-[80px] max-w-xs mr-2"
-            type="text"
-            name="phonePrefix"
-            placeholder="Prefix"
-          />
-          <input
-            ref={phoneArea}
-            className="input input-bordered w-[80px] max-w-xs mr-2"
-            type="text"
-            name="phoneArea"
-            placeholder="(Area)"
-          />
-          <input
-            ref={phoneNumber}
-            className="input input-bordered max-w-xs mr-2"
-            type="text"
-            placeholder="Phone number"
-          />
-          {' '}
-          Ext:
-          {' '}
-          <input
-            ref={phoneExtension}
-            className="input input-bordered w-[70px] max-w-xs ml-2"
-            type="text"
-            name="phoneExtension"
-          />
-        </div>
+        {!isMobile
+          ? <div className="flex items-center">
+            <input
+              ref={phonePrefix}
+              className="input input-bordered w-[80px] max-w-xs mr-2"
+              type="text"
+              name="phonePrefix"
+              placeholder="Prefix"
+            />
+            <input
+              ref={phoneArea}
+              className="input input-bordered w-[80px] max-w-xs mr-2"
+              type="text"
+              name="phoneArea"
+              placeholder="(Area)"
+            />
+            <input
+              ref={phoneNumber}
+              className="input input-bordered max-w-xs mr-2"
+              type="text"
+              placeholder="Phone number"
+            />
+            {' '}
+            Ext:
+            {' '}
+            <input
+              ref={phoneExtension}
+              className="input input-bordered w-[70px] max-w-xs ml-2"
+              type="text"
+              name="phoneExtension"
+            />
+          </div>
+          :
+          <div className='flex flex-wrap'>
+            <input
+              ref={phonePrefix}
+              className="input input-bordered w-[80px] max-w-xs mr-2"
+              type="text"
+              name="phonePrefix"
+              placeholder="Prefix"
+            />
+            <input
+              ref={phoneArea}
+              className="input input-bordered w-[80px] max-w-xs mr-2"
+              type="text"
+              name="phoneArea"
+              placeholder="(Area)"
+            />
+            <input
+              ref={phoneNumber}
+              className="input input-bordered max-w-xs mr-2"
+              type="text"
+              placeholder="Phone number"
+            />
+            {' '}
+            Ext:
+            {' '}
+            <input
+              ref={phoneExtension}
+              className="input input-bordered w-[70px] max-w-xs ml-2"
+              type="text"
+              name="phoneExtension"
+            />
+          </div>
+        }
+
         <input
           ref={address1}
           className="input input-bordered w-full max-w-xs"
