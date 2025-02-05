@@ -1,4 +1,4 @@
-import { useState, useMemo, type ReactNode, createContext, useEffect, useLayoutEffect } from 'react';
+import { useState, useMemo, type ReactNode, createContext, useLayoutEffect } from 'react';
 
 export type TDirection = 'ltr' | 'rtl';
 
