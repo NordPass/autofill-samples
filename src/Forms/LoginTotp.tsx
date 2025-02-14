@@ -1,14 +1,15 @@
 import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { errorToast, successToast } from '../utils/toasts';
+import { errorTotpToast, successToast } from '../utils/toasts';
 
 export const LoginTotp = () => {
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
+  const totp = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -81,6 +82,7 @@ export const LoginTotp = () => {
           autoComplete="current-password"
         />
         <input
+          ref={totp}
           id="totp"
           className="input input-bordered w-full max-w-xs"
           type="text"
@@ -90,8 +92,8 @@ export const LoginTotp = () => {
           className="btn btn-outline mt-3"
           type="button"
           onClick={(event) => {
-            if (email.current?.value === 'error@gmail.com') {
-              errorToast();
+            if (!totp.current?.value) {
+              errorTotpToast();
               event.preventDefault();
 
               return;

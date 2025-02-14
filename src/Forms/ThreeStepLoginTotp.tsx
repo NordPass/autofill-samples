@@ -1,16 +1,17 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { errorToast, successToast } from '../utils/toasts';
+import { errorToast, errorTotpToast, successToast } from '../utils/toasts';
 
 export const ThreeStepLoginTotp = () => {
   const username = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
+  const totp = useRef<HTMLInputElement>(null);
   const [showPassword, setShowPassword] = useState(false);
   const [submit, setSubmit] = useState(false);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -68,46 +69,46 @@ export const ThreeStepLoginTotp = () => {
       <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`}>
 
         {!showPassword && !submit
-        && (
-          <>
-            <p className="pb-2">Enter your credentials to login.</p>
+          && (
+            <>
+              <p className="pb-2">Enter your credentials to login.</p>
 
-            <input
-              ref={username}
-              className="input input-bordered w-full max-w-xs"
-              type="text"
-              placeholder="Email or username"
-            />
-            <button
-              className="btn btn-outline mt-3"
-              type="button"
-              onClick={() => setShowPassword(true)}
-            >
-              Continue
-            </button>
-          </>
-        )}
+              <input
+                ref={username}
+                className="input input-bordered w-full max-w-xs"
+                type="text"
+                placeholder="Email or username"
+              />
+              <button
+                className="btn btn-outline mt-3"
+                type="button"
+                onClick={() => setShowPassword(true)}
+              >
+                Continue
+              </button>
+            </>
+          )}
 
         {!submit && showPassword
-        && (
-          <>
-            <p className="pb-2">Enter your credentials to login.</p>
-            <input
-              ref={password}
-              className="input input-bordered w-full max-w-xs"
-              type="password"
-              placeholder="Password"
-              autoComplete="current-password"
-            />
-            <button
-              className="btn btn-outline mt-3"
-              type="button"
-              onClick={() => setTimeout(() => setSubmit(true), 500)}
-            >
-              Continue
-            </button>
-          </>
-        )}
+          && (
+            <>
+              <p className="pb-2">Enter your credentials to login.</p>
+              <input
+                ref={password}
+                className="input input-bordered w-full max-w-xs"
+                type="password"
+                placeholder="Password"
+                autoComplete="current-password"
+              />
+              <button
+                className="btn btn-outline mt-3"
+                type="button"
+                onClick={() => setTimeout(() => setSubmit(true), 500)}
+              >
+                Continue
+              </button>
+            </>
+          )}
 
         {submit && (
           <>
@@ -115,6 +116,7 @@ export const ThreeStepLoginTotp = () => {
             <label>
               2FA code
               <input
+                ref={totp}
                 id="totpField"
                 className="input input-bordered w-full max-w-xs"
                 type="text"
@@ -131,7 +133,14 @@ export const ThreeStepLoginTotp = () => {
                   event.preventDefault();
 
                   return;
+                } else if (!totp.current?.value) {
+                  errorTotpToast();
+                  event.preventDefault();
+
+                  return;
+
                 }
+
                 successToast();
               }}
             >

@@ -11,3 +11,10 @@ export const errorToast = () => {
     autoClose: 5000,
   });
 };
+
+export const errorTotpToast = () => {
+  toast.error('TOTP is not filled', {
+    position: 'top-center',
+    autoClose: 5000,
+  });
+};

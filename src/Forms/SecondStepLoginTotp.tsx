@@ -1,7 +1,7 @@
 import { useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { errorToast, successToast } from '../utils/toasts';
+import { errorToast, errorTotpToast, successToast } from '../utils/toasts';
 
 export const SecondStepLoginTotp = () => {
   const username = useRef<HTMLInputElement>(null);
@@ -10,7 +10,7 @@ export const SecondStepLoginTotp = () => {
   const [submit, setSubmit] = useState(false);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -75,32 +75,32 @@ export const SecondStepLoginTotp = () => {
       <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`}>
 
         {!submit
-        && (
-          <>
-            <p className="pb-2">Enter your credentials to login.</p>
+          && (
+            <>
+              <p className="pb-2">Enter your credentials to login.</p>
 
-            <input
-              ref={username}
-              className="input input-bordered w-full max-w-xs"
-              type="text"
-              placeholder="Email or username"
-            />
-            <input
-              ref={password}
-              className="input input-bordered w-full max-w-xs"
-              type="password"
-              placeholder="Password"
-              autoComplete="current-password"
-            />
-            <button
-              className="btn btn-outline mt-3"
-              type="button"
-              onClick={() => setTimeout(() => setSubmit(true), 500)}
-            >
-              Continue
-            </button>
-          </>
-        )}
+              <input
+                ref={username}
+                className="input input-bordered w-full max-w-xs"
+                type="text"
+                placeholder="Email or username"
+              />
+              <input
+                ref={password}
+                className="input input-bordered w-full max-w-xs"
+                type="password"
+                placeholder="Password"
+                autoComplete="current-password"
+              />
+              <button
+                className="btn btn-outline mt-3"
+                type="button"
+                onClick={() => setTimeout(() => setSubmit(true), 500)}
+              >
+                Continue
+              </button>
+            </>
+          )}
 
         {submit && (
           <>
@@ -128,6 +128,11 @@ export const SecondStepLoginTotp = () => {
                 onClick={(event) => {
                   if (username.current?.value === 'error@gmail.com') {
                     errorToast();
+                    event.preventDefault();
+
+                    return;
+                  } else if (!totp.current?.value) {
+                    errorTotpToast();
                     event.preventDefault();
 
                     return;
