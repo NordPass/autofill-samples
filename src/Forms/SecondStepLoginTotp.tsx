@@ -108,6 +108,7 @@ export const SecondStepLoginTotp = () => {
             <label>
               2FA code
               <input
+                ref={totp}
                 id="totpField"
                 className="input input-bordered w-full max-w-xs"
                 type="text"
