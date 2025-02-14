@@ -84,12 +84,16 @@ export const LoginSixFieldsTotp = () => {
         <div className="flex justify-around gap-3 totp-form pt-3 flex-col">
           Code from authenticator app
           <div className="gap-3 flex">
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" ref={el => el && totp.current.push(el)}/>
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" ref={el => el && totp.current.push(el)}/>
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" ref={el => el && totp.current.push(el)}/>
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" ref={el => el && totp.current.push(el)}/>
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" ref={el => el && totp.current.push(el)}/>
-            <input type="text" autoComplete="off" maxLength={1} className="input input-bordered w-[45px]" id="totp" ref={el => el && totp.current.push(el)}/>
+            {[...Array(6)].map((_, index) => (
+              <input
+                key={index}
+                type="text"
+                autoComplete="off"
+                maxLength={1}
+                className="input input-bordered w-[45px]"
+                ref={el => el && (totp.current[index] = el)}
+              />
+            ))}
           </div>
         </div>
         <button
