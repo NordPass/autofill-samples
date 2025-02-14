@@ -6,7 +6,7 @@ import { errorTotpToast, successToast } from '../utils/toasts';
 export const LoginSixFieldsTotp = () => {
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
-  const totp = useRef<Array<HTMLInputElement>>([]);
+  const totp = useRef<Array<HTMLInputElement | null>>([]);
 
   return (
     <div className="ml-3" style={{ justifyItems: 'left' }}>
@@ -100,7 +100,7 @@ export const LoginSixFieldsTotp = () => {
           className="btn btn-outline mt-3"
           type="button"
           onClick={(event) => {
-            if (totp.current.some(el => !el.value)) {
+            if (totp.current.some(el => el && !el.value)) {
               errorTotpToast();
               event.preventDefault();
 
