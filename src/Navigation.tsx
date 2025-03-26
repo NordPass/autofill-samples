@@ -1,9 +1,9 @@
-import { useContext } from 'react';
+import { use } from 'react';
 import { Link } from 'react-router-dom';
 import { DirectionContext } from './utils/DirectionProvider';
 
 export const Navigation = () => {
-  const { direction } = useContext(DirectionContext);
+  const { direction } = use(DirectionContext);
 
   return (
     <div style={{ justifyItems: 'left' }}>
@@ -33,22 +33,23 @@ export const Navigation = () => {
         <Link className="btn btn-neutral" to="/customLoginTwoFields">Custom Login 2</Link>
         <Link className="btn btn-neutral" to="/secondStepLogin">Second Step Login</Link>
         <Link className="btn btn-neutral" to="/hiddenSecondStepLogin">Second Step Login 2</Link>
-        <Link className='btn btn-neutral' to="/secondStepLoginTotp">Second Step Login Totp</Link>
-        <Link className='btn btn-neutral' to="/threeStepLoginTotp">Three Step Login Totp</Link>
+        <Link className="btn btn-neutral" to="/secondStepLoginTotp">Second Step Login Totp</Link>
+        <Link className="btn btn-neutral" to="/threeStepLoginTotp">Three Step Login Totp</Link>
         <Link className="btn btn-neutral" to="/twoLogin">Two Login</Link>
         <Link className="btn btn-neutral" to="/modalLogin">Modal Login</Link>
         <Link className="btn btn-neutral" to="/checkoutForm">Checkout Form</Link>
       </nav>
 
       <button
+        type="button"
         className={`btn ml-3 mb-3 ${direction === 'ltr' ? 'btn-secondary' : 'btn-accent'}`}
         onClick={() => {
-            location.assign(location.href.split('?')[0] + `?direction=${direction === 'rtl' ? 'ltr' : 'rtl'}`);
-            location.reload();
+          location.assign(`${location.href.split('?')[0]}?direction=${direction === 'rtl' ? 'ltr' : 'rtl'}`);
+          location.reload();
         }}
       >
         Change direction
       </button>
     </div>
   );
-}
+};

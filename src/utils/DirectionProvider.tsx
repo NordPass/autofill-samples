@@ -1,4 +1,5 @@
-import { useState, useMemo, type ReactNode, createContext, useLayoutEffect } from 'react';
+import type { ReactNode } from 'react';
+import { createContext, useLayoutEffect, useMemo, useState } from 'react';
 
 export type TDirection = 'ltr' | 'rtl';
 
@@ -7,6 +8,10 @@ interface IDirectionContext {
   setDirection: (direction: TDirection) => void;
 }
 
+export const DirectionContext = createContext<IDirectionContext>({
+  direction: 'ltr',
+  setDirection: () => undefined,
+});
 
 export const DirectionProvider = ({ children }: { children?: ReactNode }) => {
   const [direction, setDirection] = useState<TDirection>('ltr');
@@ -24,7 +29,6 @@ export const DirectionProvider = ({ children }: { children?: ReactNode }) => {
     }
   }, []);
 
-
   const value = useMemo<IDirectionContext>(
     () => ({
       direction,
@@ -33,10 +37,5 @@ export const DirectionProvider = ({ children }: { children?: ReactNode }) => {
     [direction, setDirection],
   );
 
-  return <DirectionContext.Provider value={value}>{children}</DirectionContext.Provider>;
+  return <DirectionContext value={value}>{children}</DirectionContext>;
 };
-
-export const DirectionContext = createContext<IDirectionContext>({
-  direction: 'ltr',
-  setDirection: () => undefined,
-});

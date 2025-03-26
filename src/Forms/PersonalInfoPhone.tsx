@@ -127,70 +127,72 @@ export const PersonalInfoPhone = () => {
           placeholder="Email"
         />
         {!isMobile
-          ? <div className="flex items-center">
-            <input
-              ref={phonePrefix}
-              className="input input-bordered w-[80px] max-w-xs mr-2"
-              type="text"
-              name="phonePrefix"
-              placeholder="Prefix"
-            />
-            <input
-              ref={phoneArea}
-              className="input input-bordered w-[80px] max-w-xs mr-2"
-              type="text"
-              name="phoneArea"
-              placeholder="(Area)"
-            />
-            <input
-              ref={phoneNumber}
-              className="input input-bordered max-w-xs mr-2"
-              type="text"
-              placeholder="Phone number"
-            />
-            {' '}
-            Ext:
-            {' '}
-            <input
-              ref={phoneExtension}
-              className="input input-bordered w-[70px] max-w-xs ml-2"
-              type="text"
-              name="phoneExtension"
-            />
-          </div>
-          :
-          <div className='flex flex-wrap'>
-            <input
-              ref={phonePrefix}
-              className="input input-bordered w-[80px] max-w-xs mr-2"
-              type="text"
-              name="phonePrefix"
-              placeholder="Prefix"
-            />
-            <input
-              ref={phoneArea}
-              className="input input-bordered w-[80px] max-w-xs mr-2"
-              type="text"
-              name="phoneArea"
-              placeholder="(Area)"
-            />
-            <input
-              ref={phoneNumber}
-              className="input input-bordered max-w-xs mr-2"
-              type="text"
-              placeholder="Phone number"
-            />
-            {' '}
-            Ext:
-            {' '}
-            <input
-              ref={phoneExtension}
-              className="input input-bordered w-[70px] max-w-xs ml-2"
-              type="text"
-              name="phoneExtension"
-            />
-          </div>
-        }
+          ? (
+              <div className="flex items-center">
+                <input
+                  ref={phonePrefix}
+                  className="input input-bordered w-[80px] max-w-xs mr-2"
+                  type="text"
+                  name="phonePrefix"
+                  placeholder="Prefix"
+                />
+                <input
+                  ref={phoneArea}
+                  className="input input-bordered w-[80px] max-w-xs mr-2"
+                  type="text"
+                  name="phoneArea"
+                  placeholder="(Area)"
+                />
+                <input
+                  ref={phoneNumber}
+                  className="input input-bordered max-w-xs mr-2"
+                  type="text"
+                  placeholder="Phone number"
+                />
+                {' '}
+                Ext:
+                {' '}
+                <input
+                  ref={phoneExtension}
+                  className="input input-bordered w-[70px] max-w-xs ml-2"
+                  type="text"
+                  name="phoneExtension"
+                />
+              </div>
+            )
+          : (
+              <div className="flex flex-wrap">
+                <input
+                  ref={phonePrefix}
+                  className="input input-bordered w-[80px] max-w-xs mr-2"
+                  type="text"
+                  name="phonePrefix"
+                  placeholder="Prefix"
+                />
+                <input
+                  ref={phoneArea}
+                  className="input input-bordered w-[80px] max-w-xs mr-2"
+                  type="text"
+                  name="phoneArea"
+                  placeholder="(Area)"
+                />
+                <input
+                  ref={phoneNumber}
+                  className="input input-bordered max-w-xs mr-2"
+                  type="text"
+                  placeholder="Phone number"
+                />
+                {' '}
+                Ext:
+                {' '}
+                <input
+                  ref={phoneExtension}
+                  className="input input-bordered w-[70px] max-w-xs ml-2"
+                  type="text"
+                  name="phoneExtension"
+                />
+              </div>
+            )}
 
         <input
           ref={address1}

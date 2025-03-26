@@ -84,10 +84,9 @@ export const LoginSixFieldsTotp = () => {
         <div className="flex justify-around gap-3 totp-form pt-3 flex-col">
           Code from authenticator app
           <div className="gap-3 flex">
-            {[...Array(6)].map((_, index) => (
+            {[...Array.from({ length: 6 })].map((_, index) => (
               <label key={index} htmlFor={`totp-${index}`}>
                 <input
-                  key={index}
                   type="text"
                   autoComplete="off"
                   maxLength={1}

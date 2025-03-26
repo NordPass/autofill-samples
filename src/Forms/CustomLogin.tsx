@@ -9,7 +9,7 @@ export const CustomLogin = () => {
   const companyID = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"

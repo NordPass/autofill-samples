@@ -99,7 +99,8 @@ export const Builder = () => {
             type="submit"
             onClick={(event) => {
               event.preventDefault();
-            }}>
+            }}
+          >
             Submit
           </button>
           <button

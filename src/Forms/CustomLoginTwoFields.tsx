@@ -98,7 +98,8 @@ export const CustomLoginTwoFields = () => {
           type="submit"
           onClick={(event) => {
             event.preventDefault();
-          }}>
+          }}
+        >
           Sign In
         </button>
         <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>

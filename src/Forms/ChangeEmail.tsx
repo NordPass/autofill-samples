@@ -88,7 +88,8 @@ export const ChangeEmail = () => {
           type="submit"
           onClick={(event) => {
             event.preventDefault();
-          }}>
+          }}
+        >
           Change Email
         </button>
       </form>

@@ -193,7 +193,7 @@ export const COUNTRY_OPTIONS = [
   'Yemen',
   'Zambia',
   'Zimbabwe',
-];
+] as const;
 
 export const STATES_OPTIONS = [
   'Alabama',
@@ -246,7 +246,7 @@ export const STATES_OPTIONS = [
   'West Virginia',
   'Wisconsin',
   'Wyoming',
-];
+] as const;
 
 export const PREFIX_OPTIONS = [
   '+93', // Afghanistan
@@ -443,4 +443,4 @@ export const PREFIX_OPTIONS = [
   '+967', // Yemen
   '+260', // Zambia
   '+263', // Zimbabwe
-];
+] as const;

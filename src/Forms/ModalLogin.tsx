@@ -35,7 +35,7 @@ export const ModalLogin = () => {
             type="submit"
             onClick={(event) => {
               event.preventDefault();
-              
+
               if (email.current?.value === 'error@gmail.com') {
                 errorToast();
 

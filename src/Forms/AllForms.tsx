@@ -172,7 +172,8 @@ export const AllForms = () => (
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="CVV" />
       <button
         className="btn btn-outline mt-3"
-        type="submit" onClick={(event) => {
+        type="submit"
+        onClick={(event) => {
           event.preventDefault();
         }}
       >
@@ -342,8 +343,8 @@ export const AllForms = () => (
         id="select-state"
         className="select select-bordered w-full max-w-xs"
       >
-        {STATES_OPTIONS.map((stateOption, index) => (
-          <option key={index} value={stateOption}>
+        {STATES_OPTIONS.map(stateOption => (
+          <option key={stateOption} value={stateOption}>
             {stateOption}
           </option>
         ))}
@@ -588,8 +589,8 @@ export const AllForms = () => (
           id="select-country"
           className="select select-bordered w-full max-w-xs"
         >
-          {COUNTRY_OPTIONS.map((countryOption, index) => (
-            <option key={index} value={countryOption}>
+          {COUNTRY_OPTIONS.map(countryOption => (
+            <option key={countryOption} value={countryOption}>
               {countryOption}
             </option>
           ))}
@@ -631,7 +632,9 @@ export const AllForms = () => (
         onClick={(event) => {
           event.preventDefault();
         }}
-      >Submit checkout</button>
+      >
+        Submit checkout
+      </button>
     </form>
   </div>
 );

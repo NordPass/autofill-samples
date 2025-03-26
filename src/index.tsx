@@ -34,9 +34,8 @@ import { TOTPOneField } from './Forms/TOTPOneField.tsx';
 import { TwoLogin } from './Forms/TwoLogin.tsx';
 import { MobileNavigation } from './mobileView/MobileNavigation.tsx';
 import { Navigation } from './Navigation.tsx';
-import 'tailwindcss/tailwind.css';
-import 'react-toastify/dist/ReactToastify.css';
 import { DirectionProvider } from './utils/DirectionProvider.tsx';
+import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

@@ -152,8 +152,8 @@ export const CheckoutForm = () => {
             id="select-country"
             className="select select-bordered w-full max-w-xs"
           >
-            {COUNTRY_OPTIONS.map((countryOption, index) => (
-              <option key={index} value={countryOption}>
+            {COUNTRY_OPTIONS.map(countryOption => (
+              <option key={countryOption} value={countryOption}>
                 {countryOption}
               </option>
             ))}

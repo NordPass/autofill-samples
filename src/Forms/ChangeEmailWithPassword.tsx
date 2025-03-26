@@ -5,7 +5,7 @@ export const ChangeEmailWithPassword = () => {
   const password = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -78,7 +78,9 @@ export const ChangeEmailWithPassword = () => {
           onClick={(event) => {
             event.preventDefault();
           }}
-        >Change Email</button>
+        >
+          Change Email
+        </button>
       </form>
     </div>
   );

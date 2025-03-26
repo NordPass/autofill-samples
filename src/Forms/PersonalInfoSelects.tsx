@@ -160,8 +160,8 @@ export const PersonalInfoSelects = () => {
           ref={state}
           className="select select-bordered w-full max-w-xs"
         >
-          {STATES_OPTIONS.map((stateOption, index) => (
-            <option key={index} value={stateOption}>
+          {STATES_OPTIONS.map(stateOption => (
+            <option key={stateOption} value={stateOption}>
               {stateOption}
             </option>
           ))}

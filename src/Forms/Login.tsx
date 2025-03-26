@@ -119,7 +119,7 @@ export const Login = () => {
             type="submit"
             onClick={(event) => {
               event.preventDefault();
-              
+
               if (username.current?.value === 'error@gmail.com') {
                 errorToast();
 

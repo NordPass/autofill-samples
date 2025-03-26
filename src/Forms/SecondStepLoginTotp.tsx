@@ -133,7 +133,8 @@ export const SecondStepLoginTotp = () => {
                     errorToast();
 
                     return;
-                  } else if (!totp.current?.value) {
+                  }
+                  else if (!totp.current?.value) {
                     errorTotpToast();
 
                     return;
