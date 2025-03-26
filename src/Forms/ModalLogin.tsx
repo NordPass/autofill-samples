@@ -9,7 +9,7 @@ export const ModalLogin = () => {
   return (
     <div className="ml-3">
 
-      <div style={{ justifyItems: 'left' }}>
+      <div className="justify-items-start">
         <h1 className="text-4xl mb-3">Modal Login Form</h1>
         <button type="button" className="btn btn-outline" onClick={() => setModal(!modal)}>{modal ? 'Hide modal' : 'Show modal'}</button>
       </div>

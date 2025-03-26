@@ -1,5 +1,5 @@
 export const OneTimePassword = () => (
-  <div style={{ justifyItems: 'left' }}>
+  <div className="justify-items-start">
     <h1 className="text-4xl ml-3 mb-2">OTP Form</h1>
 
     <form className="flex flex-col items-start ml-3">

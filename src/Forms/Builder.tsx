@@ -14,7 +14,7 @@ export const Builder = () => {
   const password = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left' }}>
+    <div className="ml-3 justify-items-start">
       <input
         className="input input-bordered w-full max-w-xs mt-2"
         type="text"

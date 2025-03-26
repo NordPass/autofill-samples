@@ -6,50 +6,81 @@ export const Navigation = () => {
   const { direction } = use(DirectionContext);
 
   return (
-    <div style={{ justifyItems: 'left' }}>
-      <nav className="flex justify-around m-3 flex-wrap gap-2">
-        <Link className="btn btn-neutral" to="/all">All Forms</Link>
-        <Link className="btn btn-neutral" to="/login">Login</Link>
-        <Link className="btn btn-neutral" to="/loginPhone">Login 2</Link>
-        <Link className="btn btn-neutral" to="/loginTotp">Login with TOTP</Link>
-        <Link className="btn btn-neutral" to="/loginSixFieldsTotp">Login with Totp 2</Link>
-        <Link className="btn btn-neutral" to="/register">Register</Link>
-        <Link className="btn btn-neutral" to="/forgotPassword">Forgot Password</Link>
-        <Link className="btn btn-neutral" to="/changePassword">Change Password</Link>
-        <Link className="btn btn-neutral" to="/changeEmail">Change Email</Link>
-        <Link className="btn btn-neutral" to="/changeEmailWithPassword">Change Email 2</Link>
-        <Link className="btn btn-neutral" to="/creditCard">Credit Card</Link>
-        <Link className="btn btn-neutral" to="/identity">Personal Info</Link>
-        <Link className="btn btn-neutral" to="/identitySelects">Personal Info 2</Link>
-        <Link className="btn btn-neutral" to="/identityPhone">Personal Info 3</Link>
-        <Link className="btn btn-neutral" to="/other">Other</Link>
-        <Link className="btn btn-neutral" to="/subscribe">Subscribe</Link>
-        <Link className="btn btn-neutral" to="/mfa">One Time Password</Link>
-        <Link className="btn btn-neutral" to="/totp">TOTP</Link>
-        <Link className="btn btn-neutral" to="/totpOneField">TOTP 2</Link>
-        <Link className="btn btn-neutral" to="/loginRegister">Login/Register</Link>
-        <Link className="btn btn-neutral" to="/builder">Builder</Link>
-        <Link className="btn btn-neutral" to="/customLogin">Custom Login</Link>
-        <Link className="btn btn-neutral" to="/customLoginTwoFields">Custom Login 2</Link>
-        <Link className="btn btn-neutral" to="/secondStepLogin">Second Step Login</Link>
-        <Link className="btn btn-neutral" to="/hiddenSecondStepLogin">Second Step Login 2</Link>
-        <Link className="btn btn-neutral" to="/secondStepLoginTotp">Second Step Login Totp</Link>
-        <Link className="btn btn-neutral" to="/threeStepLoginTotp">Three Step Login Totp</Link>
-        <Link className="btn btn-neutral" to="/twoLogin">Two Login</Link>
-        <Link className="btn btn-neutral" to="/modalLogin">Modal Login</Link>
-        <Link className="btn btn-neutral" to="/checkoutForm">Checkout Form</Link>
-      </nav>
+    <div className="bg-base-200 p-2 shadow-lg border-b border-base-300">
+      <nav className="text-sm w-full">
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-2">
+          {/* Authentication Group */}
+          <div className="card bg-base-300/50 backdrop-blur p-2 hover:bg-base-300 transition-colors">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-primary mb-1.5">Authentication</h2>
+            <div className="flex flex-wrap gap-1">
+              <Link className="btn btn-xs btn-primary hover:scale-105 transition-transform" to="/login">Login</Link>
+              <Link className="btn btn-xs btn-primary hover:scale-105 transition-transform" to="/register">Register</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/loginRegister">Combined</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/forgotPassword">Forgot</Link>
+            </div>
+          </div>
 
-      <button
-        type="button"
-        className={`btn ml-3 mb-3 ${direction === 'ltr' ? 'btn-secondary' : 'btn-accent'}`}
-        onClick={() => {
-          location.assign(`${location.href.split('?')[0]}?direction=${direction === 'rtl' ? 'ltr' : 'rtl'}`);
-          location.reload();
-        }}
-      >
-        Change direction
-      </button>
+          {/* Multi-factor Authentication */}
+          <div className="card bg-base-300/50 backdrop-blur p-2 hover:bg-base-300 transition-colors">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-secondary mb-1.5">2FA</h2>
+            <div className="flex flex-wrap gap-1">
+              <Link className="btn btn-xs btn-secondary hover:scale-105 transition-transform" to="/mfa">OTP</Link>
+              <Link className="btn btn-xs btn-secondary hover:scale-105 transition-transform" to="/totp">TOTP</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-secondary" to="/totpOneField">Simple</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-secondary" to="/loginTotp">Combo</Link>
+            </div>
+          </div>
+
+          {/* User Information */}
+          <div className="card bg-base-300/50 backdrop-blur p-2 hover:bg-base-300 transition-colors">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-accent mb-1.5">User Info</h2>
+            <div className="flex flex-wrap gap-1">
+              <Link className="btn btn-xs btn-accent hover:scale-105 transition-transform" to="/identity">Profile</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/identitySelects">+Select</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/identityPhone">+Phone</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/changeEmail">Email</Link>
+            </div>
+          </div>
+
+          {/* Advanced Forms */}
+          <div className="card bg-base-300/50 backdrop-blur p-2 hover:bg-base-300 transition-colors">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-info mb-1.5">Advanced</h2>
+            <div className="flex flex-wrap gap-1">
+              <Link className="btn btn-xs btn-info hover:scale-105 transition-transform" to="/creditCard">Payment</Link>
+              <Link className="btn btn-xs btn-info hover:scale-105 transition-transform" to="/checkoutForm">Checkout</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-info" to="/subscribe">Subscribe</Link>
+            </div>
+          </div>
+
+          {/* Other Examples */}
+          <div className="card bg-base-300/50 backdrop-blur p-2 hover:bg-base-300 transition-colors">
+            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral mb-1.5">More</h2>
+            <div className="flex flex-wrap gap-1">
+              <Link className="btn btn-xs hover:scale-105 transition-transform" to="/customLogin">Custom</Link>
+              <Link className="btn btn-xs hover:scale-105 transition-transform" to="/modalLogin">Modal</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/all">All</Link>
+            </div>
+          </div>
+
+          {/* Direction Toggle */}
+          <div className="card bg-base-300/50 backdrop-blur p-2 hover:bg-base-300 transition-colors flex items-center">
+            <div className="flex gap-1 w-full">
+              <Link className="btn btn-xs flex-1 btn-neutral hover:scale-105 transition-transform" to="/builder">Builder</Link>
+              <button
+                type="button"
+                className={`btn btn-xs flex-1 ${direction === 'ltr' ? 'btn-secondary' : 'btn-accent'} 
+                  hover:scale-105 transition-transform`}
+                onClick={() => {
+                  location.assign(`${location.href.split('?')[0]}?direction=${direction === 'rtl' ? 'ltr' : 'rtl'}`);
+                  location.reload();
+                }}
+              >
+                {direction === 'ltr' ? '→ RTL' : '← LTR'}
+              </button>
+            </div>
+          </div>
+        </div>
+      </nav>
     </div>
   );
 };

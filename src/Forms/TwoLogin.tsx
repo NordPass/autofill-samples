@@ -1,5 +1,5 @@
 export const TwoLogin = () => (
-  <div className="ml-3" style={{ justifyItems: 'left' }}>
+  <div className="ml-3 justify-items-start">
 
     <h1 className="text-xl">First Login Form</h1>
 

@@ -6,7 +6,7 @@ export const Register = () => {
   const newPassword = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left' }}>
+    <div className="ml-3 justify-items-start">
       <button
         className="btn btn-outline"
         type="button"
