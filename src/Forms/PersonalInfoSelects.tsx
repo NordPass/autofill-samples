@@ -15,7 +15,7 @@ export const PersonalInfoSelects = () => {
   const country = useRef<HTMLSelectElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -184,7 +184,15 @@ export const PersonalInfoSelects = () => {
             </option>
           ))}
         </select>
-        <button className="btn btn-outline mt-3" type="button">Save</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Save
+        </button>
       </form>
     </div>
   );

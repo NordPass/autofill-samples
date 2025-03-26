@@ -125,16 +125,16 @@ export const SecondStepLoginTotp = () => {
               </button>
               <button
                 className="btn btn-outline btn-primary"
-                type="button"
+                type="submit"
                 onClick={(event) => {
+                  event.preventDefault();
+
                   if (username.current?.value === 'error@gmail.com') {
                     errorToast();
-                    event.preventDefault();
 
                     return;
                   } else if (!totp.current?.value) {
                     errorTotpToast();
-                    event.preventDefault();
 
                     return;
                   }

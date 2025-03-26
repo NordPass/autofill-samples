@@ -9,7 +9,7 @@ export const SecondStepLogin = () => {
   const [submit, setSubmit] = useState(false);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -74,15 +74,15 @@ export const SecondStepLogin = () => {
           placeholder="Email or username"
         />
         {!submit
-        && (
-          <button
-            className="btn btn-outline mt-3"
-            type="button"
-            onClick={() => setSubmit(true)}
-          >
-            Continue to sign in
-          </button>
-        )}
+          && (
+            <button
+              className="btn btn-outline mt-3"
+              type="button"
+              onClick={() => setSubmit(true)}
+            >
+              Continue to sign in
+            </button>
+          )}
         {submit && (
           <>
             <input
@@ -94,10 +94,11 @@ export const SecondStepLogin = () => {
             />
             <button
               className="btn btn-outline mt-3"
-              type="button"
+              type="submit"
               onClick={(event) => {
+                event.preventDefault();
+
                 if (username.current?.value === 'error@gmail.com') {
-                  event.preventDefault();
                   errorToast();
                 }
                 else {

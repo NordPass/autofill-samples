@@ -4,7 +4,7 @@ export const Subscribe = () => {
   const emailInput = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -46,7 +46,15 @@ export const Subscribe = () => {
           type="email"
           placeholder="Enter email"
         />
-        <button className="btn btn-outline mt-3" type="button">Submit</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Submit
+        </button>
       </form>
     </div>
   );

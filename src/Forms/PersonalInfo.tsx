@@ -13,7 +13,7 @@ export const PersonalInfo = () => {
   const country = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -152,7 +152,15 @@ export const PersonalInfo = () => {
           type="text"
           placeholder="Country"
         />
-        <button className="btn btn-outline mt-3" type="button">Save</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Save
+        </button>
       </form>
     </div>
   );

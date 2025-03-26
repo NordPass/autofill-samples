@@ -14,7 +14,7 @@ export const Builder = () => {
   const password = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <input
         className="input input-bordered w-full max-w-xs mt-2"
         type="text"
@@ -94,7 +94,14 @@ export const Builder = () => {
         ))}
 
         <div className="mt-3">
-          <button className="btn btn-outline mr-3" type="button">Submit</button>
+          <button
+            className="btn btn-outline mr-3"
+            type="submit"
+            onClick={(event) => {
+              event.preventDefault();
+            }}>
+            Submit
+          </button>
           <button
             className="btn btn-outline"
             type="button"

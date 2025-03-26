@@ -90,11 +90,12 @@ export const LoginTotp = () => {
         />
         <button
           className="btn btn-outline mt-3"
-          type="button"
+          type="submit"
           onClick={(event) => {
+            event.preventDefault();
+
             if (!totp.current?.value) {
               errorTotpToast();
-              event.preventDefault();
 
               return;
             }

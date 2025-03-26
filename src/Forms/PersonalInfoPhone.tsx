@@ -228,7 +228,15 @@ export const PersonalInfoPhone = () => {
           type="text"
           placeholder="Country"
         />
-        <button className="btn btn-outline mt-3" type="button">Save</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Save
+        </button>
       </form>
     </div>
   );

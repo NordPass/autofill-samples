@@ -10,7 +10,7 @@ export const Login = () => {
   const [phoneLogin, setPhoneLogin] = useState(false);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -116,11 +116,12 @@ export const Login = () => {
           />
           <button
             className="btn btn-outline mt-3"
-            type="button"
+            type="submit"
             onClick={(event) => {
+              event.preventDefault();
+              
               if (username.current?.value === 'error@gmail.com') {
                 errorToast();
-                event.preventDefault();
 
                 return;
               }
@@ -152,11 +153,12 @@ export const Login = () => {
           />
           <button
             className="btn btn-outline mt-3"
-            type="button"
+            type="submit"
             onClick={(event) => {
+              event.preventDefault();
+
               if (phone.current?.value === '111111111') {
                 errorToast();
-                event.preventDefault();
 
                 return;
               }

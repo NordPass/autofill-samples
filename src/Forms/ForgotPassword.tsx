@@ -5,7 +5,7 @@ export const ForgotPassword = () => {
   const email = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -45,7 +45,15 @@ export const ForgotPassword = () => {
           type="text"
           placeholder="Email Address"
         />
-        <button className="btn btn-outline mt-3" type="button">Get Password</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Get Password
+        </button>
         <Link className="underline pt-2" to="/login">Log in into your account</Link>
       </form>
     </div>

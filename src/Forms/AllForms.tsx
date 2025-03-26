@@ -12,7 +12,15 @@ export const AllForms = () => (
         placeholder="Password"
         autoComplete="current-password"
       />
-      <button className="btn btn-outline mt-3" type="button">Sign In</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Sign In
+      </button>
     </form>
     <form className="flex flex-col items-start mt-3">
       <p className="pb-2">Welcome!</p>
@@ -31,7 +39,10 @@ export const AllForms = () => (
       />
       <button
         className="btn btn-outline mt-3"
-        type="button"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
       >
         Sign In
       </button>
@@ -52,7 +63,10 @@ export const AllForms = () => (
       />
       <button
         className="btn btn-outline mt-3"
-        type="button"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
       >
         Sign In
       </button>
@@ -66,26 +80,58 @@ export const AllForms = () => (
         placeholder="Password"
         autoComplete="new-password"
       />
-      <button className="btn btn-outline mt-3" type="button">Sign Up</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Sign Up
+      </button>
     </form>
     <form className="flex items-center flex-col">
       <h1 className="text-4xl mb-3">Change Password</h1>
       <input className="input input-bordered w-full max-w-xs" type="password" placeholder="Current password" />
       <input className="input input-bordered w-full max-w-xs" type="password" placeholder="New Password" />
       <input className="input input-bordered w-full max-w-xs" type="password" placeholder="Repeat New Password" />
-      <button className="btn btn-outline mt-3" type="button">Change Password</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Change Password
+      </button>
     </form>
     <form className="flex items-center flex-col">
       <h1 className="text-4xl mb-3">Forgot Password</h1>
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="Email Address" />
-      <button className="btn btn-outline mt-3" type="button">Get Password</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Get Password
+      </button>
     </form>
     <form className="flex items-center flex-col">
       <h1 className="text-4xl mb-3">Change Email</h1>
       <input className="input input-bordered w-full max-w-xs" type="password" placeholder="Current email" />
       <input className="input input-bordered w-full max-w-xs" type="password" placeholder="New Email" />
       <input className="input input-bordered w-full max-w-xs" type="password" placeholder="Repeat New Email" />
-      <button className="btn btn-outline mt-3" type="button">Change Email</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Change Email
+      </button>
     </form>
     <form className="flex flex-col items-start mt-3">
       <p>To change your email,</p>
@@ -108,7 +154,15 @@ export const AllForms = () => (
         type="password"
         placeholder="Enter password"
       />
-      <button className="btn btn-outline mt-3" type="button">Change Email</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Change Email
+      </button>
     </form>
     <form className="flex items-center flex-col">
       <h1 className="text-4xl mb-3">Credit Card</h1>
@@ -116,7 +170,14 @@ export const AllForms = () => (
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="CC number" />
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="MM/YY" />
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="CVV" />
-      <button className="btn btn-outline mt-3" type="button">Submit Credit Card</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit" onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Submit Credit Card
+      </button>
     </form>
     <form className="flex items-center flex-col">
       <h1 className="text-4xl mb-3">Personal Info</h1>
@@ -130,7 +191,15 @@ export const AllForms = () => (
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="State" />
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="Zip or Postal code" />
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="Country" />
-      <button className="btn btn-outline mt-3" type="button">Save</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Save
+      </button>
     </form>
     <form className="flex flex-col items-start mt-3">
       <p className="pb-2">Save your credentials for future transactions.</p>
@@ -207,7 +276,15 @@ export const AllForms = () => (
         type="text"
         placeholder="Country"
       />
-      <button className="btn btn-outline mt-3" type="button">Save</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Save
+      </button>
     </form>
     <form className="flex flex-col items-start mt-3">
       <p className="pb-2">Save your address for future transactions.</p>
@@ -287,22 +364,54 @@ export const AllForms = () => (
           </option>
         ))}
       </select>
-      <button className="btn btn-outline mt-3" type="button">Save</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Save
+      </button>
     </form>
     <form className="flex items-center flex-col">
       <h1 className="text-4xl mb-3">Search</h1>
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="Enter question..." />
-      <button className="btn btn-outline mt-3" type="button">Search</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Search
+      </button>
     </form>
     <form className="flex items-center flex-col">
       <h1 className="text-4xl mb-3">Subscribe to our newsletters!</h1>
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="Enter email" />
-      <button className="btn btn-outline mt-3" type="button">Submit</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Submit
+      </button>
     </form>
     <form className="flex flex-col items-start ml-3">
       <p className="pb-2">Enter code from email to enter your account.</p>
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="Activation code" />
-      <button className="btn btn-outline mt-3" type="button">Get access</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Get access
+      </button>
     </form>
     <form className="flex items-center justify-center mt-3 flex-col">
       <fieldset className="TotpInput__loginFieldset flex items-center justify-center mt-3 flex-col">
@@ -316,7 +425,15 @@ export const AllForms = () => (
           <input type="text" autoComplete="off" maxLength={1} className="TotpInput__loginInput keeper-ignore input input-bordered w-[40px]" />
         </div>
       </fieldset>
-      <button className="btn btn-outline mt-3 w-[15%]" type="button">Submit</button>
+      <button
+        className="btn btn-outline mt-3 w-[15%]"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Submit
+      </button>
     </form>
     <form className="gl-show-field-errors js-2fa-form flex items-center justify-center mt-3 flex-col" aria-live="assertive" action="/users/sign_in" accept-charset="UTF-8" method="post">
       <input type="hidden" name="authenticity_token" value="b7NGhc4zZ4o6OsmTX7e_tdLsFoI92Vrqbv410JjU2miRg-bVxyyetxKk7zG6ij-V3528_j6wfJ681mU-U95VQQ" autoComplete="off" />
@@ -337,7 +454,15 @@ export const AllForms = () => (
     <form className="flex items-center flex-col">
       <h1 className="text-4xl mb-3">Enter email to sign in or sign up!</h1>
       <input className="input input-bordered w-full max-w-xs" type="text" placeholder="Enter email" />
-      <button className="btn btn-outline mt-3" type="button">Login/Register</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Login/Register
+      </button>
     </form>
     <form className="flex flex-col items-start mt-3">
       <p className="pb-2">Enter your credentials to login into your corporate account.</p>
@@ -363,7 +488,10 @@ export const AllForms = () => (
       />
       <button
         className="btn btn-outline mt-3"
-        type="button"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
       >
         Sign In
       </button>
@@ -397,7 +525,15 @@ export const AllForms = () => (
         type="text"
         placeholder="Website"
       />
-      <button className="btn btn-outline mt-3" type="button">Sign In</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >
+        Sign In
+      </button>
     </form>
     <form className="flex flex-col items-start mt-3">
       <h1 className="text-4xl mt-3">Checkout Form</h1>
@@ -489,7 +625,13 @@ export const AllForms = () => (
           type="text"
         />
       </section>
-      <button className="btn btn-outline mt-3" type="button">Submit checkout</button>
+      <button
+        className="btn btn-outline mt-3"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
+      >Submit checkout</button>
     </form>
   </div>
 );

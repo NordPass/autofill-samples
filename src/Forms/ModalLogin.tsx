@@ -32,11 +32,12 @@ export const ModalLogin = () => {
           />
           <button
             className="btn btn-outline mt-3"
-            type="button"
+            type="submit"
             onClick={(event) => {
+              event.preventDefault();
+              
               if (email.current?.value === 'error@gmail.com') {
                 errorToast();
-                event.preventDefault();
 
                 return;
               }

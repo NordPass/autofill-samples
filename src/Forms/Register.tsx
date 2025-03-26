@@ -6,7 +6,7 @@ export const Register = () => {
   const newPassword = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -66,7 +66,15 @@ export const Register = () => {
           placeholder="Password"
           autoComplete="new-password"
         />
-        <button className="btn btn-outline mt-3" type="button">Sign Up</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Sign Up
+        </button>
         <Link to="/login" className="underline pt-2">Already have an account?</Link>
       </form>
     </div>

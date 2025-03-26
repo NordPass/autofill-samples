@@ -72,7 +72,13 @@ export const ChangeEmailWithPassword = () => {
           type="password"
           placeholder="Enter password"
         />
-        <button className="btn btn-outline mt-3" type="button">Change Email</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >Change Email</button>
       </form>
     </div>
   );

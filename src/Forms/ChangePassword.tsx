@@ -6,7 +6,7 @@ export const ChangePassword = () => {
   const confirmNewPassword = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -85,7 +85,15 @@ export const ChangePassword = () => {
           placeholder="Repeat New Password"
           autoComplete="new-password"
         />
-        <button className="btn btn-outline mt-3" type="button">Change Password</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Change Password
+        </button>
       </form>
     </div>
   );

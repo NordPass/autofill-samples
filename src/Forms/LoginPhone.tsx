@@ -115,11 +115,12 @@ export const LoginPhone = () => {
           />
           <button
             className="btn btn-outline mt-3"
-            type="button"
+            type="submit"
             onClick={(event) => {
+              event.preventDefault();
+
               if (username.current?.value === 'error@gmail.com') {
                 errorToast();
-                event.preventDefault();
 
                 return;
               }
@@ -151,11 +152,12 @@ export const LoginPhone = () => {
           />
           <button
             className="btn btn-outline mt-3"
-            type="button"
+            type="submit"
             onClick={(event) => {
+              event.preventDefault();
+
               if (phone.current?.value === '111111111') {
                 errorToast();
-                event.preventDefault();
 
                 return;
               }

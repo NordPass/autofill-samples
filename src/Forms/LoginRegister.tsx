@@ -4,7 +4,7 @@ export const LoginRegister = () => {
   const email = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -45,7 +45,15 @@ export const LoginRegister = () => {
           type="text"
           placeholder="Email"
         />
-        <button className="btn btn-outline mt-3" type="button">Continue</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Continue
+        </button>
       </form>
     </div>
   );

@@ -11,6 +11,14 @@ export const TOTP = () => (
         <input type="text" autoComplete="off" maxLength={1} className="TotpInput__loginInput keeper-ignore input input-bordered w-[40px]" />
       </div>
     </fieldset>
-    <button className="btn btn-outline mt-3 w-[15%]" type="button">Submit</button>
+    <button
+      className="btn btn-outline mt-3 w-[15%]"
+      type="submit"
+      onClick={(event) => {
+        event.preventDefault();
+      }}
+    >
+      Submit
+    </button>
   </form>
 );

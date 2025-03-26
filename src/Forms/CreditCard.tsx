@@ -7,7 +7,7 @@ export const CreditCard = () => {
   const cvv = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -86,7 +86,15 @@ export const CreditCard = () => {
           type="text"
           placeholder="CVV"
         />
-        <button className="btn btn-outline mt-3" type="button">Submit Credit Card</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}
+        >
+          Submit Credit Card
+        </button>
       </form>
     </div>
   );

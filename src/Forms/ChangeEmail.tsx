@@ -6,7 +6,7 @@ export const ChangeEmail = () => {
   const confirmNewEmail = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -83,7 +83,14 @@ export const ChangeEmail = () => {
           type="email"
           placeholder="Repeat New Email"
         />
-        <button className="btn btn-outline mt-3" type="button">Change Email</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}>
+          Change Email
+        </button>
       </form>
     </div>
   );

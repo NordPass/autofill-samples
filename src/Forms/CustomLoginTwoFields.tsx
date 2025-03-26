@@ -8,7 +8,7 @@ export const CustomLoginTwoFields = () => {
   const website = useRef<HTMLInputElement>(null);
 
   return (
-    <div className="ml-3" style={{ justifyItems: 'left'}}>
+    <div className="ml-3" style={{ justifyItems: 'left' }}>
       <button
         className="btn btn-outline"
         type="button"
@@ -93,7 +93,14 @@ export const CustomLoginTwoFields = () => {
           type="text"
           placeholder="Website"
         />
-        <button className="btn btn-outline mt-3" type="button">Sign In</button>
+        <button
+          className="btn btn-outline mt-3"
+          type="submit"
+          onClick={(event) => {
+            event.preventDefault();
+          }}>
+          Sign In
+        </button>
         <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
         <Link className="pt-2 underline" to="/register">Sign up</Link>
       </form>

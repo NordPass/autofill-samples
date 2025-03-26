@@ -1,5 +1,5 @@
 export const TwoLogin = () => (
-  <div className="ml-3" style={{ justifyItems: 'left'}}>
+  <div className="ml-3" style={{ justifyItems: 'left' }}>
 
     <h1 className="text-xl">First Login Form</h1>
 
@@ -19,7 +19,10 @@ export const TwoLogin = () => (
       />
       <button
         className="btn btn-outline mt-3"
-        type="button"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
       >
         Sign In
       </button>
@@ -43,7 +46,10 @@ export const TwoLogin = () => (
       />
       <button
         className="btn btn-outline mt-3"
-        type="button"
+        type="submit"
+        onClick={(event) => {
+          event.preventDefault();
+        }}
       >
         Sign In
       </button>
