@@ -64,7 +64,7 @@ export const LoginSixFieldsTotp = () => {
       <h1 className="text-4xl mt-3">Login form with Totp</h1>
 
       <form className="flex flex-col items-start mt-3">
-        <p className="pb-2">Enter your credentials to login into your account.</p>
+        <p className="pb-2">Enter your credentials to login into your account</p>
 
         <input
           id="email"
@@ -85,16 +85,18 @@ export const LoginSixFieldsTotp = () => {
           Code from authenticator app
           <div className="gap-3 flex">
             {[...Array(6)].map((_, index) => (
-              <input
-                key={index}
-                type="text"
-                autoComplete="off"
-                maxLength={1}
-                className="input input-bordered w-[45px]"
-                ref={(el) => {
-                  totp.current[index] = el;
-                }}
-              />
+              <label key={index} htmlFor={`totp-${index}`}>
+                <input
+                  key={index}
+                  type="text"
+                  autoComplete="off"
+                  maxLength={1}
+                  className="input input-bordered w-[45px]"
+                  ref={(el) => {
+                    totp.current[index] = el;
+                  }}
+                />
+              </label>
             ))}
           </div>
         </div>
@@ -103,7 +105,7 @@ export const LoginSixFieldsTotp = () => {
           type="submit"
           onClick={(event) => {
             event.preventDefault();
-            
+
             if (totp.current.some(el => !el?.value)) {
               errorTotpToast();
 
