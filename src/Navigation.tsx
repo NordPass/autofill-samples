@@ -17,6 +17,10 @@ export const Navigation = () => {
               <Link className="btn btn-xs btn-primary hover:scale-105 transition-transform" to="/register">Register</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/loginRegister">Combined</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/forgotPassword">Forgot</Link>
+              <Link className='btn btn-xs btn-ghost hover:btn-primary' to="/secondStepLogin">Second Step</Link>
+              <Link className='btn btn-xs btn-ghost hover:btn-primary' to="/hiddenSecondStepLogin">Hidden Second Step</Link>
+              <Link className='btn btn-xs btn-ghost hover:btn-primary' to="/loginPhone">With Phone</Link>
+              <Link className='btn btn-xs btn-ghost hover:btn-primary' to="/twoLogin">2 Forms</Link>
             </div>
           </div>
 
@@ -28,6 +32,9 @@ export const Navigation = () => {
               <Link className="btn btn-xs btn-secondary hover:scale-105 transition-transform" to="/totp">TOTP</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-secondary" to="/totpOneField">Simple</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-secondary" to="/loginTotp">Combo</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-secondary" to="/loginSixFieldsTotp">Combo 6 Fields</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-secondary" to="/secondStepLoginTotp">Combo 2 Step</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-secondary" to="/threeStepLoginTotp">Combo 3 Step</Link>
             </div>
           </div>
 
@@ -39,6 +46,8 @@ export const Navigation = () => {
               <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/identitySelects">+Select</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/identityPhone">+Phone</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/changeEmail">Email</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/changePassword">Password</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/changeEmailWithPassword">Email + Password</Link>
             </div>
           </div>
 
@@ -57,8 +66,10 @@ export const Navigation = () => {
             <h2 className="text-xs font-bold uppercase tracking-wider text-neutral mb-1.5">More</h2>
             <div className="flex flex-wrap gap-1">
               <Link className="btn btn-xs hover:scale-105 transition-transform" to="/customLogin">Custom</Link>
+              <Link className="btn btn-xs hover:scale-105 transition-transform" to="/customLoginTwoFields">Custom 2</Link>
               <Link className="btn btn-xs hover:scale-105 transition-transform" to="/modalLogin">Modal</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/all">All</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/other">Other</Link>
             </div>
           </div>
 
