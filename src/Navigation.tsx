@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { DirectionContext } from './utils/DirectionProvider';
 
 export const Navigation = () => {
-  const { direction } = use(DirectionContext);
+  const { direction, updateDirection } = use(DirectionContext);
 
   return (
     <div className="bg-base-200 p-2 shadow-lg border-b border-base-300">
@@ -63,7 +63,7 @@ export const Navigation = () => {
 
           {/* Other Examples */}
           <div className="card bg-base-300/50 backdrop-blur p-2 hover:bg-base-300 transition-colors">
-            <h2 className="text-xs font-bold uppercase tracking-wider text-neutral mb-1.5">More</h2>
+            <h2 className="text-xs font-bold uppercase tracking-wider text-error mb-1.5">More</h2>
             <div className="flex flex-wrap gap-1">
               <Link className="btn btn-xs hover:scale-105 transition-transform" to="/customLogin">Custom</Link>
               <Link className="btn btn-xs hover:scale-105 transition-transform" to="/customLoginTwoFields">Custom 2</Link>
@@ -82,8 +82,11 @@ export const Navigation = () => {
                 className={`btn btn-xs flex-1 ${direction === 'ltr' ? 'btn-secondary' : 'btn-accent'} 
                   hover:scale-105 transition-transform`}
                 onClick={() => {
-                  location.assign(`${location.href.split('?')[0]}?direction=${direction === 'rtl' ? 'ltr' : 'rtl'}`);
-                  location.reload();
+                  const newDirection = direction === 'rtl' ? 'ltr' : 'rtl';
+                  const url = new URL(window.location.href);
+                  url.searchParams.set('direction', newDirection);
+                  window.history.pushState({}, '', url);
+                  updateDirection(newDirection);
                 }}
               >
                 {direction === 'ltr' ? '→ RTL' : '← LTR'}

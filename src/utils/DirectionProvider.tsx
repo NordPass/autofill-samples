@@ -5,36 +5,38 @@ export type TDirection = 'ltr' | 'rtl';
 
 interface IDirectionContext {
   direction: TDirection;
-  setDirection: (direction: TDirection) => void;
+  updateDirection: (direction: TDirection) => void;
 }
 
 export const DirectionContext = createContext<IDirectionContext>({
   direction: 'ltr',
-  setDirection: () => undefined,
+  updateDirection: () => undefined,
 });
 
 export const DirectionProvider = ({ children }: { children?: ReactNode }) => {
   const [direction, setDirection] = useState<TDirection>('ltr');
 
   useLayoutEffect(() => {
-    const queryParams = window.location.hash.split('?')[1];
-    if (queryParams) {
-      const params = new URLSearchParams(queryParams);
-      const direction = params.get('direction');
+    const urlParams = new URLSearchParams(window.location.search);
+    const directionParam = urlParams.get('direction');
 
-      if (direction === 'rtl') {
-        setDirection(direction);
-        document.documentElement.dir = direction;
-      }
+    if (directionParam === 'ltr' || directionParam === 'rtl') {
+      setDirection(directionParam);
+      document.documentElement.dir = directionParam;
     }
   }, []);
+
+  const updateDirection = (newDirection: TDirection) => {
+    setDirection(newDirection);
+    document.documentElement.dir = newDirection;
+  };
 
   const value = useMemo<IDirectionContext>(
     () => ({
       direction,
-      setDirection,
+      updateDirection,
     }),
-    [direction, setDirection],
+    [direction],
   );
 
   return <DirectionContext value={value}>{children}</DirectionContext>;
