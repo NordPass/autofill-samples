@@ -17,10 +17,10 @@ export const Navigation = () => {
               <Link className="btn btn-xs btn-primary hover:scale-105 transition-transform" to="/register">Register</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/loginRegister">Combined</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/forgotPassword">Forgot</Link>
-              <Link className='btn btn-xs btn-ghost hover:btn-primary' to="/secondStepLogin">Second Step</Link>
-              <Link className='btn btn-xs btn-ghost hover:btn-primary' to="/hiddenSecondStepLogin">Hidden Second Step</Link>
-              <Link className='btn btn-xs btn-ghost hover:btn-primary' to="/loginPhone">With Phone</Link>
-              <Link className='btn btn-xs btn-ghost hover:btn-primary' to="/twoLogin">2 Forms</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/secondStepLogin">Second Step</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/hiddenSecondStepLogin">Hidden Second Step</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/loginPhone">With Phone</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/twoLogin">2 Forms</Link>
             </div>
           </div>
 

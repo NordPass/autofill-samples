@@ -5,9 +5,7 @@ export const Other = () => (
     <button
       className="btn btn-outline mt-3"
       type="submit"
-      onClick={(event) => {
-        event.preventDefault();
-      }}
+      onClick={event => event.preventDefault()}
     >
       Search
     </button>

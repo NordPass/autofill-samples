@@ -97,9 +97,7 @@ export const Builder = () => {
           <button
             className="btn btn-outline mr-3"
             type="submit"
-            onClick={(event) => {
-              event.preventDefault();
-            }}
+            onClick={event => event.preventDefault()}
           >
             Submit
           </button>

@@ -187,9 +187,7 @@ export const PersonalInfoSelects = () => {
         <button
           className="btn btn-outline mt-3"
           type="submit"
-          onClick={(event) => {
-            event.preventDefault();
-          }}
+          onClick={event => event.preventDefault()}
         >
           Save
         </button>

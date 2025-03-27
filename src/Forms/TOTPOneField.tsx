@@ -15,9 +15,7 @@ export const TOTPOneField = () => (
       data-testid="verify-code-button"
       type="submit"
       className="btn btn-outline mt-3 w-[7%]"
-      onClick={(event) => {
-        event.preventDefault();
-      }}
+      onClick={event => event.preventDefault()}
     >
       <span className="gl-button-text"> Confirm </span>
     </button>
