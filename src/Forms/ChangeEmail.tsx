@@ -67,19 +67,19 @@ export const ChangeEmail = () => {
 
         <input
           ref={email}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="email"
           placeholder="Current email"
         />
         <input
           ref={newEmail}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="email"
           placeholder="New Email"
         />
         <input
           ref={confirmNewEmail}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="email"
           placeholder="Repeat New Email"
         />

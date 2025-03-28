@@ -66,21 +66,21 @@ export const ChangePassword = () => {
 
         <input
           ref={password}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="password"
           placeholder="Current password"
           autoComplete="current-password"
         />
         <input
           ref={newPassword}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="password"
           placeholder="New Password"
           autoComplete="new-password"
         />
         <input
           ref={confirmNewPassword}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="password"
           placeholder="Repeat New Password"
           autoComplete="new-password"

@@ -100,19 +100,19 @@ export const PersonalInfoSelects = () => {
 
         <input
           ref={firstName}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="First Name"
         />
         <input
           ref={lastName}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Last Name"
         />
         <input
           ref={email}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Email"
         />
@@ -131,26 +131,26 @@ export const PersonalInfoSelects = () => {
           </select>
           <input
             ref={phoneNumber}
-            className="input input-bordered max-w-xs"
+            className="input max-w-xs"
             type="text"
             placeholder="Phone number"
           />
         </div>
         <input
           ref={address1}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Address 1"
         />
         <input
           ref={address2}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Address 2"
         />
         <input
           ref={city}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="City"
         />
@@ -168,7 +168,7 @@ export const PersonalInfoSelects = () => {
         </select>
         <input
           ref={zip}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Zip or Postal code"
         />

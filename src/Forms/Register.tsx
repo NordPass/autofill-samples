@@ -55,13 +55,13 @@ export const Register = () => {
 
         <input
           ref={username}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Email Address or Username"
         />
         <input
           ref={newPassword}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="password"
           placeholder="Password"
           autoComplete="new-password"

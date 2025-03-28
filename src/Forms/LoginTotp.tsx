@@ -69,14 +69,14 @@ export const LoginTotp = () => {
         <input
           id="email"
           ref={email}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Login email"
         />
         <input
           id="loginPassword"
           ref={password}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="password"
           placeholder="Password"
           autoComplete="current-password"
@@ -84,7 +84,7 @@ export const LoginTotp = () => {
         <input
           ref={totp}
           id="totp"
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Code from authenticator app"
         />

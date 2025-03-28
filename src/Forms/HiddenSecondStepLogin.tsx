@@ -68,7 +68,7 @@ export const HiddenSecondStepLogin = () => {
 
         <input
           ref={username}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Email or username"
         />
@@ -90,7 +90,7 @@ export const HiddenSecondStepLogin = () => {
         <div className={`${submit ? 'block' : 'hidden'}`}>
           <input
             ref={password}
-            className="input input-bordered w-full max-w-xs"
+            className="input w-full max-w-xs"
             type="password"
             placeholder="Password"
             autoComplete="current-password"

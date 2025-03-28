@@ -62,13 +62,13 @@ export const ChangeEmailWithPassword = () => {
 
         <input
           ref={newEmail}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="email"
           placeholder="New Email"
         />
         <input
           ref={password}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="password"
           placeholder="Enter password"
         />

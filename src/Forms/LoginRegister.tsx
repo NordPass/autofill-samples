@@ -41,7 +41,7 @@ export const LoginRegister = () => {
 
         <input
           ref={email}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Email"
         />

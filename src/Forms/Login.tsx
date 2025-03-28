@@ -103,13 +103,13 @@ export const Login = () => {
 
           <input
             ref={username}
-            className="input input-bordered w-full max-w-xs"
+            className="input w-full max-w-xs"
             type="text"
             placeholder="Email Address/Username"
           />
           <input
             ref={password}
-            className="input input-bordered w-full max-w-xs"
+            className="input w-full max-w-xs"
             type="password"
             placeholder="Password"
             autoComplete="current-password"
@@ -142,12 +142,12 @@ export const Login = () => {
 
           <input
             ref={phone}
-            className="input input-bordered w-full max-w-xs"
+            className="input w-full max-w-xs"
             type="text"
             placeholder="Phone number"
           />
           <input
-            className="input input-bordered w-full max-w-xs"
+            className="input w-full max-w-xs"
             type="text"
             placeholder="Code from phone"
           />

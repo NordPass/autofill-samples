@@ -16,7 +16,7 @@ export const Builder = () => {
   return (
     <div className="ml-3 justify-items-start">
       <input
-        className="input input-bordered w-full max-w-xs mt-2"
+        className="input w-full max-w-xs mt-2"
         type="text"
         placeholder="Type input value..."
         ref={inputFormValue}
@@ -71,13 +71,13 @@ export const Builder = () => {
       <form className="flex flex-col items-start mt-3">
         <input
           ref={username}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Email Address or Username"
         />
         <input
           ref={password}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="password"
           placeholder="Password"
           autoComplete="current-password"
@@ -86,7 +86,7 @@ export const Builder = () => {
           <React.Fragment key={key}>
             <input
               id={customInput.label}
-              className="input input-bordered w-full max-w-xs mt-1"
+              className="input w-full max-w-xs mt-1"
               type={customInput.type}
               placeholder={customInput.placeholder}
             />

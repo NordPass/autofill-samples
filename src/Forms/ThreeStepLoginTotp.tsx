@@ -75,7 +75,7 @@ export const ThreeStepLoginTotp = () => {
 
               <input
                 ref={username}
-                className="input input-bordered w-full max-w-xs"
+                className="input w-full max-w-xs"
                 type="text"
                 placeholder="Email or username"
               />
@@ -95,7 +95,7 @@ export const ThreeStepLoginTotp = () => {
               <p className="pb-2">Enter your credentials to login.</p>
               <input
                 ref={password}
-                className="input input-bordered w-full max-w-xs"
+                className="input w-full max-w-xs"
                 type="password"
                 placeholder="Password"
                 autoComplete="current-password"
@@ -118,7 +118,7 @@ export const ThreeStepLoginTotp = () => {
               <input
                 ref={totp}
                 id="totpField"
-                className="input input-bordered w-full max-w-xs"
+                className="input w-full max-w-xs"
                 type="text"
                 placeholder="Code from authenticator app"
               />

@@ -64,25 +64,25 @@ export const CreditCard = () => {
 
         <input
           ref={fullName}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Full Name"
         />
         <input
           ref={ccNumber}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="CC number"
         />
         <input
           ref={ccDate}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="MM/YY"
         />
         <input
           ref={cvv}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="CVV"
         />

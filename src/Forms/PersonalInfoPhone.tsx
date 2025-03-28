@@ -110,19 +110,19 @@ export const PersonalInfoPhone = () => {
 
         <input
           ref={firstName}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="First Name"
         />
         <input
           ref={lastName}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Last Name"
         />
         <input
           ref={email}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Email"
         />
@@ -131,21 +131,21 @@ export const PersonalInfoPhone = () => {
               <div className="flex items-center">
                 <input
                   ref={phonePrefix}
-                  className="input input-bordered w-[80px] max-w-xs mr-2"
+                  className="input w-20 max-w-xs mr-2"
                   type="text"
                   name="phonePrefix"
                   placeholder="Prefix"
                 />
                 <input
                   ref={phoneArea}
-                  className="input input-bordered w-[80px] max-w-xs mr-2"
+                  className="input w-20 max-w-xs mr-2"
                   type="text"
                   name="phoneArea"
                   placeholder="(Area)"
                 />
                 <input
                   ref={phoneNumber}
-                  className="input input-bordered max-w-xs mr-2"
+                  className="input max-w-xs mr-2"
                   type="text"
                   placeholder="Phone number"
                 />
@@ -154,7 +154,7 @@ export const PersonalInfoPhone = () => {
                 {' '}
                 <input
                   ref={phoneExtension}
-                  className="input input-bordered w-[70px] max-w-xs ml-2"
+                  className="input w-[70px] max-w-xs ml-2"
                   type="text"
                   name="phoneExtension"
                 />
@@ -164,21 +164,21 @@ export const PersonalInfoPhone = () => {
               <div className="flex flex-wrap">
                 <input
                   ref={phonePrefix}
-                  className="input input-bordered w-[80px] max-w-xs mr-2"
+                  className="input w-20 max-w-xs mr-2"
                   type="text"
                   name="phonePrefix"
                   placeholder="Prefix"
                 />
                 <input
                   ref={phoneArea}
-                  className="input input-bordered w-[80px] max-w-xs mr-2"
+                  className="input w-20 max-w-xs mr-2"
                   type="text"
                   name="phoneArea"
                   placeholder="(Area)"
                 />
                 <input
                   ref={phoneNumber}
-                  className="input input-bordered max-w-xs mr-2"
+                  className="input max-w-xs mr-2"
                   type="text"
                   placeholder="Phone number"
                 />
@@ -187,7 +187,7 @@ export const PersonalInfoPhone = () => {
                 {' '}
                 <input
                   ref={phoneExtension}
-                  className="input input-bordered w-[70px] max-w-xs ml-2"
+                  className="input w-[70px] max-w-xs ml-2"
                   type="text"
                   name="phoneExtension"
                 />
@@ -196,37 +196,37 @@ export const PersonalInfoPhone = () => {
 
         <input
           ref={address1}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Address 1"
         />
         <input
           ref={address2}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Address 2"
         />
         <input
           ref={city}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="City"
         />
         <input
           ref={state}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="State"
         />
         <input
           ref={zip}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Zip or Postal code"
         />
         <input
           ref={country}
-          className="input input-bordered w-full max-w-xs"
+          className="input w-full max-w-xs"
           type="text"
           placeholder="Country"
         />

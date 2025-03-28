@@ -81,13 +81,13 @@ export const SecondStepLoginTotp = () => {
 
               <input
                 ref={username}
-                className="input input-bordered w-full max-w-xs"
+                className="input w-full max-w-xs"
                 type="text"
                 placeholder="Email or username"
               />
               <input
                 ref={password}
-                className="input input-bordered w-full max-w-xs"
+                className="input w-full max-w-xs"
                 type="password"
                 placeholder="Password"
                 autoComplete="current-password"
@@ -110,7 +110,7 @@ export const SecondStepLoginTotp = () => {
               <input
                 ref={totp}
                 id="totpField"
-                className="input input-bordered w-full max-w-xs"
+                className="input w-full max-w-xs"
                 type="text"
                 placeholder="Code from authenticator app"
               />

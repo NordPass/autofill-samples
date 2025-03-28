@@ -104,14 +104,14 @@ export const CheckoutForm = () => {
           <input
             id="ccFullName"
             ref={ccFullName}
-            className="input input-bordered w-full max-w-xs"
+            className="input w-full max-w-xs"
             type="text"
           />
           <label htmlFor="ccNumber">Credit card number</label>
           <input
             id="ccNumber"
             ref={ccNumber}
-            className="input input-bordered w-full max-w-xs mb-1"
+            className="input w-full max-w-xs mb-1"
             type="text"
             placeholder="0000 0000 0000 0000"
           />
@@ -119,7 +119,7 @@ export const CheckoutForm = () => {
           <input
             id="ccExpirationFull"
             ref={ccExpirationFull}
-            className="input input-bordered w-full max-w-xs mb-1"
+            className="input w-full max-w-xs mb-1"
             type="text"
             placeholder="MM/YY"
           />
@@ -127,7 +127,7 @@ export const CheckoutForm = () => {
           <input
             id="ccCVV"
             ref={ccCVV}
-            className="input input-bordered w-full max-w-xs mb-1"
+            className="input w-full max-w-xs mb-1"
             type="text"
             placeholder="000"
           />
@@ -135,7 +135,7 @@ export const CheckoutForm = () => {
           <input
             id="ccZipCode"
             ref={ccZipCode}
-            className="input input-bordered w-full max-w-xs mb-1"
+            className="input w-full max-w-xs mb-1"
             type="text"
           />
         </section>
@@ -162,35 +162,35 @@ export const CheckoutForm = () => {
           <input
             id="city"
             ref={city}
-            className="input input-bordered w-full max-w-xs mb-1"
+            className="input w-full max-w-xs mb-1"
             type="text"
           />
           <label htmlFor="address">Street Address</label>
           <input
             id="address"
             ref={address}
-            className="input input-bordered w-full max-w-xs mb-1"
+            className="input w-full max-w-xs mb-1"
             type="text"
           />
           <label htmlFor="address2">Apt/Suite/Other (Optional)</label>
           <input
             id="address2"
             ref={address2}
-            className="input input-bordered w-full max-w-xs mb-1"
+            className="input w-full max-w-xs mb-1"
             type="text"
           />
           <label htmlFor="billingZipCode">Zip or Postal Code</label>
           <input
             id="billingZipCode"
             ref={billingZipCode}
-            className="input input-bordered w-full max-w-xs mb-1"
+            className="input w-full max-w-xs mb-1"
             type="text"
           />
           <label htmlFor="billingFullName">Full Name</label>
           <input
             id="billingFullName"
             ref={billingFullName}
-            className="input input-bordered w-full max-w-xs mb-1"
+            className="input w-full max-w-xs mb-1"
             type="text"
           />
         </section>

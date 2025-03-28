@@ -19,13 +19,13 @@ export const ModalLogin = () => {
           <p className="mb-3">Enter your credentials to login.</p>
 
           <input
-            className="input input-bordered w-full max-w-xs"
+            className="input w-full max-w-xs"
             ref={email}
             type="text"
             placeholder="Email Address/Username"
           />
           <input
-            className="input input-bordered w-full max-w-xs"
+            className="input w-full max-w-xs"
             type="password"
             placeholder="Password"
             autoComplete="current-password"

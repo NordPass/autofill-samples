@@ -5,7 +5,7 @@ export const OneTimePassword = () => (
     <form className="flex flex-col items-start ml-3">
       <p className="pb-2">Enter code from email to enter your account.</p>
 
-      <input className="input input-bordered w-full max-w-xs" type="text" placeholder="Activation code" />
+      <input className="input w-full max-w-xs" type="text" placeholder="Activation code" />
       <button
         className="btn btn-outline mt-3"
         type="submit"

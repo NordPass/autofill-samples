@@ -6,9 +6,9 @@ export const AllForms = () => (
       {/* Login Form */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Login</h1>
-        <input className="input input-bordered w-full mb-3" type="text" placeholder="Email Address/Username" />
+        <input className="input w-full mb-3" type="text" placeholder="Email Address/Username" />
         <input
-          className="input input-bordered w-full mb-4"
+          className="input w-full mb-4"
           type="password"
           placeholder="Password"
           autoComplete="current-password"
@@ -28,12 +28,12 @@ export const AllForms = () => (
         <p className="mb-4">Enter your credentials to login.</p>
 
         <input
-          className="input input-bordered w-full mb-3"
+          className="input w-full mb-3"
           type="text"
           placeholder="Email Address/Username"
         />
         <input
-          className="input input-bordered w-full mb-4"
+          className="input w-full mb-4"
           type="password"
           placeholder="Password"
           autoComplete="current-password"
@@ -53,12 +53,12 @@ export const AllForms = () => (
         <p className="mb-4">Enter your credentials to login.</p>
 
         <input
-          className="input input-bordered w-full mb-3"
+          className="input w-full mb-3"
           type="text"
           placeholder="Phone number"
         />
         <input
-          className="input input-bordered w-full mb-4"
+          className="input w-full mb-4"
           type="text"
           placeholder="Code from phone"
         />
@@ -74,9 +74,9 @@ export const AllForms = () => (
       {/* Register Form */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Register</h1>
-        <input className="input input-bordered w-full mb-3" type="text" placeholder="Email Address/Username" />
+        <input className="input w-full mb-3" type="text" placeholder="Email Address/Username" />
         <input
-          className="input input-bordered w-full mb-4"
+          className="input w-full mb-4"
           type="password"
           placeholder="Password"
           autoComplete="new-password"
@@ -93,9 +93,9 @@ export const AllForms = () => (
       {/* Change Password */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Change Password</h1>
-        <input className="input input-bordered w-full mb-3" type="password" placeholder="Current password" />
-        <input className="input input-bordered w-full mb-3" type="password" placeholder="New Password" />
-        <input className="input input-bordered w-full mb-4" type="password" placeholder="Repeat New Password" />
+        <input className="input w-full mb-3" type="password" placeholder="Current password" />
+        <input className="input w-full mb-3" type="password" placeholder="New Password" />
+        <input className="input w-full mb-4" type="password" placeholder="Repeat New Password" />
         <button
           className="btn btn-neutral w-full"
           type="submit"
@@ -108,7 +108,7 @@ export const AllForms = () => (
       {/* Forgot Password */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Forgot Password</h1>
-        <input className="input input-bordered w-full mb-4" type="text" placeholder="Email Address" />
+        <input className="input w-full mb-4" type="text" placeholder="Email Address" />
         <button
           className="btn btn-neutral w-full"
           type="submit"
@@ -121,9 +121,9 @@ export const AllForms = () => (
       {/* Change Email centered */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Change Email</h1>
-        <input className="input input-bordered w-full mb-3" type="password" placeholder="Current email" />
-        <input className="input input-bordered w-full mb-3" type="password" placeholder="New Email" />
-        <input className="input input-bordered w-full mb-4" type="password" placeholder="Repeat New Email" />
+        <input className="input w-full mb-3" type="password" placeholder="Current email" />
+        <input className="input w-full mb-3" type="password" placeholder="New Email" />
+        <input className="input w-full mb-4" type="password" placeholder="Repeat New Email" />
         <button
           className="btn btn-neutral w-full"
           type="submit"
@@ -145,12 +145,12 @@ export const AllForms = () => (
         </p>
 
         <input
-          className="input input-bordered w-full mb-3"
+          className="input w-full mb-3"
           type="email"
           placeholder="New Email"
         />
         <input
-          className="input input-bordered w-full mb-4"
+          className="input w-full mb-4"
           type="password"
           placeholder="Enter password"
         />
@@ -166,10 +166,10 @@ export const AllForms = () => (
       {/* Credit Card */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Credit Card</h1>
-        <input className="input input-bordered w-full mb-3" type="text" placeholder="Full Name" />
-        <input className="input input-bordered w-full mb-3" type="text" placeholder="CC number" />
-        <input className="input input-bordered w-full mb-3" type="text" placeholder="MM/YY" />
-        <input className="input input-bordered w-full mb-4" type="text" placeholder="CVV" />
+        <input className="input w-full mb-3" type="text" placeholder="Full Name" />
+        <input className="input w-full mb-3" type="text" placeholder="CC number" />
+        <input className="input w-full mb-3" type="text" placeholder="MM/YY" />
+        <input className="input w-full mb-4" type="text" placeholder="CVV" />
         <button
           className="btn btn-neutral w-full"
           type="submit"
@@ -183,16 +183,16 @@ export const AllForms = () => (
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Personal Info</h1>
         <div className="w-full space-y-3 mb-4">
-          <input className="input input-bordered w-full" type="text" placeholder="First Name" />
-          <input className="input input-bordered w-full" type="text" placeholder="Last Name" />
-          <input className="input input-bordered w-full" type="text" placeholder="Email" />
-          <input className="input input-bordered w-full" type="text" placeholder="Phone number" />
-          <input className="input input-bordered w-full" type="text" placeholder="Address 1" />
-          <input className="input input-bordered w-full" type="text" placeholder="Address 2" />
-          <input className="input input-bordered w-full" type="text" placeholder="City" />
-          <input className="input input-bordered w-full" type="text" placeholder="State" />
-          <input className="input input-bordered w-full" type="text" placeholder="Zip or Postal code" />
-          <input className="input input-bordered w-full" type="text" placeholder="Country" />
+          <input className="input w-full" type="text" placeholder="First Name" />
+          <input className="input w-full" type="text" placeholder="Last Name" />
+          <input className="input w-full" type="text" placeholder="Email" />
+          <input className="input w-full" type="text" placeholder="Phone number" />
+          <input className="input w-full" type="text" placeholder="Address 1" />
+          <input className="input w-full" type="text" placeholder="Address 2" />
+          <input className="input w-full" type="text" placeholder="City" />
+          <input className="input w-full" type="text" placeholder="State" />
+          <input className="input w-full" type="text" placeholder="Zip or Postal code" />
+          <input className="input w-full" type="text" placeholder="Country" />
         </div>
         <button
           className="btn btn-neutral w-full"
@@ -209,72 +209,72 @@ export const AllForms = () => (
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-4">
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="First Name"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Last Name"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Email"
           />
           <div className="flex items-center space-x-2">
             <input
-              className="input input-bordered w-[80px]"
+              className="input w-20"
               type="text"
               name="phonePrefix"
               placeholder="Prefix"
             />
             <input
-              className="input input-bordered w-[80px]"
+              className="input w-20"
               type="text"
               name="phoneArea"
               placeholder="(Area)"
             />
             <input
-              className="input input-bordered flex-1"
+              className="input flex-1"
               type="text"
               placeholder="Phone number"
             />
             <span>Ext:</span>
             <input
-              className="input input-bordered w-[70px]"
+              className="input w-[70px]"
               type="text"
               name="phoneExtension"
             />
           </div>
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Address 1"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Address 2"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="City"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="State"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Zip or Postal code"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Country"
           />
@@ -294,17 +294,17 @@ export const AllForms = () => (
 
         <div className="space-y-3 mb-4">
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="First Name"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Last Name"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Email"
           />
@@ -321,23 +321,23 @@ export const AllForms = () => (
               ))}
             </select>
             <input
-              className="input input-bordered flex-1"
+              className="input flex-1"
               type="text"
               placeholder="Phone number"
             />
           </div>
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Address 1"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Address 2"
           />
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="City"
           />
@@ -353,7 +353,7 @@ export const AllForms = () => (
             ))}
           </select>
           <input
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Zip or Postal code"
           />
@@ -381,7 +381,7 @@ export const AllForms = () => (
       {/* Search form */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Search</h1>
-        <input className="input input-bordered w-full mb-4" type="text" placeholder="Enter question..." />
+        <input className="input w-full mb-4" type="text" placeholder="Enter question..." />
         <button
           className="btn btn-neutral w-full"
           type="submit"
@@ -394,7 +394,7 @@ export const AllForms = () => (
       {/* Newsletter */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Subscribe to our newsletters!</h1>
-        <input className="input input-bordered w-full mb-4" type="text" placeholder="Enter email" />
+        <input className="input w-full mb-4" type="text" placeholder="Enter email" />
         <button
           className="btn btn-neutral w-full"
           type="submit"
@@ -407,7 +407,7 @@ export const AllForms = () => (
       {/* Activation code */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col">
         <p className="mb-4">Enter code from email to enter your account.</p>
-        <input className="input input-bordered w-full mb-4" type="text" placeholder="Activation code" />
+        <input className="input w-full mb-4" type="text" placeholder="Activation code" />
         <button
           className="btn btn-neutral"
           type="submit"
@@ -422,12 +422,12 @@ export const AllForms = () => (
         <fieldset className="w-full flex flex-col items-center">
           <label className="text-xl font-semibold mb-4">Enter code from your mobile authenticator app:</label>
           <div className="flex justify-around w-full max-w-xs mb-4">
-            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input input-bordered w-[40px] text-center" />
-            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input input-bordered w-[40px] text-center" />
-            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input input-bordered w-[40px] text-center" />
-            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input input-bordered w-[40px] text-center" />
-            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input input-bordered w-[40px] text-center" />
-            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input input-bordered w-[40px] text-center" />
+            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input size-10 text-center" />
+            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input size-10 text-center" />
+            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input size-10 text-center" />
+            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input size-10 text-center" />
+            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input size-10 text-center" />
+            <input type="text" autoComplete="off" maxLength={1} className="keeper-ignore input size-10 text-center" />
           </div>
         </fieldset>
         <button
@@ -440,27 +440,26 @@ export const AllForms = () => (
       </form>
 
       {/* 2FA Verification */}
-      <form className="gl-show-field-errors js-2fa-form bg-base-200 p-6 rounded-lg shadow-md flex flex-col" aria-live="assertive" action="/users/sign_in" accept-charset="UTF-8" method="post">
-        <input type="hidden" name="authenticity_token" value="b7NGhc4zZ4o6OsmTX7e_tdLsFoI92Vrqbv410JjU2miRg-bVxyyetxKk7zG6ij-V3528_j6wfJ681mU-U95VQQ" autoComplete="off" />
-        <div className="form-group mb-4">
+      <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col">
+        <div className="mb-4">
           <label htmlFor="user_otp_attempt" className="block text-xl font-semibold mb-2">Enter verification code</label>
-          <input className="form-control gl-form-input input input-bordered w-full" title="This field is required." data-testid="two-fa-code-field" type="text" name="user[otp_attempt]" id="user_otp_attempt" />
-          <p className="gl-field-error hidden">This field is required.</p>
-          <p className="form-text text-muted hint mt-2 text-sm">
+          <input className="input w-full" title="This field is required." data-testid="two-fa-code-field" type="text" name="user[otp_attempt]" id="user_otp_attempt" />
+          <p className="hidden">This field is required.</p>
+          <p className="text-muted hint mt-2 text-sm">
             Enter the code from your two-factor authenticator app.
             If you've lost your device, you can enter one of your recovery codes.
           </p>
           <input value="0" autoComplete="off" type="hidden" name="user[remember_me]" id="user_remember_me" />
         </div>
         <button data-testid="verify-code-button" type="submit" className="btn btn-neutral">
-          <span className="gl-button-text">Verify code</span>
+          Verify code
         </button>
       </form>
 
       {/* Login or Signup */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Enter email to sign in or sign up!</h1>
-        <input className="input input-bordered w-full mb-4" type="text" placeholder="Enter email" />
+        <input className="input w-full mb-4" type="text" placeholder="Enter email" />
         <button
           className="btn btn-neutral w-full"
           type="submit"
@@ -477,20 +476,20 @@ export const AllForms = () => (
         <div className="space-y-3 mb-4">
           <input
             id="email"
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Login email"
           />
           <input
             id="loginPassword"
-            className="input input-bordered w-full"
+            className="input w-full"
             type="password"
             placeholder="Password"
             autoComplete="current-password"
           />
           <input
             id="companyID"
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Company ID"
           />
@@ -511,26 +510,26 @@ export const AllForms = () => (
         <div className="space-y-3 mb-4">
           <input
             id="email"
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Email"
           />
           <input
             id="loginPassword"
-            className="input input-bordered w-full"
+            className="input w-full"
             type="password"
             placeholder="Password"
             autoComplete="current-password"
           />
           <input
             id="companyID"
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Company ID"
           />
           <input
             id="website"
-            className="input input-bordered w-full"
+            className="input w-full"
             type="text"
             placeholder="Website"
           />
@@ -558,7 +557,7 @@ export const AllForms = () => (
                 <label htmlFor="ccFullName" className="block text-sm mb-1">Name on Card</label>
                 <input
                   id="ccFullName"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                 />
               </div>
@@ -566,7 +565,7 @@ export const AllForms = () => (
                 <label htmlFor="ccNumber" className="block text-sm mb-1">Credit card number</label>
                 <input
                   id="ccNumber"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                   placeholder="0000 0000 0000 0000"
                 />
@@ -575,7 +574,7 @@ export const AllForms = () => (
                 <label htmlFor="ccExpirationFull" className="block text-sm mb-1">Expiration Date</label>
                 <input
                   id="ccExpirationFull"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                   placeholder="MM/YY"
                 />
@@ -584,7 +583,7 @@ export const AllForms = () => (
                 <label htmlFor="ccCVV" className="block text-sm mb-1">Security Code</label>
                 <input
                   id="ccCVV"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                   placeholder="000"
                 />
@@ -593,7 +592,7 @@ export const AllForms = () => (
                 <label htmlFor="ccZipCode" className="block text-sm mb-1">Zip Code</label>
                 <input
                   id="ccZipCode"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                 />
               </div>
@@ -623,7 +622,7 @@ export const AllForms = () => (
                 <label htmlFor="city" className="block text-sm mb-1">City</label>
                 <input
                   id="city"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                 />
               </div>
@@ -631,7 +630,7 @@ export const AllForms = () => (
                 <label htmlFor="address" className="block text-sm mb-1">Street Address</label>
                 <input
                   id="address"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                 />
               </div>
@@ -639,7 +638,7 @@ export const AllForms = () => (
                 <label htmlFor="address2" className="block text-sm mb-1">Apt/Suite/Other (Optional)</label>
                 <input
                   id="address2"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                 />
               </div>
@@ -647,7 +646,7 @@ export const AllForms = () => (
                 <label htmlFor="billingZipCode" className="block text-sm mb-1">Zip or Postal Code</label>
                 <input
                   id="billingZipCode"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                 />
               </div>
@@ -655,7 +654,7 @@ export const AllForms = () => (
                 <label htmlFor="billingFullName" className="block text-sm mb-1">Full Name</label>
                 <input
                   id="billingFullName"
-                  className="input input-bordered w-full"
+                  className="input w-full"
                   type="text"
                 />
               </div>
