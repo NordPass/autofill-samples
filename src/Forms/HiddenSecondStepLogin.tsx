@@ -76,8 +76,12 @@ export const HiddenSecondStepLogin = () => {
           ? (
               <button
                 className="btn btn-outline mt-3"
-                type="button"
-                onClick={() => new Promise(resolve => setTimeout(() => resolve(setSubmit(true)), 500))}
+                type="submit"
+                onClick={(event) => {
+                  event.preventDefault();
+
+                  setTimeout(() => setSubmit(true), 500);
+                }}
               >
                 Continue to login
               </button>

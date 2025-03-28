@@ -1,7 +1,7 @@
 export const TOTPOneField = () => (
   <form className="gl-show-field-errors js-2fa-form flex items-center justify-center mt-3 flex-col" aria-live="assertive" action="/users/sign_in" accept-charset="UTF-8" method="post">
     <input type="hidden" name="authenticity_token" value="b7NGhc4zZ4o6OsmTX7e_tdLsFoI92Vrqbv410JjU2miRg-bVxyyetxKk7zG6ij-V3528_j6wfJ681mU-U95VQQ" autoComplete="off" />
-    <div className="form-group flex justify-around w-[500px] flex-col">
+    <div className="form-group flex justify-around w-[500px] flex-col items-center">
       <label htmlFor="user_otp_attempt" className="text-4xl mb-2">Enter verification code</label>
       <input className="form-control gl-form-input input input-bordered" title="This field is required." data-testid="two-fa-code-field" type="text" name="user[otp_attempt]" id="user_otp_attempt" />
       <p className="gl-field-error hidden">This field is required.</p>
