@@ -1,4 +1,5 @@
 import { useRef, useState } from 'react';
+import { isMobile } from 'react-device-detect';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
@@ -69,7 +70,7 @@ export const Login = () => {
           phone.current!.value = '111111111';
         }}
       >
-        Failed login
+        {isMobile ? 'Failed' : 'Failed login'}
       </button>
       <button
         className="btn btn-outline ml-3"
@@ -91,7 +92,7 @@ export const Login = () => {
         type="button"
         onClick={() => setPhoneLogin(!phoneLogin)}
       >
-        {phoneLogin ? 'Email/Username Login' : 'Phone Login'}
+        {phoneLogin ? 'Email/Username Login' : (isMobile ? 'Phone' : 'Phone Login')}
       </button>
 
       <h1 className="text-4xl mt-3">Login Form</h1>

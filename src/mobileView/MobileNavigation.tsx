@@ -9,7 +9,7 @@ export const MobileNavigation = () => {
   document.body.style.overflow = style;
 
   return (
-    <nav className={`fixed ${toggleMenu && 'block fixed h-full flex-wrap bg-base-100 overflow-auto'} w-full`}>
+    <nav className={`fixed ${toggleMenu && 'block fixed h-full flex-wrap bg-base-100 overflow-auto'} w-full z-10`}>
       <button
         type="button"
         className="btn btn-square btn-ghost transition-transform duration-300 ease-in-out"
@@ -70,7 +70,7 @@ export const MobileNavigation = () => {
             Change direction
           </button>
           <Link className="btn btn-neutral w-[90%]" to="/all">All Forms</Link>
-          <Link className="btn btn-neutral  w-[90%]" to="/login">Login</Link>
+          <Link className="btn btn-neutral w-[90%]" to="/login">Login</Link>
           <Link className="btn btn-neutral w-[90%]" to="/loginTotp">Login with TOTP</Link>
           <Link className="btn btn-neutral w-[90%]" to="/loginSixFieldsTotp>">Login with Totp 2</Link>
           <Link className="btn btn-neutral w-[90%]" to="/register">Register</Link>

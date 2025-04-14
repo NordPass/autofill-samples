@@ -1,4 +1,5 @@
 import { useRef } from 'react';
+import { isMobile } from 'react-device-detect';
 import { Link } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 import { errorToast, successToast } from '../utils/toasts';
@@ -52,7 +53,7 @@ export const CustomLogin = () => {
           companyID.current!.value = '09998881231';
         }}
       >
-        Failed login
+        {isMobile ? 'Failed' : 'Failed login'}
       </button>
       <button
         className="btn btn-outline ml-3"
