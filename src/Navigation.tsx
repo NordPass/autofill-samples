@@ -1,6 +1,6 @@
 import { use } from 'react';
 import { Link } from 'react-router-dom';
-import { DirectionContext } from './utils/DirectionProvider';
+import { DirectionContext } from './utils/DirectionContext';
 
 export const Navigation = () => {
   const { direction, updateDirection } = use(DirectionContext);

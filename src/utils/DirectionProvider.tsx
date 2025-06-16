@@ -1,5 +1,6 @@
 import type { ReactNode } from 'react';
-import { createContext, useLayoutEffect, useMemo, useState } from 'react';
+import { useLayoutEffect, useMemo, useState } from 'react';
+import { DirectionContext } from './DirectionContext';
 
 export type TDirection = 'ltr' | 'rtl';
 
@@ -7,11 +8,6 @@ interface IDirectionContext {
   direction: TDirection;
   updateDirection: (direction: TDirection) => void;
 }
-
-export const DirectionContext = createContext<IDirectionContext>({
-  direction: 'ltr',
-  updateDirection: () => undefined,
-});
 
 export const DirectionProvider = ({ children }: { children?: ReactNode }) => {
   const [direction, setDirection] = useState<TDirection>('ltr');
