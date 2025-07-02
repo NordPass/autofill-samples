@@ -97,6 +97,8 @@ export const SecondStepLogin = () => {
               type="submit"
               onClick={(event) => {
                 event.preventDefault();
+                // eslint-disable-next-line no-console
+                console.log('here');
 
                 if (username.current?.value === 'error@gmail.com') {
                   errorToast();
