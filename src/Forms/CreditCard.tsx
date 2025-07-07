@@ -61,29 +61,36 @@ export const CreditCard = () => {
 
       <form className="flex flex-col items-start mt-3">
         <p className="pb-2">Save your credit cart for future transactions.</p>
-
+        <label htmlFor="fullName">Full Name</label>
         <input
           ref={fullName}
           className="input w-full max-w-xs"
           type="text"
+          id="fullName"
           placeholder="Full Name"
         />
+        <label htmlFor="ccNumber">CC number</label>
         <input
           ref={ccNumber}
           className="input w-full max-w-xs"
           type="text"
+          id="ccNumber"
           placeholder="CC number"
         />
+        <label htmlFor="ccDate">Expiration Date</label>
         <input
           ref={ccDate}
           className="input w-full max-w-xs"
           type="text"
+          id="expirationDate"
           placeholder="MM/YY"
         />
+        <label htmlFor="cvv">CVV</label>
         <input
           ref={cvv}
           className="input w-full max-w-xs"
           type="text"
+          id="cvv"
           placeholder="CVV"
         />
         <button
