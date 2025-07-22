@@ -121,14 +121,10 @@ export const AllForms = () => (
       {/* Change Email centered */}
       <form className="bg-base-200 p-6 rounded-lg shadow-md flex flex-col items-center">
         <h1 className="text-3xl font-bold mb-4">Change Email</h1>
-        <input className="input w-full mb-3" type="password" placeholder="Current email" />
-        <input className="input w-full mb-3" type="password" placeholder="New Email" />
-        <input className="input w-full mb-4" type="password" placeholder="Repeat New Email" />
-        <button
-          className="btn btn-neutral w-full"
-          type="submit"
-          onClick={event => event.preventDefault()}
-        >
+        <input className="input w-full mb-3" type="email" placeholder="Current email" />
+        <input className="input w-full mb-3" type="email" placeholder="New Email" />
+        <input className="input w-full mb-4" type="email" placeholder="Repeat New Email" />
+        <button className="btn btn-neutral w-full" type="submit" onClick={event => event.preventDefault()}>
           Change Email
         </button>
       </form>
