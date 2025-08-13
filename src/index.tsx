@@ -20,6 +20,7 @@ import { LoginRegister } from './Forms/LoginRegister.tsx';
 import { LoginSixFieldsTotp } from './Forms/LoginSixFieldsTotp.tsx';
 import { LoginTotp } from './Forms/LoginTotp.tsx';
 import { ModalLogin } from './Forms/ModalLogin.tsx';
+import { Narrow } from './Forms/Narrow.tsx';
 import { OneTimePassword } from './Forms/OneTimePassword.tsx';
 import { Other } from './Forms/Other.tsx';
 import { PersonalInfo } from './Forms/PersonalInfo.tsx';
@@ -54,6 +55,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/creditCard" element={<CreditCard />} />
             <Route path="/changeEmail" element={<ChangeEmail />} />
             <Route path="/other" element={<Other />} />
+            <Route path="/narrow" element={<Narrow />} />
             <Route path="/subscribe" element={<Subscribe />} />
             <Route path="/mfa" element={<OneTimePassword />} />
             <Route path="/totp" element={<TOTP />} />

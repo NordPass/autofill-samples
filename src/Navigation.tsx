@@ -70,6 +70,7 @@ export const Navigation = () => {
               <Link className="btn btn-xs hover:scale-105 transition-transform" to="/modalLogin">Modal</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/all">All</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/other">Other</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/narrow">Narrow</Link>
             </div>
           </div>
 
