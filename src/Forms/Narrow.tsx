@@ -3,6 +3,7 @@ import { useSearchParams } from 'react-router-dom';
 
 export const Narrow = () => {
   const [searchParams] = useSearchParams();
+
   const [controlWidth, setControlWidth] = useState<number>(() => {
     const w = Number.parseInt(searchParams.get('w') ?? '200', 10);
     return Number.isNaN(w) ? 200 : w;
@@ -11,143 +12,190 @@ export const Narrow = () => {
     const height = Number.parseInt(searchParams.get('h') ?? '32', 10);
     return Number.isNaN(height) ? 32 : height;
   });
+  const [controlPadding, setControlPadding] = useState<number>(() => {
+    const padding = Number.parseInt(searchParams.get('p') ?? '8', 10);
+    return Number.isNaN(padding) ? 8 : padding;
+  });
+  const [controlMargin, setControlMargin] = useState<number>(() => {
+    const margin = Number.parseInt(searchParams.get('m') ?? '4', 10);
+    return Number.isNaN(margin) ? 4 : margin;
+  });
 
   return (
     <div className="w-full px-4">
-      <h1 className="text-4xl mt-3">Narrow Inputs Form</h1>
+      <h1 className="text-4xl mt-3">Adjustable Inputs Form</h1>
 
-      <div className="sticky top-0 z-10 pb-4 border-b border-gray-600 mb-4">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="grid grid-cols-1 gap-2 w-full">
+      <div className="pb-4 border-b border-gray-600 mb-4">
+        <div className="grid grid-cols-1 gap-4 my-3">
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
             <div className="w-full">
-              <label className="label" htmlFor="widthRange">
+              <label className="label flex flex-col">
                 <span className="label-text">
                   Width:
                   {controlWidth}
                   px
                 </span>
+                <input
+                  type="range"
+                  min={10}
+                  max={200}
+                  value={controlWidth}
+                  onChange={e => setControlWidth(Number(e.target.value))}
+                  className="w-full accent-gray-400 bg-gray-700 rounded-lg h-2"
+                />
               </label>
-              <input
-                id="widthRange"
-                type="range"
-                min={10}
-                max={200}
-                value={controlWidth}
-                onChange={e => setControlWidth(Number(e.target.value))}
-                className="w-full accent-blue-400 bg-gray-600 rounded-lg h-2"
-              />
             </div>
             <div className="w-full">
-              <label className="label" htmlFor="heightRange">
+              <label className="label flex flex-col">
                 <span className="label-text">
                   Height:
                   {controlHeight}
                   px
                 </span>
+                <input
+                  type="range"
+                  min={10}
+                  max={56}
+                  value={controlHeight}
+                  onChange={e => setControlHeight(Number(e.target.value))}
+                  className="w-full accent-gray-400 bg-gray-700 rounded-lg h-2"
+                />
               </label>
-              <input
-                id="heightRange"
-                type="range"
-                min={10}
-                max={56}
-                value={controlHeight}
-                onChange={e => setControlHeight(Number(e.target.value))}
-                className="w-full accent-blue-400 bg-gray-600 rounded-lg h-2"
-              />
+            </div>
+            <div className="w-full">
+              <label className="label flex flex-col">
+                <span className="label-text">
+                  Padding:
+                  {controlPadding}
+                  px
+                </span>
+                <input
+                  type="range"
+                  min={0}
+                  max={20}
+                  value={controlPadding}
+                  onChange={e => setControlPadding(Number(e.target.value))}
+                  className="w-full accent-gray-400 bg-gray-700 rounded-lg h-2"
+                />
+              </label>
+            </div>
+            <div className="w-full">
+              <label className="label flex flex-col">
+                <span className="label-text">
+                  Margin:
+                  {controlMargin}
+                  px
+                </span>
+                <input
+                  type="range"
+                  min={0}
+                  max={20}
+                  value={controlMargin}
+                  onChange={e => setControlMargin(Number(e.target.value))}
+                  className="w-full accent-gray-400 bg-gray-700 rounded-lg h-2"
+                />
+              </label>
             </div>
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <form className="grid grid-cols-1 gap-2 w-full" onSubmit={event => event.preventDefault()}>
-          <label className="label" htmlFor="firstName">
-            <span className="label-text">First Name</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" id="firstName" />
-          <label className="label" htmlFor="lastName">
-            <span className="label-text">Last Name</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" id="lastName" />
-          <label className="label" htmlFor="email">
-            <span className="label-text">Email</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" id="email" />
 
-          <label className="label" htmlFor="phoneNumber">
-            <span className="label-text">Phone number</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" id="phoneNumber" />
-          <label className="label" htmlFor="address1">
-            <span className="label-text">Address 1</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" id="address1" />
-          <label className="label" htmlFor="address2">
-            <span className="label-text">Address 2</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" id="address2" />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
+        <div className="w-full">
+          <h2 className="text-2xl mb-4">Controlled Form</h2>
+          <form className="grid grid-cols-1 gap-2 w-full" onSubmit={event => event.preventDefault()}>
+            <label className="label flex flex-col">
+              <span className="label-text">First Name</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Last Name</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Email</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
 
-          <label className="label" htmlFor="city">
-            <span className="label-text">City</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" id="city" />
-          <label className="label" htmlFor="state">
-            <span className="label-text">State</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" id="state" />
-          <label className="label" htmlFor="zip">
-            <span className="label-text">Zip or Postal code</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" id="zip" />
-          <label className="label" htmlFor="country">
-            <span className="label-text">Country</span>
-          </label>
-          <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px` }} className="outline-1 rounded" type="text" />
-        </form>
+            <label className="label flex flex-col">
+              <span className="label-text">Phone number</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Address 1</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Address 2</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
 
-        <form className="grid grid-cols-1 gap-2 w-full" onSubmit={event => event.preventDefault()}>
-          <label className="label" htmlFor="firstName2">
-            <span className="label-text">First Name</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="firstName2" />
-          <label className="label" htmlFor="lastName2">
-            <span className="label-text">Last Name</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="lastName2" />
-          <label className="label" htmlFor="email2">
-            <span className="label-text">Email</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="email2" />
+            <label className="label flex flex-col">
+              <span className="label-text">City</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">State</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Zip or Postal code</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Country</span>
+              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+            </label>
+          </form>
+        </div>
 
-          <label className="label" htmlFor="phoneNumber2">
-            <span className="label-text">Phone number</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="phoneNumber2" />
-          <label className="label" htmlFor="address12">
-            <span className="label-text">Address 1</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="address12" />
-          <label className="label" htmlFor="address22">
-            <span className="label-text">Address 2</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="address22" />
+        <div className="w-full">
+          <h2 className="text-2xl mb-4">Reference Form</h2>
+          <form className="grid grid-cols-1 gap-2 w-full" onSubmit={event => event.preventDefault()}>
+            <label className="label flex flex-col">
+              <span className="label-text">First Name</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Last Name</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Email</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
 
-          <label className="label" htmlFor="city2">
-            <span className="label-text">City</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="city2" />
-          <label className="label" htmlFor="state2">
-            <span className="label-text">State</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="state2" />
-          <label className="label" htmlFor="zip2">
-            <span className="label-text">Zip or Postal code</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="zip2" />
-          <label className="label" htmlFor="country2">
-            <span className="label-text">Country</span>
-          </label>
-          <input className="border rounded px-3 py-2 w-full" type="text" id="country2" />
-        </form>
+            <label className="label flex flex-col">
+              <span className="label-text">Phone number</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Address 1</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Address 2</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
+
+            <label className="label flex flex-col">
+              <span className="label-text">City</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">State</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Zip or Postal code</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
+            <label className="label flex flex-col">
+              <span className="label-text">Country</span>
+              <input className="border rounded px-3 py-2 w-full" type="text" />
+            </label>
+          </form>
+        </div>
       </div>
     </div>
   );

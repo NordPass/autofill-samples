@@ -1,9 +1,16 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 
 export const MobileNavigation = () => {
   const [toggleMenu, setToggleMenu] = useState(false);
   const [direction, setDirection] = useState(false);
+
+  const [searchParams] = useSearchParams();
+
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('nav') === 'hide' || searchParams.get('nav') === 'hide') {
+    return null;
+  }
 
   const style = toggleMenu ? 'hidden' : 'auto';
   document.body.style.overflow = style;

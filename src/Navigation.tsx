@@ -1,9 +1,15 @@
 import { use } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { DirectionContext } from './utils/DirectionContext';
 
 export const Navigation = () => {
   const { direction, updateDirection } = use(DirectionContext);
+
+  const [searchParams] = useSearchParams();
+  const urlParams = new URLSearchParams(window.location.search);
+  if (urlParams.get('nav') === 'hide' || searchParams.get('nav') === 'hide') {
+    return null;
+  }
 
   return (
     <div className="bg-base-200 p-2 shadow-lg border-b border-base-300">
@@ -71,6 +77,7 @@ export const Navigation = () => {
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/all">All</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/other">Other</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/narrow">Narrow</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/frames">Frames</Link>
             </div>
           </div>
 

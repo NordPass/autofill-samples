@@ -13,6 +13,7 @@ import { CreditCard } from './Forms/CreditCard.tsx';
 import { CustomLogin } from './Forms/CustomLogin.tsx';
 import { CustomLoginTwoFields } from './Forms/CustomLoginTwoFields.tsx';
 import { ForgotPassword } from './Forms/ForgotPassword.tsx';
+import { Frames } from './Forms/Frames.tsx';
 import { HiddenSecondStepLogin } from './Forms/HiddenSecondStepLogin.tsx';
 import { Login } from './Forms/Login.tsx';
 import { LoginPhone } from './Forms/LoginPhone.tsx';
@@ -56,6 +57,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/changeEmail" element={<ChangeEmail />} />
             <Route path="/other" element={<Other />} />
             <Route path="/narrow" element={<Narrow />} />
+            <Route path="/frames" element={<Frames />} />
             <Route path="/subscribe" element={<Subscribe />} />
             <Route path="/mfa" element={<OneTimePassword />} />
             <Route path="/totp" element={<TOTP />} />

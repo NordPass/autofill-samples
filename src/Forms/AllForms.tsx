@@ -311,7 +311,7 @@ export const AllForms = () => (
               className="select select-bordered flex-none"
             >
               {PREFIX_OPTIONS.map(prefixOption => (
-                <option key={prefixOption} value={prefixOption}>
+                <option key={globalThis.crypto.randomUUID()} value={prefixOption}>
                   {prefixOption}
                 </option>
               ))}
@@ -355,7 +355,7 @@ export const AllForms = () => (
           />
           <select
             name="countries"
-            id="select-country"
+            id="select-country-2"
             className="select select-bordered w-full"
           >
             {COUNTRY_OPTIONS.map(countryOption => (
@@ -471,7 +471,7 @@ export const AllForms = () => (
 
         <div className="space-y-3 mb-4">
           <input
-            id="email"
+            id="loginEmail"
             className="input w-full"
             type="text"
             placeholder="Login email"
@@ -511,14 +511,14 @@ export const AllForms = () => (
             placeholder="Email"
           />
           <input
-            id="loginPassword"
+            id="password"
             className="input w-full"
             type="password"
             placeholder="Password"
             autoComplete="current-password"
           />
           <input
-            id="companyID"
+            id="company-ID"
             className="input w-full"
             type="text"
             placeholder="Company ID"
