@@ -1,14 +1,15 @@
 import { useRef, useState } from 'react';
 import { isMobile } from 'react-device-detect';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
-import { errorToast, successToast } from '../utils/toasts';
+import { errorToast, successToast } from '../../utils/toasts';
 
 export const Login = () => {
   const username = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
   const phone = useRef<HTMLInputElement>(null);
   const [phoneLogin, setPhoneLogin] = useState(false);
+  const navigate = useNavigate();
 
   return (
     <div className="ml-3 justify-items-start">
@@ -130,6 +131,13 @@ export const Login = () => {
             }}
           >
             Sign In
+          </button>
+          <button
+            className="btn btn-outline mt-3 btn-success"
+            type="button"
+            onClick={() => navigate('/loginSuccess')}
+          >
+            Successful Login to next page
           </button>
           <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
           <Link className="pt-2 underline" to="/register">Sign up</Link>
