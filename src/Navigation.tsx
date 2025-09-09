@@ -84,11 +84,10 @@ export const Navigation = () => {
           {/* Direction Toggle */}
           <div className="card bg-base-300/50 backdrop-blur p-2 hover:bg-base-300 transition-colors flex items-center">
             <div className="flex gap-1 w-full">
-              <Link className="btn btn-xs flex-1 btn-neutral hover:scale-105 transition-transform" to="/builder">Builder</Link>
+              <Link className="btn btn-xs flex-1 btn-neutral hover:scale-105 transition-transform" to="/builder">🔨 Builder</Link>
               <button
                 type="button"
-                className={`btn btn-xs flex-1 ${direction === 'ltr' ? 'btn-secondary' : 'btn-accent'} 
-                  hover:scale-105 transition-transform`}
+                className="btn btn-xs flex-1 btn-neutral hover:scale-105 transition-transform"
                 onClick={() => {
                   const newDirection = direction === 'rtl' ? 'ltr' : 'rtl';
                   const url = new URL(window.location.href);
@@ -97,7 +96,19 @@ export const Navigation = () => {
                   updateDirection(newDirection);
                 }}
               >
-                {direction === 'ltr' ? '→ RTL' : '← LTR'}
+
+                {direction === 'ltr' ? 'RTL ⬅️' : 'LTR ➡️'}
+              </button>
+              <button
+                type="button"
+                className="btn btn-xs flex-1 btn-neutral hover:scale-105 transition-transform"
+                onClick={() => {
+                  document.querySelectorAll('input').forEach((input) => {
+                    input.setAttribute('data-np-skip', '');
+                  });
+                }}
+              >
+                Skip Autofill ⏭️️
               </button>
             </div>
           </div>
