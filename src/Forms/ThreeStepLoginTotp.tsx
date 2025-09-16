@@ -82,7 +82,7 @@ export const ThreeStepLoginTotp = () => {
               <button
                 className="btn btn-outline mt-3"
                 type="submit"
-                onClick={() => setShowPassword(true)}
+                onClick={() => setTimeout(() => setShowPassword(true), 1000)}
               >
                 Continue
               </button>
@@ -103,7 +103,7 @@ export const ThreeStepLoginTotp = () => {
               <button
                 className="btn btn-outline mt-3"
                 type="submit"
-                onClick={() => setTimeout(() => setSubmit(true), 500)}
+                onClick={() => setTimeout(() => setSubmit(true), 2000)}
               >
                 Continue
               </button>
@@ -126,7 +126,7 @@ export const ThreeStepLoginTotp = () => {
 
             <button
               className="btn btn-outline mt-3"
-              type="button"
+              type="submit"
               onClick={(event) => {
                 event.preventDefault();
 

@@ -95,7 +95,7 @@ export const SecondStepLoginTotp = () => {
               <button
                 className="btn btn-outline mt-3"
                 type="submit"
-                onClick={() => setTimeout(() => setSubmit(true), 500)}
+                onClick={() => setTimeout(() => setSubmit(true), 1000)}
               >
                 Continue
               </button>
