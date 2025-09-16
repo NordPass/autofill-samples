@@ -66,7 +66,7 @@ export const ThreeStepLoginTotp = () => {
 
       <h1 className="text-4xl mb-3">Login form with password and TOTP fields that are not in DOM</h1>
 
-      <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`}>
+      <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`} onSubmit={event => event.preventDefault()}>
 
         {!showPassword && !submit
           && (
@@ -81,7 +81,7 @@ export const ThreeStepLoginTotp = () => {
               />
               <button
                 className="btn btn-outline mt-3"
-                type="button"
+                type="submit"
                 onClick={() => setShowPassword(true)}
               >
                 Continue
@@ -102,7 +102,7 @@ export const ThreeStepLoginTotp = () => {
               />
               <button
                 className="btn btn-outline mt-3"
-                type="button"
+                type="submit"
                 onClick={() => setTimeout(() => setSubmit(true), 500)}
               >
                 Continue
@@ -126,7 +126,7 @@ export const ThreeStepLoginTotp = () => {
 
             <button
               className="btn btn-outline mt-3"
-              type="submit"
+              type="button"
               onClick={(event) => {
                 event.preventDefault();
 

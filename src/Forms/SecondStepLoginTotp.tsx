@@ -72,7 +72,7 @@ export const SecondStepLoginTotp = () => {
 
       <h1 className="text-4xl mb-3">Login form with TOTP field that is not in DOM</h1>
 
-      <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`}>
+      <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`} onSubmit={event => event.preventDefault()}>
 
         {!submit
           && (
@@ -94,7 +94,7 @@ export const SecondStepLoginTotp = () => {
               />
               <button
                 className="btn btn-outline mt-3"
-                type="button"
+                type="submit"
                 onClick={() => setTimeout(() => setSubmit(true), 500)}
               >
                 Continue
