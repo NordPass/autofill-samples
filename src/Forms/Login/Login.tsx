@@ -98,89 +98,93 @@ export const Login = () => {
 
       <h1 className="text-4xl mt-3">Login Form</h1>
 
-      {!phoneLogin && (
-        <form className="flex flex-col items-start mt-3">
-          <p className="pb-2">Welcome!</p>
-          <p className="pb-2">Enter your credentials to login.</p>
+      {phoneLogin
+        ? (
+            <form className="flex flex-col items-start mt-3">
+              <p className="pb-2">Welcome!</p>
+              <p className="pb-2">Enter your credentials to login.</p>
 
-          <input
-            ref={username}
-            className="input w-full max-w-xs"
-            type="text"
-            placeholder="Email Address/Username"
-          />
-          <input
-            ref={password}
-            className="input w-full max-w-xs"
-            type="password"
-            placeholder="Password"
-            autoComplete="current-password"
-          />
-          <button
-            className="btn btn-outline mt-3"
-            type="submit"
-            onClick={(event) => {
-              event.preventDefault();
+              <input
+                ref={phone}
+                className="input w-full max-w-xs"
+                type="text"
+                placeholder="Phone number"
+              />
+              <input
+                className="input w-full max-w-xs"
+                type="text"
+                placeholder="Code from phone"
+              />
+              <button
+                className="btn btn-outline mt-3"
+                type="submit"
+                onClick={(event) => {
+                  event.preventDefault();
 
-              if (username.current?.value === 'error@gmail.com') {
-                errorToast();
+                  if (phone.current?.value === '111111111') {
+                    errorToast();
 
-                return;
-              }
-              successToast();
-            }}
-          >
-            Sign In
-          </button>
-          <button
-            className="btn btn-outline mt-3 btn-success"
-            type="button"
-            onClick={() => navigate('/loginSuccess')}
-          >
-            Successful Login to next page
-          </button>
-          <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-          <Link className="pt-2 underline" to="/register">Sign up</Link>
-          <ToastContainer />
-        </form>
-      )}
-      {phoneLogin && (
-        <form className="flex flex-col items-start mt-3">
-          <p className="pb-2">Welcome!</p>
-          <p className="pb-2">Enter your credentials to login.</p>
+                    return;
+                  }
+                  successToast();
+                }}
+              >
+                Sign In
+              </button>
+              <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+              <Link className="pt-2 underline" to="/register">Sign up</Link>
+              <ToastContainer />
+            </form>
+          )
+        : (
+            <form className="flex flex-col items-start mt-3">
+              <p className="pb-2">Welcome!</p>
+              <p className="pb-2">Enter your credentials to login.</p>
 
-          <input
-            ref={phone}
-            className="input w-full max-w-xs"
-            type="text"
-            placeholder="Phone number"
-          />
-          <input
-            className="input w-full max-w-xs"
-            type="text"
-            placeholder="Code from phone"
-          />
-          <button
-            className="btn btn-outline mt-3"
-            type="submit"
-            onClick={(event) => {
-              event.preventDefault();
+              <input
+                ref={username}
+                name="username"
+                autoComplete="username"
+                className="input w-full max-w-xs"
+                type="text"
+                placeholder="Email Address/Username"
+              />
+              <input
+                ref={password}
+                name="password"
+                className="input w-full max-w-xs"
+                type="password"
+                placeholder="Password"
+                autoComplete="current-password"
+              />
+              <button
+                className="btn btn-outline mt-3"
+                type="submit"
+                onClick={(event) => {
+                  event.preventDefault();
 
-              if (phone.current?.value === '111111111') {
-                errorToast();
+                  if (username.current?.value === 'error@gmail.com') {
+                    errorToast();
 
-                return;
-              }
-              successToast();
-            }}
-          >
-            Sign In
-          </button>
-          <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-          <Link className="pt-2 underline" to="/register">Sign up</Link>
-          <ToastContainer />
-        </form>
-      )}
+                    return;
+                  }
+                  successToast();
+                }}
+              >
+                Sign In
+              </button>
+              <button
+                className="btn btn-outline mt-3 btn-success"
+                type="button"
+                onClick={() => navigate('/loginSuccess')}
+              >
+                Successful Login to next page
+              </button>
+              <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
+              <Link className="pt-2 underline" to="/register">Sign up</Link>
+              <ToastContainer />
+            </form>
+          ) }
     </div>
   );
 };
