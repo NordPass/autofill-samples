@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useLayoutEffect, useState } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 
 export const MobileNavigation = () => {
@@ -7,13 +7,15 @@ export const MobileNavigation = () => {
 
   const [searchParams] = useSearchParams();
 
+  useLayoutEffect(() => {
+    const style = toggleMenu ? 'hidden' : 'auto';
+    document.body.style.overflow = style;
+  }, [toggleMenu]);
+
   const urlParams = new URLSearchParams(window.location.search);
   if (urlParams.get('nav') === 'hide' || searchParams.get('nav') === 'hide') {
     return null;
   }
-
-  const style = toggleMenu ? 'hidden' : 'auto';
-  document.body.style.overflow = style;
 
   return (
     <nav className={`fixed ${toggleMenu && 'block fixed h-full flex-wrap bg-base-100 overflow-auto'} w-full z-10`}>

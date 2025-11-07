@@ -83,7 +83,7 @@ export const Navigation = () => {
 
           {/* Direction Toggle */}
           <div className="card bg-base-300/50 backdrop-blur p-2 hover:bg-base-300 transition-colors flex items-center">
-            <div className="flex gap-1 w-full">
+            <div className="flex gap-1 flex-wrap w-full">
               <Link className="btn btn-xs flex-1 btn-neutral hover:scale-105 transition-transform" to="/builder">🔨 Builder</Link>
               <button
                 type="button"
