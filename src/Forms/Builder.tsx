@@ -1,4 +1,5 @@
 import React, { useRef, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 interface ICustomInput {
   label?: string;
@@ -12,7 +13,7 @@ export const Builder = () => {
   const hiddenValue = useRef<HTMLInputElement>(null);
   const username = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
-
+  const navigate = useNavigate();
   return (
     <div className="ml-3 justify-items-start">
       <input
@@ -100,6 +101,13 @@ export const Builder = () => {
             onClick={event => event.preventDefault()}
           >
             Submit
+          </button>
+          <button
+            className="btn btn-outline btn-success mr-3"
+            type="button"
+            onClick={() => navigate('/loginSuccess')}
+          >
+            Successful Login to next page
           </button>
           <button
             className="btn btn-outline"

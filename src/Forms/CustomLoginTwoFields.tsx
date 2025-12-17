@@ -5,7 +5,7 @@ export const CustomLoginTwoFields = () => {
   const email = useRef<HTMLInputElement>(null);
   const password = useRef<HTMLInputElement>(null);
   const companyID = useRef<HTMLInputElement>(null);
-  const website = useRef<HTMLInputElement>(null);
+  const department = useRef<HTMLInputElement>(null);
   const navigate = useNavigate();
 
   return (
@@ -17,7 +17,7 @@ export const CustomLoginTwoFields = () => {
           email.current!.value = 'naruto.uzumaki@gmail.com';
           password.current!.value = '12345';
           companyID.current!.value = '9871234123';
-          website.current!.value = '123';
+          department.current!.value = '123';
         }}
       >
         FIll in (Naruto)
@@ -29,7 +29,7 @@ export const CustomLoginTwoFields = () => {
           email.current!.value = 'brucewayne33112@gmail.com';
           password.current!.value = 'alfredthebutler123';
           companyID.current!.value = '111111231111';
-          website.current!.value = '456';
+          department.current!.value = '456';
         }}
       >
         FIll in (Batman)
@@ -41,7 +41,7 @@ export const CustomLoginTwoFields = () => {
           email.current!.value = 'dragonBorn33112@gmail.com';
           password.current!.value = 'afterdarknessAlwaysComesLight_1';
           companyID.current!.value = '09998881231';
-          website.current!.value = '789';
+          department.current!.value = '789';
         }}
       >
         FIll in (Dragonborn)
@@ -53,7 +53,7 @@ export const CustomLoginTwoFields = () => {
           email.current!.value = '';
           password.current!.value = '';
           companyID.current!.value = '';
-          website.current!.value = '';
+          department.current!.value = '';
         }}
       >
         Clear
@@ -88,11 +88,11 @@ export const CustomLoginTwoFields = () => {
           placeholder="Company ID"
         />
         <input
-          id="website"
-          ref={website}
+          id="department"
+          ref={department}
           className="input w-full max-w-xs"
           type="text"
-          placeholder="Website"
+          placeholder="Department"
         />
         <button
           className="btn btn-outline mt-3"
