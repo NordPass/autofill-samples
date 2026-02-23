@@ -9,10 +9,12 @@ export const randomBytes = (length = 32) => {
 };
 
 export const bufferToBase64 = (buffer: ArrayBuffer) =>
-  btoa(String.fromCharCode(...new Uint8Array(buffer)));
+  // @ts-expect-error -- TypeScript types does not include this function
+  new Uint8Array(buffer).toBase64();
 
 export const base64ToBuffer = (base64: string) =>
-  Uint8Array.from(atob(base64), c => c.charCodeAt(0));
+  // @ts-expect-error -- TypeScript types does not include this function
+  Uint8Array.fromBase64(base64);
 
 export const buildPubKeyCredParams = (
   options: IRegistrationSettings,
