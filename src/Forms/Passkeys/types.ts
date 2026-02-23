@@ -52,3 +52,12 @@ export interface ILoginSettings {
   userVerification: UserVerification;
   hints: Array<ValueOf<typeof Hint>>;
 }
+
+export interface IStoredCredential {
+  id: string;
+  username: string;
+  credentialId: string;
+  algorithm: number | undefined;
+  timestamp: number;
+  settings: IRegistrationSettings;
+}

@@ -2,6 +2,7 @@ import type { ILoginSettings, IRegistrationSettings } from './types';
 import { useState } from 'react';
 import { LoginSettings } from './LoginSettings';
 import { RegistrationSettings } from './RegistrationSettings';
+import { StoredCredentials } from './StoredCredentials';
 import {
   Attestation,
   AuthenticatorAttachment,
@@ -14,6 +15,7 @@ import { login, register } from './utils';
 export const Passkeys = () => {
   const [username, setUsername] = useState('');
   const [output, setOutput] = useState('Waiting...');
+  const [credentialsRefresh, setCredentialsRefresh] = useState(0);
 
   const [registrationSettings, setRegistrationSettings]
     = useState<IRegistrationSettings>({
@@ -36,6 +38,16 @@ export const Passkeys = () => {
       userVerification: UserVerification.Preferred,
       hints: [],
     });
+
+  const handleRegister = async () => {
+    await register(setOutput, registrationSettings, username);
+    setCredentialsRefresh(prev => prev + 1);
+  };
+
+  const handleLogin = async () => {
+    await login(setOutput, loginSettings, username);
+    setCredentialsRefresh(prev => prev + 1);
+  };
 
   return (
     <div className="text-white flex items-center justify-center p-6">
@@ -62,15 +74,14 @@ export const Passkeys = () => {
 
           <div className="flex gap-3 pt-2">
             <button
-              onClick={() =>
-                register(setOutput, registrationSettings, username)}
+              onClick={handleRegister}
               className="bg-white text-black px-4 py-2 rounded-lg text-sm font-medium"
             >
               Register
             </button>
 
             <button
-              onClick={() => login(setOutput, loginSettings)}
+              onClick={handleLogin}
               className="bg-slate-700 px-4 py-2 rounded-lg text-sm"
             >
               Login
@@ -80,6 +91,10 @@ export const Passkeys = () => {
 
         <div className="bg-slate-800 rounded-xl p-4 shadow">
           <pre className="text-xs whitespace-pre-wrap break-all">{output}</pre>
+        </div>
+
+        <div className="bg-slate-800 rounded-xl p-4 shadow">
+          <StoredCredentials key={credentialsRefresh} />
         </div>
       </div>
     </div>
