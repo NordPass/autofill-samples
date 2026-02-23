@@ -77,6 +77,9 @@ export const register = async (
       credential.response as AuthenticatorAttestationResponse
     ).getPublicKeyAlgorithm?.();
 
+    localStorage.setItem('demoCredentialId', credIdBase64);
+    localStorage.setItem('demoUsername', username);
+
     setOutput(
       `✅ Registration successful!\n\n`
       + `Username: ${username}\n`
