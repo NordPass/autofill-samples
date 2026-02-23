@@ -8,14 +8,6 @@ export const randomBytes = (length = 32) => {
   return bytes;
 };
 
-export const bufferToBase64 = (buffer: ArrayBuffer) =>
-  // @ts-expect-error -- TypeScript types does not include this function
-  new Uint8Array(buffer).toBase64();
-
-export const base64ToBuffer = (base64: string) =>
-  // @ts-expect-error -- TypeScript types does not include this function
-  Uint8Array.fromBase64(base64);
-
 export const buildPubKeyCredParams = (
   options: IRegistrationSettings,
 ): PublicKeyCredentialParameters[] =>
@@ -38,6 +30,7 @@ export const register = async (
   }
 
   const pubKeyCredParams = buildPubKeyCredParams(options);
+  const rpId = window.location.hostname;
 
   if (pubKeyCredParams.length === 0) {
     setOutput('❌ Select at least one algorithm');
@@ -46,7 +39,10 @@ export const register = async (
 
   const publicKey: CredentialCreationOptions['publicKey'] = {
     challenge: randomBytes(),
-    rp: { name: 'Algorithm Tester' },
+    rp: {
+      name: 'Algorithm Tester',
+      ...(rpId ? { id: rpId } : {}),
+    },
     user: {
       id: randomBytes(16),
       name: username,
@@ -56,10 +52,7 @@ export const register = async (
     timeout: 60000,
     authenticatorSelection: {
       userVerification: options.userVerification,
-      authenticatorAttachment:
-				options.attachment === 'all'
-				  ? undefined
-				  : (options.attachment as Exclude<AuthenticatorAttachment, 'all'>),
+      authenticatorAttachment: options.attachment === 'all' ? undefined : (options.attachment as Exclude<AuthenticatorAttachment, 'all'>),
       residentKey: options.residentKey,
     },
     attestation: options.attestation,
@@ -78,7 +71,8 @@ export const register = async (
       return;
     }
 
-    const credIdBase64 = bufferToBase64(credential.rawId);
+    // @ts-expect-error -- TypeScript types does not include this function
+    const credIdBase64 = new Uint8Array(credential.rawId).toBase64();
     const alg = (
       credential.response as AuthenticatorAttestationResponse
     ).getPublicKeyAlgorithm?.();
@@ -101,6 +95,7 @@ export const login = async (
 ) => {
   const credIdBase64 = localStorage.getItem('demoCredentialId');
   const storedUsername = localStorage.getItem('demoUsername');
+  const rpId = window.location.hostname;
 
   if (!credIdBase64) {
     setOutput('❌ No credential registered yet');
@@ -110,10 +105,12 @@ export const login = async (
   const publicKey: CredentialRequestOptions['publicKey'] = {
     challenge: randomBytes(),
     allowCredentials: [
-      { id: base64ToBuffer(credIdBase64), type: 'public-key' },
+      // @ts-expect-error -- TypeScript types does not include this function
+      { id: Uint8Array.fromBase64(credIdBase64), type: 'public-key' },
     ],
     userVerification: options.userVerification,
     timeout: 60000,
+    ...(rpId ? { rpId } : {}),
     ...(options.hints.length > 0 && { hints: options.hints }),
   };
 
