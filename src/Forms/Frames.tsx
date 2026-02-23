@@ -1,4 +1,3 @@
-/* eslint-disable react-dom/no-missing-iframe-sandbox */
 import { useMemo } from 'react';
 import { useSearchParams } from 'react-router-dom';
 

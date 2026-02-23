@@ -1,4 +1,4 @@
-import React from 'react';
+import * as React from 'react';
 import { isMobile } from 'react-device-detect';
 import ReactDOM from 'react-dom/client';
 import { HashRouter, Route, Routes } from 'react-router-dom';
