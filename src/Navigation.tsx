@@ -27,6 +27,7 @@ export const Navigation = () => {
               <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/hiddenSecondStepLogin">Hidden Second Step</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/loginPhone">With Phone</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/twoLogin">2 Forms</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-primary" to="/passkeys">Passkeys</Link>
             </div>
           </div>
 

@@ -25,6 +25,7 @@ import { ModalLogin } from './Forms/ModalLogin.tsx';
 import { Narrow } from './Forms/Narrow.tsx';
 import { OneTimePassword } from './Forms/OneTimePassword.tsx';
 import { Other } from './Forms/Other.tsx';
+import { Passkeys } from './Forms/Passkeys/Passkeys';
 import { PersonalInfo } from './Forms/PersonalInfo.tsx';
 import { PersonalInfoPhone } from './Forms/PersonalInfoPhone.tsx';
 import { PersonalInfoSelects } from './Forms/PersonalInfoSelects.tsx';
@@ -81,6 +82,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/threeStepLoginTotp" element={<ThreeStepLoginTotp />} />
             <Route path="/loginSixFieldsTotp" element={<LoginSixFieldsTotp />} />
             <Route path="/loginSuccess" element={<LoginSuccessPage />} />
+            <Route path="/passkeys" element={<Passkeys />} />
             <Route path="*" element={<AllForms />} />
           </Routes>
         </Layout>
