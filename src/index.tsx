@@ -17,6 +17,7 @@ import { Frames } from './Forms/Frames.tsx';
 import { HiddenSecondStepLogin } from './Forms/HiddenSecondStepLogin.tsx';
 import { Login } from './Forms/Login/Login.tsx';
 import { LoginSuccessPage } from './Forms/Login/LoginSuccessPage.tsx';
+import { LoginWithReadOnlyFields } from './Forms/Login/LoginWithReadOnlyFields.tsx';
 import { LoginPhone } from './Forms/LoginPhone.tsx';
 import { LoginRegister } from './Forms/LoginRegister.tsx';
 import { LoginSixFieldsTotp } from './Forms/LoginSixFieldsTotp.tsx';
@@ -83,6 +84,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
             <Route path="/loginSixFieldsTotp" element={<LoginSixFieldsTotp />} />
             <Route path="/loginSuccess" element={<LoginSuccessPage />} />
             <Route path="/passkeys" element={<Passkeys />} />
+            <Route path="/loginWithReadOnlyFields" element={<LoginWithReadOnlyFields />} />
             <Route path="*" element={<AllForms />} />
           </Routes>
         </Layout>
