@@ -67,7 +67,7 @@ export const LoginWithReadOnlyFields = () => {
         type="button"
         onClick={() => setIsReadOnly(!isReadOnly)}
       >
-        {isReadOnly ? 'Enable Read Only' : 'Disable Read Only'}
+        {!isReadOnly ? 'Enable Read Only' : 'Disable Read Only'}
       </button>
 
       <h1 className="text-4xl mt-3">Login Form</h1>
