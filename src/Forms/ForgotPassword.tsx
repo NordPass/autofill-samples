@@ -50,7 +50,7 @@ export const ForgotPassword = () => {
           type="submit"
           onClick={event => event.preventDefault()}
         >
-          Get Password
+          Reset Password
         </button>
         <Link className="underline pt-2" to="/login">Log in into your account</Link>
       </form>
