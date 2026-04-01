@@ -1,9 +1,11 @@
 import { use } from 'react';
 import { Link, useSearchParams } from 'react-router-dom';
 import { DirectionContext } from './utils/DirectionContext';
+import { ThemeContext } from './utils/ThemeContext';
 
 export const Navigation = () => {
   const { direction, updateDirection } = use(DirectionContext);
+  const { theme, updateTheme } = use(ThemeContext);
 
   const [searchParams] = useSearchParams();
   const urlParams = new URLSearchParams(window.location.search);
@@ -124,9 +126,21 @@ export const Navigation = () => {
                   strokeLinecap="round"
                   strokeLinejoin="round"
                 >
+                  
                   <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                 </svg>
-                <input type="checkbox" value="emerald" className="toggle theme-controller" />
+                <input
+                  type="checkbox"
+                  className="toggle"
+                  checked={theme === 'emerald'}
+                  onChange={() => {
+                    const newTheme = theme === 'dim' ? 'emerald' : 'dim';
+                    const url = new URL(window.location.href);
+                    url.searchParams.set('theme', newTheme);
+                    window.history.pushState({}, '', url);
+                    updateTheme(newTheme);
+                  }}
+                />
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="20"

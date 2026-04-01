@@ -41,10 +41,12 @@ import { TwoLogin } from './Forms/TwoLogin.tsx';
 import { MobileNavigation } from './mobileView/MobileNavigation.tsx';
 import { Navigation } from './Navigation.tsx';
 import { DirectionProvider } from './utils/DirectionProvider.tsx';
+import { ThemeProvider } from './utils/ThemeProvider.tsx';
 import './index.css';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
+    <ThemeProvider>
     <DirectionProvider>
       <HashRouter>
         {isMobile ? <MobileNavigation /> : <Navigation />}
@@ -90,5 +92,6 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
         </Layout>
       </HashRouter>
     </DirectionProvider>
+    </ThemeProvider>
   </React.StrictMode>,
 );
