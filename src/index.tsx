@@ -47,51 +47,51 @@ import './index.css';
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>
     <ThemeProvider>
-    <DirectionProvider>
-      <HashRouter>
-        {isMobile ? <MobileNavigation /> : <Navigation />}
-        <Layout>
-          <Routes>
-            <Route path="/" element={<AllForms />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/register" element={<Register />} />
-            <Route path="/forgotPassword" element={<ForgotPassword />} />
-            <Route path="/changePassword" element={<ChangePassword />} />
-            <Route path="/identity" element={<PersonalInfo />} />
-            <Route path="/creditCard" element={<CreditCard />} />
-            <Route path="/changeEmail" element={<ChangeEmail />} />
-            <Route path="/other" element={<Other />} />
-            <Route path="/narrow" element={<Narrow />} />
-            <Route path="/frames" element={<Frames />} />
-            <Route path="/subscribe" element={<Subscribe />} />
-            <Route path="/mfa" element={<OneTimePassword />} />
-            <Route path="/totp" element={<TOTP />} />
-            <Route path="/totpOneField" element={<TOTPOneField />} />
-            <Route path="/loginRegister" element={<LoginRegister />} />
-            <Route path="/builder" element={<Builder />} />
-            <Route path="/customLogin" element={<CustomLogin />} />
-            <Route path="/customLoginTwoFields" element={<CustomLoginTwoFields />} />
-            <Route path="/identitySelects" element={<PersonalInfoSelects />} />
-            <Route path="/secondStepLogin" element={<SecondStepLogin />} />
-            <Route path="/hiddenSecondStepLogin" element={<HiddenSecondStepLogin />} />
-            <Route path="/twoLogin" element={<TwoLogin />} />
-            <Route path="/modalLogin" element={<ModalLogin />} />
-            <Route path="/identityPhone" element={<PersonalInfoPhone />} />
-            <Route path="/loginPhone" element={<LoginPhone />} />
-            <Route path="/checkoutForm" element={<CheckoutForm />} />
-            <Route path="/changeEmailWithPassword" element={<ChangeEmailWithPassword />} />
-            <Route path="/loginTotp" element={<LoginTotp />} />
-            <Route path="/secondStepLoginTotp" element={<SecondStepLoginTotp />} />
-            <Route path="/threeStepLoginTotp" element={<ThreeStepLoginTotp />} />
-            <Route path="/loginSixFieldsTotp" element={<LoginSixFieldsTotp />} />
-            <Route path="/loginSuccess" element={<LoginSuccessPage />} />
-            <Route path="/passkeys" element={<Passkeys />} />
-            <Route path="/loginWithReadOnlyFields" element={<LoginWithReadOnlyFields />} />
-            <Route path="*" element={<AllForms />} />
-          </Routes>
-        </Layout>
-      </HashRouter>
-    </DirectionProvider>
+      <DirectionProvider>
+        <HashRouter>
+          {isMobile ? <MobileNavigation /> : <Navigation />}
+          <Layout>
+            <Routes>
+              <Route path="/" element={<AllForms />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="/register" element={<Register />} />
+              <Route path="/forgotPassword" element={<ForgotPassword />} />
+              <Route path="/changePassword" element={<ChangePassword />} />
+              <Route path="/identity" element={<PersonalInfo />} />
+              <Route path="/creditCard" element={<CreditCard />} />
+              <Route path="/changeEmail" element={<ChangeEmail />} />
+              <Route path="/other" element={<Other />} />
+              <Route path="/narrow" element={<Narrow />} />
+              <Route path="/frames" element={<Frames />} />
+              <Route path="/subscribe" element={<Subscribe />} />
+              <Route path="/mfa" element={<OneTimePassword />} />
+              <Route path="/totp" element={<TOTP />} />
+              <Route path="/totpOneField" element={<TOTPOneField />} />
+              <Route path="/loginRegister" element={<LoginRegister />} />
+              <Route path="/builder" element={<Builder />} />
+              <Route path="/customLogin" element={<CustomLogin />} />
+              <Route path="/customLoginTwoFields" element={<CustomLoginTwoFields />} />
+              <Route path="/identitySelects" element={<PersonalInfoSelects />} />
+              <Route path="/secondStepLogin" element={<SecondStepLogin />} />
+              <Route path="/hiddenSecondStepLogin" element={<HiddenSecondStepLogin />} />
+              <Route path="/twoLogin" element={<TwoLogin />} />
+              <Route path="/modalLogin" element={<ModalLogin />} />
+              <Route path="/identityPhone" element={<PersonalInfoPhone />} />
+              <Route path="/loginPhone" element={<LoginPhone />} />
+              <Route path="/checkoutForm" element={<CheckoutForm />} />
+              <Route path="/changeEmailWithPassword" element={<ChangeEmailWithPassword />} />
+              <Route path="/loginTotp" element={<LoginTotp />} />
+              <Route path="/secondStepLoginTotp" element={<SecondStepLoginTotp />} />
+              <Route path="/threeStepLoginTotp" element={<ThreeStepLoginTotp />} />
+              <Route path="/loginSixFieldsTotp" element={<LoginSixFieldsTotp />} />
+              <Route path="/loginSuccess" element={<LoginSuccessPage />} />
+              <Route path="/passkeys" element={<Passkeys />} />
+              <Route path="/loginWithReadOnlyFields" element={<LoginWithReadOnlyFields />} />
+              <Route path="*" element={<AllForms />} />
+            </Routes>
+          </Layout>
+        </HashRouter>
+      </DirectionProvider>
     </ThemeProvider>
   </React.StrictMode>,
 );

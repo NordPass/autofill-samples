@@ -1,6 +1,6 @@
 import type { ReactNode } from 'react';
-import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 import type { TTheme } from './ThemeContext';
+import { useCallback, useLayoutEffect, useMemo, useState } from 'react';
 import { ThemeContext } from './ThemeContext';
 
 export const ThemeProvider = ({ children }: { children?: ReactNode }) => {
