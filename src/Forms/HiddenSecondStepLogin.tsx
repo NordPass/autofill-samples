@@ -80,7 +80,7 @@ export const HiddenSecondStepLogin = () => {
                 onClick={(event) => {
                   event.preventDefault();
 
-                  setTimeout(() => setSubmit(true), 500);
+                  setTimeout(setSubmit, 500, true);
                 }}
               >
                 Continue to login

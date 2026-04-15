@@ -23,7 +23,7 @@ export const Algorithms = ({
       Supported Public Key Algorithms
 
       <div className="grid grid-cols-3 gap-2">
-        {[...Object.keys(CoseAlgorithm)].map((alg, index, algorithms) =>
+        {Array.from(Object.keys(CoseAlgorithm)).map((alg, index, algorithms) =>
           index % 2
             ? (
                 <label className="flex items-center gap-2" key={alg}>

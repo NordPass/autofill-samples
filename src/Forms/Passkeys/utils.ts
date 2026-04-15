@@ -34,6 +34,7 @@ export const deleteCredential = (id: string): void => {
 
 export const getLatestCredential = (): IStoredCredential | null => {
   const credentials = getStoredCredentials();
+  // eslint-disable-next-line e18e/prefer-array-at
   return credentials.length > 0 ? credentials[credentials.length - 1] : null;
 };
 
