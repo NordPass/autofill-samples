@@ -15,4 +15,3 @@ export const German: ITranslation = {
   registerPasswordLabel: 'Neues Passwort',
   registerSubmit: 'Registrieren',
 };
-

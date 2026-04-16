@@ -15,4 +15,3 @@ export const Dutch: ITranslation = {
   registerPasswordLabel: 'Nieuw wachtwoord',
   registerSubmit: 'Registreren',
 };
-

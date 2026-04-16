@@ -15,4 +15,3 @@ export const Lithuanian: ITranslation = {
   registerPasswordLabel: 'Naujas slaptažodis',
   registerSubmit: 'Registruotis',
 };
-

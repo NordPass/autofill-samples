@@ -4,7 +4,7 @@ export const French: ITranslation = {
   // login
   loginFormTitle: 'Connexion',
   loginFormDescription: 'Bon retour',
-  loginUsernameLabel: "Nom d'utilisateur",
+  loginUsernameLabel: 'Nom d\'utilisateur',
   loginPasswordLabel: 'Mot de passe',
   loginSubmit: 'Se connecter',
 
@@ -13,6 +13,5 @@ export const French: ITranslation = {
   registerFormDescription: 'Créer un compte',
   registerEmailLabel: 'Adresse e-mail',
   registerPasswordLabel: 'Nouveau mot de passe',
-  registerSubmit: "S'inscrire",
+  registerSubmit: 'S\'inscrire',
 };
-
