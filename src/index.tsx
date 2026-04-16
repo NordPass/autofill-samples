@@ -4,7 +4,7 @@ import ReactDOM from 'react-dom/client';
 import { HashRouter, Route, Routes } from 'react-router-dom';
 import { Layout } from './components/Layout.tsx';
 import { AllForms } from './Forms/AllForms.tsx';
-import { Builder } from './Forms/Builder.tsx';
+import { Builder } from './Forms/Builder/Builder.tsx';
 import { ChangeEmail } from './Forms/ChangeEmail.tsx';
 import { ChangeEmailWithPassword } from './Forms/ChangeEmailWithPassword.tsx';
 import { ChangePassword } from './Forms/ChangePassword.tsx';
