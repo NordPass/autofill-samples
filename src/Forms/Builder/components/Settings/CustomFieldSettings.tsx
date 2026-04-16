@@ -28,7 +28,7 @@ export const CustomFieldSettings = ({ settings, setSettings }: ICustomFieldSetti
   };
 
   useEffect(() => {
-    const entries = [...searchParams.entries()].filter(([key]) => key.startsWith('customFields['));
+    const entries = [...searchParams.entries()].filter(([key]) => key.startsWith('customField['));
 
     if (entries.length > 0) {
       const fieldsMap: Record<number, Partial<ICustomField>> = {};
