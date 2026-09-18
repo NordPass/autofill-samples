@@ -39,6 +39,8 @@ export enum Hint {
 
 type ValueOf<T> = T[keyof T];
 
+export const DEFAULT_TIMEOUT = 60000;
+
 export interface IRegistrationSettings {
   userVerification: UserVerification;
   attachment: AuthenticatorAttachment;
@@ -46,11 +48,13 @@ export interface IRegistrationSettings {
   attestation: Attestation;
   algorithms: TSelectedAlgs;
   hints: Array<ValueOf<typeof Hint>>;
+  timeout: number;
 }
 
 export interface ILoginSettings {
   userVerification: UserVerification;
   hints: Array<ValueOf<typeof Hint>>;
+  timeout: number;
 }
 
 export interface IStoredCredential {

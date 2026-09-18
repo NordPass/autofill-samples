@@ -1,6 +1,7 @@
 import type { Dispatch, SetStateAction } from 'react';
 import type { ILoginSettings } from './types';
 import { Hints } from './Hints';
+import { Timeout } from './Timeout';
 import { UserVerification } from './types';
 
 export const LoginSettings = ({
@@ -30,6 +31,8 @@ export const LoginSettings = ({
           <option value={UserVerification.Discouraged}>Discouraged</option>
         </select>
       </div>
+
+      <Timeout<ILoginSettings> settings={loginSettings} setSettings={setLoginSettings} />
     </div>
 
     <Hints<ILoginSettings> settings={loginSettings} setSettings={setLoginSettings} />

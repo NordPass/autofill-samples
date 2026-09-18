@@ -4,6 +4,7 @@ import type {
 } from './types';
 import { Hints } from './Hints';
 import { Algorithms } from './registrationSettings/Algorithms';
+import { Timeout } from './Timeout';
 import {
   Attestation,
   AuthenticatorAttachment,
@@ -90,6 +91,11 @@ export const RegistrationSettings = ({
           <option value={Attestation.Direct}>Direct</option>
         </select>
       </div>
+
+      <Timeout<IRegistrationSettings>
+        settings={registrationSettings}
+        setSettings={setRegistrationSettings}
+      />
     </div>
 
     <Algorithms

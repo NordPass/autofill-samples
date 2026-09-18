@@ -7,6 +7,7 @@ import {
   Attestation,
   AuthenticatorAttachment,
   CoseAlgorithm,
+  DEFAULT_TIMEOUT,
   ResidentKey,
   UserVerification,
 } from './types';
@@ -31,12 +32,14 @@ export const Passkeys = () => {
         [CoseAlgorithm.RS256]: false,
       },
       hints: [],
+      timeout: DEFAULT_TIMEOUT,
     });
 
   const [loginSettings, setLoginSettings]
     = useState<ILoginSettings>({
       userVerification: UserVerification.Preferred,
       hints: [],
+      timeout: DEFAULT_TIMEOUT,
     });
 
   const handleRegister = async () => {

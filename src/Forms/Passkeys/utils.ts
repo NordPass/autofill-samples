@@ -79,7 +79,7 @@ export const register = async (
       displayName: username,
     },
     pubKeyCredParams,
-    timeout: 60000,
+    timeout: options.timeout,
     authenticatorSelection: {
       userVerification: options.userVerification,
       authenticatorAttachment: options.attachment === 'all' ? undefined : (options.attachment as Exclude<AuthenticatorAttachment, 'all'>),
@@ -166,7 +166,7 @@ export const login = async (
       type: 'public-key' as const,
     })),
     userVerification: options.userVerification,
-    timeout: 60000,
+    timeout: options.timeout,
     ...(rpId ? { rpId } : {}),
     ...(options.hints.length > 0 && { hints: options.hints }),
   };
