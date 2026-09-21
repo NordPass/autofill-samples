@@ -33,6 +33,7 @@ import { PersonalInfoSelects } from './Forms/PersonalInfoSelects.tsx';
 import { Register } from './Forms/Register.tsx';
 import { SecondStepLogin } from './Forms/SecondStepLogin.tsx';
 import { SecondStepLoginTotp } from './Forms/SecondStepLoginTotp.tsx';
+import { ShadowDom } from './Forms/ShadowDom.tsx';
 import { Subscribe } from './Forms/Subscribe.tsx';
 import { ThreeStepLoginTotp } from './Forms/ThreeStepLoginTotp.tsx';
 import { TOTP } from './Forms/TOTP.tsx';
@@ -63,6 +64,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
               <Route path="/other" element={<Other />} />
               <Route path="/narrow" element={<Narrow />} />
               <Route path="/frames" element={<Frames />} />
+              <Route path="/shadowDom" element={<ShadowDom />} />
               <Route path="/subscribe" element={<Subscribe />} />
               <Route path="/mfa" element={<OneTimePassword />} />
               <Route path="/totp" element={<TOTP />} />

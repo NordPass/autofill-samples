@@ -82,6 +82,7 @@ export const Navigation = () => {
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/other">Other</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/narrow">Narrow</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/frames">Frames</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/shadowDom">Shadow DOM</Link>
             </div>
           </div>
 

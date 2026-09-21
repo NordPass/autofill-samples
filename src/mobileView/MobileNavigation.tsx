@@ -107,6 +107,7 @@ export const MobileNavigation = () => {
           <Link className="btn btn-neutral w-[90%]" to="/twoLogin">Two Login</Link>
           <Link className="btn btn-neutral w-[90%]" to="/modalLogin">Modal Login</Link>
           <Link className="btn btn-neutral w-[90%]" to="/checkoutForm">Checkout Form</Link>
+          <Link className="btn btn-neutral w-[90%]" to="/shadowDom">Shadow DOM</Link>
         </div>
       )}
     </nav>
