@@ -199,7 +199,7 @@ export const CheckoutForm = () => {
           type="submit"
           onClick={event => event.preventDefault()}
         >
-          Submit checkout
+          Pay now
         </button>
       </form>
     </div>
