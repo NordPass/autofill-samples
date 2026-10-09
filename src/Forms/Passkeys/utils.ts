@@ -10,6 +10,24 @@ export const randomBytes = (length = 32) => {
   return bytes;
 };
 
+const toBase64Url = (_key: string, value: any) => {
+  const bytes = value instanceof ArrayBuffer ? new Uint8Array(value) : value;
+  if (bytes instanceof Uint8Array) {
+    // @ts-expect-error -- TypeScript types does not include this function
+    return bytes.toBase64({ alphabet: 'base64url', omitPadding: true });
+  }
+  return value;
+};
+
+/* eslint-disable no-console */
+export const log = (label: string, value?: unknown) => {
+  console.log(label);
+  if (value !== undefined) {
+    console.log(JSON.stringify(value, toBase64Url, 2));
+  }
+};
+/* eslint-enable no-console */
+
 export const getStoredCredentials = (): IStoredCredential[] => {
   try {
     const stored = localStorage.getItem(STORED_CREDENTIALS_KEY);
@@ -89,6 +107,8 @@ export const register = async (
     ...(options.hints.length > 0 && { hints: options.hints }),
   };
 
+  log('REGISTRATION OPTIONS', publicKey);
+
   try {
     setOutput('⏳ Creating credential...');
 
@@ -100,6 +120,8 @@ export const register = async (
       setOutput('❌ Credential creation was not successful');
       return;
     }
+
+    log('REGISTRATION RESPONSE', credential);
 
     // @ts-expect-error -- TypeScript types does not include this function
     const credIdBase64 = new Uint8Array(credential.rawId).toBase64();
@@ -171,10 +193,13 @@ export const login = async (
     ...(options.hints.length > 0 && { hints: options.hints }),
   };
 
+  log('AUTHENTICATION OPTIONS', publicKey);
+
   try {
     setOutput('⏳ Requesting assertion...');
 
     const assertion = await navigator.credentials.get({ publicKey });
+    log('AUTHENTICATION RESPONSE', assertion);
 
     // Find which credential was used for this assertion
     const usedCredential = credentialsToUse.find(
