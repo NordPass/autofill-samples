@@ -2,9 +2,9 @@ import { useRef } from 'react';
 import { useSearchParams } from 'react-router-dom';
 
 const FIELDS = {
-  ccNumber: { id: 'ccNumber', placeholder: 'CC number' },
-  ccDate: { id: 'expirationDate', placeholder: 'MM/YY' },
-  cvv: { id: 'cvv', placeholder: 'CVV' },
+  ccNumber: { id: 'ccNumber', placeholder: 'CC number', autoComplete: 'cc-number' },
+  ccDate: { id: 'expirationDate', placeholder: 'MM/YY', autoComplete: 'cc-exp' },
+  cvv: { id: 'cvv', placeholder: 'CVV', autoComplete: 'cc-csc' },
 } as const;
 
 type FieldName = keyof typeof FIELDS;
@@ -27,6 +27,7 @@ export const CreditCardFrameField = () => {
         id={field.id}
         placeholder={field.placeholder}
         aria-label={field.placeholder}
+        autoComplete={field.autoComplete}
       />
     </div>
   );
@@ -96,6 +97,7 @@ export const CreditCardFrames = () => {
           type="text"
           id="nameOnCard"
           placeholder="Name on card"
+          autoComplete="cc-name"
         />
         <span>CC number</span>
         <iframe ref={ccNumber} src={fieldSrc('ccNumber')} className={frameClassName} title="CC number" />
