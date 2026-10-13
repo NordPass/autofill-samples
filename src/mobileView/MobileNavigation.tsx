@@ -88,6 +88,7 @@ export const MobileNavigation = () => {
           <Link className="btn btn-neutral w-[90%]" to="/changeEmail">Change Email</Link>
           <Link className="btn btn-neutral w-[90%]" to="/changeEmailWithPassword">Change Email 2</Link>
           <Link className="btn btn-neutral w-[90%]" to="/creditCard">Credit Card</Link>
+          <Link className="btn btn-neutral w-[90%]" to="/creditCardFrames">Credit Card (iframes)</Link>
           <Link className="btn btn-neutral w-[90%]" to="/identity">Personal Info</Link>
           <Link className="btn btn-neutral w-[90%]" to="/identitySelects">Personal Info 2</Link>
           <Link className="btn btn-neutral w-[90%]" to="/identityPhone">Personal Info 3</Link>

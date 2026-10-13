@@ -10,6 +10,7 @@ import { ChangeEmailWithPassword } from './Forms/ChangeEmailWithPassword.tsx';
 import { ChangePassword } from './Forms/ChangePassword.tsx';
 import { CheckoutForm } from './Forms/CheckoutForm.tsx';
 import { CreditCard } from './Forms/CreditCard.tsx';
+import { CreditCardFrameField, CreditCardFrames } from './Forms/CreditCardFrames.tsx';
 import { CustomLogin } from './Forms/CustomLogin.tsx';
 import { CustomLoginTwoFields } from './Forms/CustomLoginTwoFields.tsx';
 import { ForgotPassword } from './Forms/ForgotPassword.tsx';
@@ -60,6 +61,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
               <Route path="/changePassword" element={<ChangePassword />} />
               <Route path="/identity" element={<PersonalInfo />} />
               <Route path="/creditCard" element={<CreditCard />} />
+              <Route path="/creditCardFrames" element={<CreditCardFrames />} />
+              <Route path="/creditCardFrameField" element={<CreditCardFrameField />} />
               <Route path="/changeEmail" element={<ChangeEmail />} />
               <Route path="/other" element={<Other />} />
               <Route path="/narrow" element={<Narrow />} />

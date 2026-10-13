@@ -66,6 +66,7 @@ export const Navigation = () => {
             <h2 className="text-xs font-bold uppercase tracking-wider text-info mb-1.5">Advanced</h2>
             <div className="flex flex-wrap gap-1">
               <Link className="btn btn-xs btn-info hover:scale-105 transition-transform" to="/creditCard">Payment</Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-info" to="/creditCardFrames">+Iframes</Link>
               <Link className="btn btn-xs btn-info hover:scale-105 transition-transform" to="/checkoutForm">Checkout</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-info" to="/subscribe">Subscribe</Link>
             </div>
