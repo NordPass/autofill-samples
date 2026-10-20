@@ -78,7 +78,10 @@ export const SecondStepLogin = () => {
             <button
               className="btn btn-outline mt-3"
               type="submit"
-              onClick={() => setSubmit(true)}
+              onClick={(event) => {
+                event?.preventDefault();
+                setSubmit(true);
+              }}
             >
               Continue to sign in
             </button>
