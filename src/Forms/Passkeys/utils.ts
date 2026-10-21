@@ -67,6 +67,13 @@ export const buildPubKeyCredParams = (
       alg,
     }));
 
+const getTimeoutError = (startedAt: number, timeout: number): string | null => {
+  const elapsed = Math.round(performance.now() - startedAt);
+  return timeout > 0 && elapsed > timeout
+    ? `Response arrived after timeout (${elapsed}ms > ${timeout}ms)`
+    : null;
+};
+
 export const register = async (
   setOutput: (output: string) => void,
   options: IRegistrationSettings,
@@ -112,9 +119,11 @@ export const register = async (
   try {
     setOutput('⏳ Creating credential...');
 
+    const startedAt = performance.now();
     const credential = (await navigator.credentials.create({
       publicKey,
     })) as PublicKeyCredential | null;
+    const timeoutError = getTimeoutError(startedAt, options.timeout);
 
     if (!credential) {
       setOutput('❌ Credential creation was not successful');
@@ -122,6 +131,11 @@ export const register = async (
     }
 
     log('REGISTRATION RESPONSE', credential);
+
+    if (timeoutError) {
+      setOutput(`❌ Registration error:\n${timeoutError}`);
+      return;
+    }
 
     // @ts-expect-error -- TypeScript types does not include this function
     const credIdBase64 = new Uint8Array(credential.rawId).toBase64();
@@ -198,8 +212,15 @@ export const login = async (
   try {
     setOutput('⏳ Requesting assertion...');
 
+    const startedAt = performance.now();
     const assertion = await navigator.credentials.get({ publicKey });
+    const timeoutError = getTimeoutError(startedAt, options.timeout);
     log('AUTHENTICATION RESPONSE', assertion);
+
+    if (timeoutError) {
+      setOutput(`❌ Login error:\n${timeoutError}`);
+      return;
+    }
 
     // Find which credential was used for this assertion
     const usedCredential = credentialsToUse.find(
