@@ -9,14 +9,15 @@ interface IProps {
 // Instant login should then click it when it is the form's only button, or fall back to `form.submit()` with POST.
 export const SingleButtonLogin = ({ hasSecondButton = false }: IProps) => (
   <div className="ml-3 justify-items-start">
-    <h1 className="text-4xl mt-3">{hasSecondButton ? 'Two Buttons Login' : 'Single Button Login'}</h1>
-    <p className="pt-2">
-      {hasSecondButton
-        ? 'Instant login should fall back to form.submit() with POST, which navigates away from this page.'
-        : 'Instant login should click the arrow, as it is the only button.'}
-    </p>
-
+    {/* The text lives inside the form: a form with under 25 characters of text is rejected and the whole page is analyzed. */}
     <form className="flex flex-col items-start mt-3">
+      <h1 className="text-4xl">{hasSecondButton ? 'Two Buttons Login' : 'Single Button Login'}</h1>
+      <p className="pt-2">
+        {hasSecondButton
+          ? 'Instant login should fall back to form.submit() with POST, which navigates away from this page.'
+          : 'Instant login should click the arrow, as it is the only button.'}
+      </p>
+
       <input id="email" className="input w-full max-w-xs" type="text" placeholder="Email" autoComplete="username" />
       <input
         id="password"
