@@ -1,7 +1,7 @@
 import * as React from 'react';
-import { isMobile } from 'react-device-detect';
 import ReactDOM from 'react-dom/client';
 import { HashRouter, Route, Routes } from 'react-router-dom';
+import { AppNavigation } from './components/AppNavigation.tsx';
 import { Layout } from './components/Layout.tsx';
 import { AllForms } from './Forms/AllForms.tsx';
 import { Builder } from './Forms/Builder/Builder.tsx';
@@ -41,8 +41,6 @@ import { ThreeStepLoginTotp } from './Forms/ThreeStepLoginTotp.tsx';
 import { TOTP } from './Forms/TOTP.tsx';
 import { TOTPOneField } from './Forms/TOTPOneField.tsx';
 import { TwoLogin } from './Forms/TwoLogin.tsx';
-import { MobileNavigation } from './mobileView/MobileNavigation.tsx';
-import { Navigation } from './Navigation.tsx';
 import { DirectionProvider } from './utils/DirectionProvider.tsx';
 import { ThemeProvider } from './utils/ThemeProvider.tsx';
 import './index.css';
@@ -52,7 +50,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
     <ThemeProvider>
       <DirectionProvider>
         <HashRouter>
-          {isMobile ? <MobileNavigation /> : <Navigation />}
+          <AppNavigation />
           <Layout>
             <Routes>
               <Route path="/" element={<AllForms />} />
