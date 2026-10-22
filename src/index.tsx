@@ -35,6 +35,7 @@ import { Register } from './Forms/Register.tsx';
 import { SecondStepLogin } from './Forms/SecondStepLogin.tsx';
 import { SecondStepLoginTotp } from './Forms/SecondStepLoginTotp.tsx';
 import { ShadowDom } from './Forms/ShadowDom.tsx';
+import { SingleButtonLogin } from './Forms/SingleButtonLogin.tsx';
 import { Subscribe } from './Forms/Subscribe.tsx';
 import { ThreeStepLoginTotp } from './Forms/ThreeStepLoginTotp.tsx';
 import { TOTP } from './Forms/TOTP.tsx';
@@ -76,6 +77,8 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
               <Route path="/builder" element={<Builder />} />
               <Route path="/customLogin" element={<CustomLogin />} />
               <Route path="/customLoginTwoFields" element={<CustomLoginTwoFields />} />
+              <Route path="/singleButtonLogin" element={<SingleButtonLogin />} />
+              <Route path="/twoButtonsLogin" element={<SingleButtonLogin hasSecondButton />} />
               <Route path="/identitySelects" element={<PersonalInfoSelects />} />
               <Route path="/secondStepLogin" element={<SecondStepLogin />} />
               <Route path="/hiddenSecondStepLogin" element={<HiddenSecondStepLogin />} />
