@@ -78,6 +78,8 @@ export const Navigation = () => {
             <div className="flex flex-wrap gap-1">
               <Link className="btn btn-xs hover:scale-105 transition-transform" to="/customLogin">Custom</Link>
               <Link className="btn btn-xs hover:scale-105 transition-transform" to="/customLoginTwoFields">Custom 2</Link>
+              <Link className="btn btn-xs hover:scale-105 transition-transform" to="/singleButtonLogin">Single Button</Link>
+              <Link className="btn btn-xs hover:scale-105 transition-transform" to="/twoButtonsLogin">Two Buttons</Link>
               <Link className="btn btn-xs hover:scale-105 transition-transform" to="/modalLogin">Modal</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/all">All</Link>
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/other">Other</Link>

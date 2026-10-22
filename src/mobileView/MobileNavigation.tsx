@@ -101,6 +101,8 @@ export const MobileNavigation = () => {
           <Link className="btn btn-neutral w-[90%]" to="/builder">Builder</Link>
           <Link className="btn btn-neutral w-[90%]" to="/customLogin">Custom Login</Link>
           <Link className="btn btn-neutral w-[90%]" to="/customLoginTwoFields">Custom Login 2</Link>
+          <Link className="btn btn-neutral w-[90%]" to="/singleButtonLogin">Single Button Login</Link>
+          <Link className="btn btn-neutral w-[90%]" to="/twoButtonsLogin">Two Buttons Login</Link>
           <Link className="btn btn-neutral w-[90%]" to="/secondStepLogin">Second Step Login</Link>
           <Link className="btn btn-neutral w-[90%]" to="/hiddenSecondStepLogin">Second Step Login 2</Link>
           <Link className="btn btn-neutral w-[90%]" to="/secondStepLoginTotp">Second Step Login Totp</Link>
