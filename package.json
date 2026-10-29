@@ -6,12 +6,13 @@
   "author": "NordPass Team",
   "type": "module",
   "scripts": {
-    "build": "tsc && vite build",
+    "build": "tsc -b && vite build",
     "start": "vite",
     "lint": "oxlint --fix",
     "format": "oxfmt",
     "format:check": "oxfmt --check",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "prepare": "husky"
   },
   "dependencies": {
     "react": "^19.3.1",
@@ -21,16 +22,30 @@
     "react-toastify": "^11.2.0"
   },
   "devDependencies": {
+    "@babel/core": "^8.0.9",
+    "@rolldown/plugin-babel": "^0.2.4",
     "@tailwindcss/vite": "^4.3.3",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "@vitejs/plugin-react": "^6.1.2",
     "babel-plugin-react-compiler": "^1.0.0",
     "daisyui": "^5.7.50",
+    "husky": "^9.1.7",
+    "lint-staged": "^17.6.0",
     "oxfmt": "^0.75.0",
     "oxlint": "^1.90.0",
     "tailwindcss": "^4.3.3",
-    "typescript": "^5.9.3",
+    "typescript": "~7.0.2",
     "vite": "^8.3.5"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": [
+      "oxfmt --no-error-on-unmatched-pattern",
+      "oxlint --fix"
+    ],
+    "*.{json,css,html,md,yml,yaml}": "oxfmt --no-error-on-unmatched-pattern"
+  },
+  "engines": {
+    "node": "24"
   }
 }
