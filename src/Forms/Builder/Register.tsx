@@ -5,11 +5,7 @@ import { FillActions } from './components/FillActions/Login';
 import { getTranslations } from './translations/getTranslations';
 import { applyDeformation } from './utils/common';
 
-export const Register = ({
-  formSettings,
-  fieldSettings,
-  customFieldSettings,
-}: IAllSettings) => {
+export const Register = ({ formSettings, fieldSettings, customFieldSettings }: IAllSettings) => {
   const emailRef = useRef<HTMLInputElement>(null);
   const newPasswordRef = useRef<HTMLInputElement>(null);
   const customFieldsRef = useRef<Array<HTMLInputElement | null>>([]);

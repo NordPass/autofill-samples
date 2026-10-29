@@ -104,12 +104,7 @@ export const PersonalInfo = () => {
           type="text"
           placeholder="Last Name"
         />
-        <input
-          ref={email}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="Email"
-        />
+        <input ref={email} className="input w-full max-w-xs" type="text" placeholder="Email" />
         <input
           ref={phoneNumber}
           className="input w-full max-w-xs"
@@ -128,30 +123,15 @@ export const PersonalInfo = () => {
           type="text"
           placeholder="Address 2"
         />
-        <input
-          ref={city}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="City"
-        />
-        <input
-          ref={state}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="State"
-        />
+        <input ref={city} className="input w-full max-w-xs" type="text" placeholder="City" />
+        <input ref={state} className="input w-full max-w-xs" type="text" placeholder="State" />
         <input
           ref={zip}
           className="input w-full max-w-xs"
           type="text"
           placeholder="Zip or Postal code"
         />
-        <input
-          ref={country}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="Country"
-        />
+        <input ref={country} className="input w-full max-w-xs" type="text" placeholder="Country" />
         <button
           className="btn btn-outline mt-3"
           type="submit"

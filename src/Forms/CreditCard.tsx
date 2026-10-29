@@ -86,13 +86,7 @@ export const CreditCard = () => {
           placeholder="MM/YY"
         />
         <label htmlFor="cvv">CVV</label>
-        <input
-          ref={cvv}
-          className="input w-full max-w-xs"
-          type="text"
-          id="cvv"
-          placeholder="CVV"
-        />
+        <input ref={cvv} className="input w-full max-w-xs" type="text" id="cvv" placeholder="CVV" />
         <button
           className="btn btn-outline mt-3"
           type="submit"

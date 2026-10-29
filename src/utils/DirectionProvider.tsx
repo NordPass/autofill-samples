@@ -17,7 +17,7 @@ export const DirectionProvider = ({ children }: { children?: ReactNode }) => {
     const directionParam = urlParams.get('direction');
 
     if (directionParam === 'ltr' || directionParam === 'rtl') {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+      // oxlint-disable-next-line react-hooks/set-state-in-effect
       setDirection(directionParam);
       document.documentElement.dir = directionParam;
     }
@@ -28,10 +28,13 @@ export const DirectionProvider = ({ children }: { children?: ReactNode }) => {
     document.documentElement.dir = newDirection;
   }, []);
 
-  const value = useMemo<IDirectionContext>(() => ({
-    direction,
-    updateDirection,
-  }), [direction, updateDirection]);
+  const value = useMemo<IDirectionContext>(
+    () => ({
+      direction,
+      updateDirection,
+    }),
+    [direction, updateDirection],
+  );
 
   return <DirectionContext value={value}>{children}</DirectionContext>;
 };

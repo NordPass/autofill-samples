@@ -120,79 +120,68 @@ export const PersonalInfoPhone = () => {
           type="text"
           placeholder="Last Name"
         />
-        <input
-          ref={email}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="Email"
-        />
-        {!isMobile
-          ? (
-              <div className="flex items-center">
-                <input
-                  ref={phonePrefix}
-                  className="input w-20 max-w-xs mr-2"
-                  type="text"
-                  name="phonePrefix"
-                  placeholder="Prefix"
-                />
-                <input
-                  ref={phoneArea}
-                  className="input w-20 max-w-xs mr-2"
-                  type="text"
-                  name="phoneArea"
-                  placeholder="(Area)"
-                />
-                <input
-                  ref={phoneNumber}
-                  className="input max-w-xs mr-2"
-                  type="text"
-                  placeholder="Phone number"
-                />
-                {' '}
-                Ext:
-                {' '}
-                <input
-                  ref={phoneExtension}
-                  className="input w-[70px] max-w-xs ml-2"
-                  type="text"
-                  name="phoneExtension"
-                />
-              </div>
-            )
-          : (
-              <div className="flex flex-wrap">
-                <input
-                  ref={phonePrefix}
-                  className="input w-20 max-w-xs mr-2"
-                  type="text"
-                  name="phonePrefix"
-                  placeholder="Prefix"
-                />
-                <input
-                  ref={phoneArea}
-                  className="input w-20 max-w-xs mr-2"
-                  type="text"
-                  name="phoneArea"
-                  placeholder="(Area)"
-                />
-                <input
-                  ref={phoneNumber}
-                  className="input max-w-xs mr-2"
-                  type="text"
-                  placeholder="Phone number"
-                />
-                {' '}
-                Ext:
-                {' '}
-                <input
-                  ref={phoneExtension}
-                  className="input w-[70px] max-w-xs ml-2"
-                  type="text"
-                  name="phoneExtension"
-                />
-              </div>
-            )}
+        <input ref={email} className="input w-full max-w-xs" type="text" placeholder="Email" />
+        {!isMobile ? (
+          <div className="flex items-center">
+            <input
+              ref={phonePrefix}
+              className="input w-20 max-w-xs mr-2"
+              type="text"
+              name="phonePrefix"
+              placeholder="Prefix"
+            />
+            <input
+              ref={phoneArea}
+              className="input w-20 max-w-xs mr-2"
+              type="text"
+              name="phoneArea"
+              placeholder="(Area)"
+            />
+            <input
+              ref={phoneNumber}
+              className="input max-w-xs mr-2"
+              type="text"
+              placeholder="Phone number"
+            />{' '}
+            Ext:{' '}
+            <input
+              ref={phoneExtension}
+              className="input w-[70px] max-w-xs ml-2"
+              type="text"
+              name="phoneExtension"
+            />
+          </div>
+        ) : (
+          <div className="flex flex-wrap">
+            <input
+              ref={phonePrefix}
+              className="input w-20 max-w-xs mr-2"
+              type="text"
+              name="phonePrefix"
+              placeholder="Prefix"
+            />
+            <input
+              ref={phoneArea}
+              className="input w-20 max-w-xs mr-2"
+              type="text"
+              name="phoneArea"
+              placeholder="(Area)"
+            />
+            <input
+              ref={phoneNumber}
+              className="input max-w-xs mr-2"
+              type="text"
+              placeholder="Phone number"
+            />{' '}
+            Ext:{' '}
+            <input
+              ref={phoneExtension}
+              className="input w-[70px] max-w-xs ml-2"
+              type="text"
+              name="phoneExtension"
+            />
+          </div>
+        )}
 
         <input
           ref={address1}
@@ -206,30 +195,15 @@ export const PersonalInfoPhone = () => {
           type="text"
           placeholder="Address 2"
         />
-        <input
-          ref={city}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="City"
-        />
-        <input
-          ref={state}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="State"
-        />
+        <input ref={city} className="input w-full max-w-xs" type="text" placeholder="City" />
+        <input ref={state} className="input w-full max-w-xs" type="text" placeholder="State" />
         <input
           ref={zip}
           className="input w-full max-w-xs"
           type="text"
           placeholder="Zip or Postal code"
         />
-        <input
-          ref={country}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="Country"
-        />
+        <input ref={country} className="input w-full max-w-xs" type="text" placeholder="Country" />
         <button
           className="btn btn-outline mt-3"
           type="submit"

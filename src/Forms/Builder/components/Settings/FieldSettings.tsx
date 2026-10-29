@@ -21,15 +21,14 @@ export const FieldSettings = ({ settings, setSettings }: IFieldSettingsProps) =>
 
     if (entries.length > 0) {
       setSettings(Object.fromEntries(entries) as IFieldSettings);
-    }
-    else {
+    } else {
       const newParams = new URLSearchParams(searchParams);
       Object.entries(settings).forEach(([key, value]) => {
         newParams.set(`field[${key}]`, String(value));
       });
       setSearchParams(newParams);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const handleLabelChange = (value: boolean) => {
@@ -68,7 +67,10 @@ export const FieldSettings = ({ settings, setSettings }: IFieldSettingsProps) =>
 
         <div className="flex gap-3 pt-3">
           {DEFORMATION.map(value => (
-            <label key={value} className="flex items-center gap-2 border border-base-300 rounded-lg p-3 cursor-pointer">
+            <label
+              key={value}
+              className="flex items-center gap-2 border border-base-300 rounded-lg p-3 cursor-pointer"
+            >
               <input
                 type="radio"
                 name="field-deform"

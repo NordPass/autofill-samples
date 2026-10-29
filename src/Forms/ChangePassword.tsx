@@ -57,11 +57,8 @@ export const ChangePassword = () => {
         <p>If you want to change your password, </p>
         <p className="pb-2">
           enter your
-          <b>current password</b>
-          {' '}
-          and then your
-          <b>new password</b>
-          .
+          <b>current password</b> and then your
+          <b>new password</b>.
         </p>
 
         <input

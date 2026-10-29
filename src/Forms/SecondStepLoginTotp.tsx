@@ -72,35 +72,37 @@ export const SecondStepLoginTotp = () => {
 
       <h1 className="text-4xl mb-3">Login form with TOTP field that is not in DOM</h1>
 
-      <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`} onSubmit={event => event.preventDefault()}>
+      <form
+        className="flex flex-col items-start mt-3"
+        id={`${submit ? 'totp' : ''}`}
+        onSubmit={event => event.preventDefault()}
+      >
+        {!submit && (
+          <>
+            <p className="pb-2">Enter your credentials to login.</p>
 
-        {!submit
-          && (
-            <>
-              <p className="pb-2">Enter your credentials to login.</p>
-
-              <input
-                ref={username}
-                className="input w-full max-w-xs"
-                type="text"
-                placeholder="Email or username"
-              />
-              <input
-                ref={password}
-                className="input w-full max-w-xs"
-                type="password"
-                placeholder="Password"
-                autoComplete="current-password"
-              />
-              <button
-                className="btn btn-outline mt-3"
-                type="submit"
-                onClick={() => setTimeout(setSubmit, 1000, true)}
-              >
-                Continue
-              </button>
-            </>
-          )}
+            <input
+              ref={username}
+              className="input w-full max-w-xs"
+              type="text"
+              placeholder="Email or username"
+            />
+            <input
+              ref={password}
+              className="input w-full max-w-xs"
+              type="password"
+              placeholder="Password"
+              autoComplete="current-password"
+            />
+            <button
+              className="btn btn-outline mt-3"
+              type="submit"
+              onClick={() => setTimeout(setSubmit, 1000, true)}
+            >
+              Continue
+            </button>
+          </>
+        )}
 
         {submit && (
           <>
@@ -126,15 +128,14 @@ export const SecondStepLoginTotp = () => {
               <button
                 className="btn btn-outline btn-primary"
                 type="submit"
-                onClick={(event) => {
+                onClick={event => {
                   event.preventDefault();
 
                   if (username.current?.value === 'error@gmail.com') {
                     errorToast();
 
                     return;
-                  }
-                  else if (!totp.current?.value) {
+                  } else if (!totp.current?.value) {
                     errorTotpToast();
 
                     return;
@@ -150,8 +151,12 @@ export const SecondStepLoginTotp = () => {
         )}
         {!submit && (
           <>
-            <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-            <Link className="pt-2 underline" to="/register">Sign up</Link>
+            <Link className="pt-2 underline" to="/forgotPassword">
+              Forgot your password?
+            </Link>
+            <Link className="pt-2 underline" to="/register">
+              Sign up
+            </Link>
           </>
         )}
       </form>

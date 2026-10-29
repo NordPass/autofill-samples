@@ -62,7 +62,6 @@ export const CustomLoginTwoFields = () => {
       <h1 className="text-4xl mt-3">Custom Login Form 2</h1>
 
       <form className="flex flex-col items-start mt-3">
-
         <p className="pb-2">Enter your credentials to login into your corporate account.</p>
 
         <input
@@ -108,8 +107,12 @@ export const CustomLoginTwoFields = () => {
         >
           Successful Login to next page
         </button>
-        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-        <Link className="pt-2 underline" to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">
+          Forgot your password?
+        </Link>
+        <Link className="pt-2 underline" to="/register">
+          Sign up
+        </Link>
       </form>
     </div>
   );

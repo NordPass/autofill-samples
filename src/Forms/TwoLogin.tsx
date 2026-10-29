@@ -1,16 +1,10 @@
 export const TwoLogin = () => (
   <div className="ml-3 justify-items-start">
-
     <h1 className="text-xl">First Login Form</h1>
 
     <form className="flex flex-col items-start mt-3">
-
       <p className="pb-2">Enter your credentials to login.</p>
-      <input
-        className="input w-full max-w-xs"
-        type="text"
-        placeholder="Email Address/Username"
-      />
+      <input className="input w-full max-w-xs" type="text" placeholder="Email Address/Username" />
       <input
         className="input w-full max-w-xs"
         type="password"
@@ -31,11 +25,7 @@ export const TwoLogin = () => (
     <form className="flex flex-col items-start mt-3">
       <p className="pb-2">Enter your credentials to login.</p>
 
-      <input
-        className="input w-full max-w-xs"
-        type="text"
-        placeholder="Email Address/Username"
-      />
+      <input className="input w-full max-w-xs" type="text" placeholder="Email Address/Username" />
       <input
         className="input w-full max-w-xs"
         type="password"

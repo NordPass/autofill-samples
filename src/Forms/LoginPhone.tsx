@@ -116,7 +116,7 @@ export const LoginPhone = () => {
           <button
             className="btn btn-outline mt-3"
             type="submit"
-            onClick={(event) => {
+            onClick={event => {
               event.preventDefault();
 
               if (username.current?.value === 'error@gmail.com') {
@@ -129,8 +129,12 @@ export const LoginPhone = () => {
           >
             Sign In
           </button>
-          <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-          <Link className="pt-2 underline" to="/register">Sign up</Link>
+          <Link className="pt-2 underline" to="/forgotPassword">
+            Forgot your password?
+          </Link>
+          <Link className="pt-2 underline" to="/register">
+            Sign up
+          </Link>
           <ToastContainer />
         </form>
       )}
@@ -145,15 +149,11 @@ export const LoginPhone = () => {
             type="text"
             placeholder="Phone number"
           />
-          <input
-            className="input w-full max-w-xs"
-            type="text"
-            placeholder="Code from phone"
-          />
+          <input className="input w-full max-w-xs" type="text" placeholder="Code from phone" />
           <button
             className="btn btn-outline mt-3"
             type="submit"
-            onClick={(event) => {
+            onClick={event => {
               event.preventDefault();
 
               if (phone.current?.value === '111111111') {
@@ -166,8 +166,12 @@ export const LoginPhone = () => {
           >
             Sign In
           </button>
-          <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-          <Link className="pt-2 underline" to="/register">Sign up</Link>
+          <Link className="pt-2 underline" to="/forgotPassword">
+            Forgot your password?
+          </Link>
+          <Link className="pt-2 underline" to="/register">
+            Sign up
+          </Link>
           <ToastContainer />
         </form>
       )}

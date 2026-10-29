@@ -11,7 +11,7 @@ export const ThemeProvider = ({ children }: { children?: ReactNode }) => {
     const themeParam = urlParams.get('theme');
 
     if (themeParam === 'dim' || themeParam === 'emerald') {
-      // eslint-disable-next-line react-hooks/set-state-in-effect
+      // oxlint-disable-next-line react-hooks/set-state-in-effect
       setTheme(themeParam);
       document.documentElement.setAttribute('data-theme', themeParam);
     }
@@ -22,10 +22,13 @@ export const ThemeProvider = ({ children }: { children?: ReactNode }) => {
     document.documentElement.setAttribute('data-theme', newTheme);
   }, []);
 
-  const value = useMemo(() => ({
-    theme,
-    updateTheme,
-  }), [theme, updateTheme]);
+  const value = useMemo(
+    () => ({
+      theme,
+      updateTheme,
+    }),
+    [theme, updateTheme],
+  );
 
   return <ThemeContext value={value}>{children}</ThemeContext>;
 };

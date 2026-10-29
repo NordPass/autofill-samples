@@ -101,12 +101,7 @@ export const CheckoutForm = () => {
 
           <h1 className="text-3xl mb-3">Credit Card</h1>
           <label htmlFor="ccFullName">Name on Card</label>
-          <input
-            id="ccFullName"
-            ref={ccFullName}
-            className="input w-full max-w-xs"
-            type="text"
-          />
+          <input id="ccFullName" ref={ccFullName} className="input w-full max-w-xs" type="text" />
           <label htmlFor="ccNumber">Credit card number</label>
           <input
             id="ccNumber"
@@ -159,26 +154,11 @@ export const CheckoutForm = () => {
             ))}
           </select>
           <label htmlFor="city">City</label>
-          <input
-            id="city"
-            ref={city}
-            className="input w-full max-w-xs mb-1"
-            type="text"
-          />
+          <input id="city" ref={city} className="input w-full max-w-xs mb-1" type="text" />
           <label htmlFor="address">Street Address</label>
-          <input
-            id="address"
-            ref={address}
-            className="input w-full max-w-xs mb-1"
-            type="text"
-          />
+          <input id="address" ref={address} className="input w-full max-w-xs mb-1" type="text" />
           <label htmlFor="address2">Apt/Suite/Other (Optional)</label>
-          <input
-            id="address2"
-            ref={address2}
-            className="input w-full max-w-xs mb-1"
-            type="text"
-          />
+          <input id="address2" ref={address2} className="input w-full max-w-xs mb-1" type="text" />
           <label htmlFor="billingZipCode">Zip or Postal Code</label>
           <input
             id="billingZipCode"

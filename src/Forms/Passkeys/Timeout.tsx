@@ -19,7 +19,8 @@ export const Timeout = <T extends ILoginSettings | IRegistrationSettings>({
         setSettings(prevSettings => ({
           ...prevSettings,
           timeout: Number.parseInt(event.target.value, 10) || 0,
-        }))}
+        }))
+      }
       className="bg-slate-900 border border-slate-700 rounded-lg p-2"
     />
   </div>

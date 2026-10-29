@@ -39,23 +39,26 @@ const ShadowRootHost = ({ mode = 'open', className, children }: ShadowRootHostPr
   const shadowRootRef = useRef<ShadowRoot | null>(null);
   const [shadowRoot, setShadowRoot] = useState<ShadowRoot | null>(null);
 
-  const attachShadowRoot = useCallback((host: HTMLDivElement | null) => {
-    if (!host) {
-      return;
-    }
+  const attachShadowRoot = useCallback(
+    (host: HTMLDivElement | null) => {
+      if (!host) {
+        return;
+      }
 
-    // A closed root is not exposed as host.shadowRoot, so it is remembered in a
-    // ref to survive the StrictMode remount without a second attachShadow call.
-    if (!shadowRootRef.current) {
-      shadowRootRef.current = host.shadowRoot ?? host.attachShadow({ mode });
+      // A closed root is not exposed as host.shadowRoot, so it is remembered in a
+      // ref to survive the StrictMode remount without a second attachShadow call.
+      if (!shadowRootRef.current) {
+        shadowRootRef.current = host.shadowRoot ?? host.attachShadow({ mode });
 
-      const style = document.createElement('style');
-      style.textContent = SHADOW_STYLES;
-      shadowRootRef.current.append(style);
-    }
+        const style = document.createElement('style');
+        style.textContent = SHADOW_STYLES;
+        shadowRootRef.current.append(style);
+      }
 
-    setShadowRoot(shadowRootRef.current);
-  }, [mode]);
+      setShadowRoot(shadowRootRef.current);
+    },
+    [mode],
+  );
 
   return (
     <div ref={attachShadowRoot} className={className}>
@@ -74,7 +77,7 @@ const ShadowLoginForm = ({ idPrefix }: ShadowLoginFormProps) => {
   return (
     <form
       className="shadow-form"
-      onSubmit={(event) => {
+      onSubmit={event => {
         event.preventDefault();
 
         if (emailRef.current?.value === 'error@gmail.com') {

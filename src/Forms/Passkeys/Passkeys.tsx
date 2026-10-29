@@ -18,29 +18,27 @@ export const Passkeys = () => {
   const [output, setOutput] = useState('Waiting...');
   const [credentialsRefresh, setCredentialsRefresh] = useState(0);
 
-  const [registrationSettings, setRegistrationSettings]
-    = useState<IRegistrationSettings>({
-      userVerification: UserVerification.Preferred,
-      attachment: AuthenticatorAttachment.All,
-      residentKey: ResidentKey.Preferred,
-      attestation: Attestation.None,
-      algorithms: {
-        [CoseAlgorithm.ES256]: true,
-        [CoseAlgorithm.ES384]: false,
-        [CoseAlgorithm.ES512]: false,
-        [CoseAlgorithm.EDDSA]: false,
-        [CoseAlgorithm.RS256]: false,
-      },
-      hints: [],
-      timeout: DEFAULT_TIMEOUT,
-    });
+  const [registrationSettings, setRegistrationSettings] = useState<IRegistrationSettings>({
+    userVerification: UserVerification.Preferred,
+    attachment: AuthenticatorAttachment.All,
+    residentKey: ResidentKey.Preferred,
+    attestation: Attestation.None,
+    algorithms: {
+      [CoseAlgorithm.ES256]: true,
+      [CoseAlgorithm.ES384]: false,
+      [CoseAlgorithm.ES512]: false,
+      [CoseAlgorithm.EDDSA]: false,
+      [CoseAlgorithm.RS256]: false,
+    },
+    hints: [],
+    timeout: DEFAULT_TIMEOUT,
+  });
 
-  const [loginSettings, setLoginSettings]
-    = useState<ILoginSettings>({
-      userVerification: UserVerification.Preferred,
-      hints: [],
-      timeout: DEFAULT_TIMEOUT,
-    });
+  const [loginSettings, setLoginSettings] = useState<ILoginSettings>({
+    userVerification: UserVerification.Preferred,
+    hints: [],
+    timeout: DEFAULT_TIMEOUT,
+  });
 
   const handleRegister = async () => {
     await register(setOutput, registrationSettings, username);
@@ -83,10 +81,7 @@ export const Passkeys = () => {
               Register
             </button>
 
-            <button
-              onClick={handleLogin}
-              className="bg-slate-700 px-4 py-2 rounded-lg text-sm"
-            >
+            <button onClick={handleLogin} className="bg-slate-700 px-4 py-2 rounded-lg text-sm">
               Login
             </button>
           </div>

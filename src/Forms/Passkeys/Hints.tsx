@@ -10,7 +10,7 @@ export const Hints = <T extends ILoginSettings | IRegistrationSettings>({
   setSettings: Dispatch<SetStateAction<T>>;
 }) => {
   const toggleHint = (hint: Hint) => {
-    setSettings((prevSettings) => {
+    setSettings(prevSettings => {
       const hints = prevSettings.hints.includes(hint)
         ? prevSettings.hints.filter(h => h !== hint)
         : [...prevSettings.hints, hint];

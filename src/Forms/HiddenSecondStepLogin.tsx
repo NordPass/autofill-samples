@@ -72,21 +72,21 @@ export const HiddenSecondStepLogin = () => {
           type="text"
           placeholder="Email or username"
         />
-        {!submit
-          ? (
-              <button
-                className="btn btn-outline mt-3"
-                type="submit"
-                onClick={(event) => {
-                  event.preventDefault();
+        {!submit ? (
+          <button
+            className="btn btn-outline mt-3"
+            type="submit"
+            onClick={event => {
+              event.preventDefault();
 
-                  setTimeout(setSubmit, 500, true);
-                }}
-              >
-                Continue to login
-              </button>
-            )
-          : ''}
+              setTimeout(setSubmit, 500, true);
+            }}
+          >
+            Continue to login
+          </button>
+        ) : (
+          ''
+        )}
         <div className={`${submit ? 'block' : 'hidden'}`}>
           <input
             ref={password}
@@ -98,7 +98,7 @@ export const HiddenSecondStepLogin = () => {
           <button
             className="btn btn-outline mt-3"
             type="submit"
-            onClick={(event) => {
+            onClick={event => {
               event.preventDefault();
 
               if (username.current?.value === 'error@gmail.com') {
@@ -113,8 +113,12 @@ export const HiddenSecondStepLogin = () => {
           </button>
           <ToastContainer />
         </div>
-        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-        <Link className="pt-2 underline" to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">
+          Forgot your password?
+        </Link>
+        <Link className="pt-2 underline" to="/register">
+          Sign up
+        </Link>
       </form>
     </div>
   );

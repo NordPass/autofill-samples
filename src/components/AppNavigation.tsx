@@ -5,12 +5,12 @@ import { Navigation } from '../Navigation.tsx';
 
 // Pages whose form has no detectable submit button: the classifier falls back to the whole page,
 // so navigation links would count as extra buttons.
-const ROUTES_WITHOUT_NAVIGATION = ['/singleButtonLogin', '/twoButtonsLogin'];
+const ROUTES_WITHOUT_NAVIGATION = new Set(['/singleButtonLogin', '/twoButtonsLogin']);
 
 export const AppNavigation = () => {
   const { pathname } = useLocation();
 
-  if (ROUTES_WITHOUT_NAVIGATION.includes(pathname)) {
+  if (ROUTES_WITHOUT_NAVIGATION.has(pathname)) {
     return null;
   }
 

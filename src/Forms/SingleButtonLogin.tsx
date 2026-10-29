@@ -18,7 +18,13 @@ export const SingleButtonLogin = ({ hasSecondButton = false }: IProps) => (
           : 'Instant login should click the arrow, as it is the only button.'}
       </p>
 
-      <input id="email" className="input w-full max-w-xs" type="text" placeholder="Email" autoComplete="username" />
+      <input
+        id="email"
+        className="input w-full max-w-xs"
+        type="text"
+        placeholder="Email"
+        autoComplete="username"
+      />
       <input
         id="password"
         className="input w-full max-w-xs"
@@ -39,7 +45,15 @@ export const SingleButtonLogin = ({ hasSecondButton = false }: IProps) => (
           onClick={successToast}
           onKeyDown={event => event.key === 'Enter' && successToast()}
         >
-          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" aria-hidden="true">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            aria-hidden="true"
+          >
             <path d="M5 12h14M13 6l6 6-6 6" />
           </svg>
         </div>

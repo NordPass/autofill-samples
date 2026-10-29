@@ -98,7 +98,7 @@ export const CustomLogin = () => {
         <button
           className="btn btn-outline mt-3"
           type="submit"
-          onClick={(event) => {
+          onClick={event => {
             event.preventDefault();
 
             if (email.current?.value === 'error@gmail.com') {
@@ -118,8 +118,12 @@ export const CustomLogin = () => {
         >
           Successful Login to next page
         </button>
-        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-        <Link className="pt-2 underline" to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">
+          Forgot your password?
+        </Link>
+        <Link className="pt-2 underline" to="/register">
+          Sign up
+        </Link>
         <ToastContainer />
       </form>
     </div>

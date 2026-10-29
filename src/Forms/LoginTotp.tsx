@@ -91,7 +91,7 @@ export const LoginTotp = () => {
         <button
           className="btn btn-outline mt-3"
           type="submit"
-          onClick={(event) => {
+          onClick={event => {
             event.preventDefault();
 
             if (!totp.current?.value) {
@@ -104,8 +104,12 @@ export const LoginTotp = () => {
         >
           Sign In
         </button>
-        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-        <Link className="pt-2 underline" to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">
+          Forgot your password?
+        </Link>
+        <Link className="pt-2 underline" to="/register">
+          Sign up
+        </Link>
         <ToastContainer />
       </form>
     </div>

@@ -58,11 +58,8 @@ export const ChangeEmail = () => {
         <p>If you want to change your email, </p>
         <p className="pb-2">
           enter your
-          <b>current email</b>
-          {' '}
-          and then your
-          <b>new email</b>
-          .
+          <b>current email</b> and then your
+          <b>new email</b>.
         </p>
 
         <input

@@ -8,28 +8,36 @@ export const Subscribe = () => {
       <button
         className="btn btn-outline"
         type="button"
-        onClick={() => { emailInput.current!.value = 'naruto.uzumaki@gmail.com'; }}
+        onClick={() => {
+          emailInput.current!.value = 'naruto.uzumaki@gmail.com';
+        }}
       >
         FIll in (Naruto)
       </button>
       <button
         className="btn btn-outline ml-3"
         type="button"
-        onClick={() => { emailInput.current!.value = 'brucewayne33112@gmail.com'; }}
+        onClick={() => {
+          emailInput.current!.value = 'brucewayne33112@gmail.com';
+        }}
       >
         FIll in (Batman)
       </button>
       <button
         className="btn btn-outline ml-3"
         type="button"
-        onClick={() => { emailInput.current!.value = 'dragonBorn33112@gmail.com'; }}
+        onClick={() => {
+          emailInput.current!.value = 'dragonBorn33112@gmail.com';
+        }}
       >
         FIll in (Dragonborn)
       </button>
       <button
         className="btn btn-outline ml-3"
         type="button"
-        onClick={() => { emailInput.current!.value = ''; }}
+        onClick={() => {
+          emailInput.current!.value = '';
+        }}
       >
         Clear
       </button>

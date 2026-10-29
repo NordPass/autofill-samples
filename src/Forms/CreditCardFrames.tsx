@@ -9,7 +9,8 @@ const FIELDS = {
 
 type FieldName = keyof typeof FIELDS;
 
-const fieldSrc = (field: FieldName) => `/autofill-samples/#/creditCardFrameField?field=${field}&nav=hide`;
+const fieldSrc = (field: FieldName) =>
+  `/autofill-samples/#/creditCardFrameField?field=${field}&nav=hide`;
 
 export const CreditCardFrameField = () => {
   const [searchParams] = useSearchParams();
@@ -33,18 +34,18 @@ export const CreditCardFrameField = () => {
   );
 };
 
+const setFrameValue = (frame: HTMLIFrameElement | null, value: string) => {
+  const input = frame?.contentDocument?.querySelector('input');
+  if (input) {
+    input.value = value;
+  }
+};
+
 export const CreditCardFrames = () => {
   const fullName = useRef<HTMLInputElement>(null);
   const ccNumber = useRef<HTMLIFrameElement>(null);
   const ccDate = useRef<HTMLIFrameElement>(null);
   const cvv = useRef<HTMLIFrameElement>(null);
-
-  const setFrameValue = (frame: HTMLIFrameElement | null, value: string) => {
-    const input = frame?.contentDocument?.querySelector('input');
-    if (input) {
-      input.value = value;
-    }
-  };
 
   const fill = (name: string, number: string, date: string, code: string) => {
     fullName.current!.value = name;
@@ -78,11 +79,7 @@ export const CreditCardFrames = () => {
       >
         FIll in (Dragonborn)
       </button>
-      <button
-        className="btn btn-outline ml-3"
-        type="button"
-        onClick={() => fill('', '', '', '')}
-      >
+      <button className="btn btn-outline ml-3" type="button" onClick={() => fill('', '', '', '')}>
         Clear
       </button>
 
@@ -100,9 +97,19 @@ export const CreditCardFrames = () => {
           autoComplete="cc-name"
         />
         <span>CC number</span>
-        <iframe ref={ccNumber} src={fieldSrc('ccNumber')} className={frameClassName} title="CC number" />
+        <iframe
+          ref={ccNumber}
+          src={fieldSrc('ccNumber')}
+          className={frameClassName}
+          title="CC number"
+        />
         <span>Expiration Date</span>
-        <iframe ref={ccDate} src={fieldSrc('ccDate')} className={frameClassName} title="Expiration Date" />
+        <iframe
+          ref={ccDate}
+          src={fieldSrc('ccDate')}
+          className={frameClassName}
+          title="Expiration Date"
+        />
         <span>CVV</span>
         <iframe ref={cvv} src={fieldSrc('cvv')} className={frameClassName} title="CVV" />
         <button

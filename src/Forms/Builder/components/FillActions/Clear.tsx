@@ -5,7 +5,7 @@ export const Clear = ({ fields }: { fields: Array<RefObject<HTMLInputElement | n
     className="btn btn-outline"
     type="button"
     onClick={() => {
-      fields.forEach((field) => {
+      fields.forEach(field => {
         if (field.current) {
           field.current.value = '';
         }

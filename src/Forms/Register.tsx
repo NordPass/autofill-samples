@@ -73,7 +73,9 @@ export const Register = () => {
         >
           Sign Up
         </button>
-        <Link to="/login" className="underline pt-2">Already have an account?</Link>
+        <Link to="/login" className="underline pt-2">
+          Already have an account?
+        </Link>
       </form>
     </div>
   );

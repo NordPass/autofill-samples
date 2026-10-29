@@ -91,7 +91,7 @@ export const LoginSixFieldsTotp = () => {
                   autoComplete="off"
                   maxLength={1}
                   className="input w-[45px]"
-                  ref={(el) => {
+                  ref={el => {
                     totp.current[index] = el;
                   }}
                 />
@@ -102,7 +102,7 @@ export const LoginSixFieldsTotp = () => {
         <button
           className="btn btn-outline mt-3"
           type="submit"
-          onClick={(event) => {
+          onClick={event => {
             event.preventDefault();
 
             if (totp.current.some(el => !el?.value)) {
@@ -115,8 +115,12 @@ export const LoginSixFieldsTotp = () => {
         >
           Sign In
         </button>
-        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-        <Link className="pt-2 underline" to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">
+          Forgot your password?
+        </Link>
+        <Link className="pt-2 underline" to="/register">
+          Sign up
+        </Link>
         <ToastContainer />
       </form>
     </div>

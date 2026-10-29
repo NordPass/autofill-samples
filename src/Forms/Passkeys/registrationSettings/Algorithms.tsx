@@ -7,10 +7,7 @@ export interface IAlgorithms {
   setRegistrationSettings: Dispatch<SetStateAction<IRegistrationSettings>>;
 }
 
-export const Algorithms = ({
-  registrationSettings,
-  setRegistrationSettings,
-}: IAlgorithms) => {
+export const Algorithms = ({ registrationSettings, setRegistrationSettings }: IAlgorithms) => {
   const toggleAlg = (key: CoseAlgorithm) => {
     setRegistrationSettings(previous => ({
       ...previous,
@@ -21,26 +18,19 @@ export const Algorithms = ({
   return (
     <div className="space-y-2">
       Supported Public Key Algorithms
-
       <div className="grid grid-cols-3 gap-2">
         {Array.from(Object.keys(CoseAlgorithm)).map((alg, index, algorithms) =>
-          index % 2
-            ? (
-                <label className="flex items-center gap-2" key={alg}>
-                  <input
-                    type="checkbox"
-                    checked={
-                      registrationSettings.algorithms[
-                        alg as unknown as CoseAlgorithm
-                      ]
-                    }
-                    onChange={() => toggleAlg(alg as unknown as CoseAlgorithm)}
-                  />
-                  {algorithms[index - 1]}
-                  {` (${alg})`}
-                </label>
-              )
-            : null,
+          index % 2 ? (
+            <label className="flex items-center gap-2" key={alg}>
+              <input
+                type="checkbox"
+                checked={registrationSettings.algorithms[alg as unknown as CoseAlgorithm]}
+                onChange={() => toggleAlg(alg as unknown as CoseAlgorithm)}
+              />
+              {algorithms[index - 1]}
+              {` (${alg})`}
+            </label>
+          ) : null,
         )}
       </div>
     </div>

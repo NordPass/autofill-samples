@@ -8,10 +8,11 @@ export const ModalLogin = () => {
 
   return (
     <div className="ml-3">
-
       <div className="justify-items-start">
         <h1 className="text-4xl mb-3">Modal Login Form</h1>
-        <button type="button" className="btn btn-outline" onClick={() => setModal(!modal)}>{modal ? 'Hide modal' : 'Show modal'}</button>
+        <button type="button" className="btn btn-outline" onClick={() => setModal(!modal)}>
+          {modal ? 'Hide modal' : 'Show modal'}
+        </button>
       </div>
 
       {modal && (
@@ -33,7 +34,7 @@ export const ModalLogin = () => {
           <button
             className="btn btn-outline mt-3"
             type="submit"
-            onClick={(event) => {
+            onClick={event => {
               event.preventDefault();
 
               if (email.current?.value === 'error@gmail.com') {

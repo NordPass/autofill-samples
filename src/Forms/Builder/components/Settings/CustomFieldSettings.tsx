@@ -33,7 +33,6 @@ export const CustomFieldSettings = ({ settings, setSettings }: ICustomFieldSetti
     if (entries.length > 0) {
       const fieldsMap: Record<number, Partial<ICustomField>> = {};
       entries.forEach(([key, value]) => {
-        // eslint-disable-next-line e18e/prefer-static-regex
         const match = key.match(/^customField\[(\d+)\]\[(\w+)\]$/);
         if (match) {
           const index = Number(match[1]);
@@ -45,11 +44,10 @@ export const CustomFieldSettings = ({ settings, setSettings }: ICustomFieldSetti
         }
       });
       setSettings(Object.values(fieldsMap) as ICustomField[]);
-    }
-    else if (settings.length > 0) {
+    } else if (settings.length > 0) {
       writeToParams(settings);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const handleFieldChange = (index: number, changed: keyof ICustomField, value: string) => {
@@ -89,6 +87,8 @@ export const CustomFieldSettings = ({ settings, setSettings }: ICustomFieldSetti
 
           {settings.map((field, index) => (
             <div
+              // Custom fields have no stable id; they are positional, like `customField[i]` in the URL.
+              // oxlint-disable-next-line react/no-array-index-key
               key={index}
               className="grid grid-cols-5 gap-3 items-center border border-base-300 rounded-lg p-3"
             >
@@ -117,7 +117,8 @@ export const CustomFieldSettings = ({ settings, setSettings }: ICustomFieldSetti
                 className="select select-bordered select-sm w-full"
                 value={field.type}
                 onChange={e =>
-                  handleFieldChange(index, 'type', e.target.value as ICustomField['type'])}
+                  handleFieldChange(index, 'type', e.target.value as ICustomField['type'])
+                }
               >
                 {INPUT_TYPE.map(type => (
                   <option key={type} value={type}>

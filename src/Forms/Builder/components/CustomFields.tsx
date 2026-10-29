@@ -27,7 +27,7 @@ export const CustomFields = ({
             </label>
           )}
           <input
-            ref={(el) => {
+            ref={el => {
               customFieldsRef.current[index] = el;
             }}
             className="input w-full"

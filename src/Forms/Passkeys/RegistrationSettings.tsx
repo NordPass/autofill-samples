@@ -1,16 +1,9 @@
 import type { Dispatch, SetStateAction } from 'react';
-import type {
-  IRegistrationSettings,
-} from './types';
+import type { IRegistrationSettings } from './types';
 import { Hints } from './Hints';
 import { Algorithms } from './registrationSettings/Algorithms';
 import { Timeout } from './Timeout';
-import {
-  Attestation,
-  AuthenticatorAttachment,
-  ResidentKey,
-  UserVerification,
-} from './types';
+import { Attestation, AuthenticatorAttachment, ResidentKey, UserVerification } from './types';
 
 export const RegistrationSettings = ({
   registrationSettings,
@@ -31,7 +24,8 @@ export const RegistrationSettings = ({
             setRegistrationSettings(prev => ({
               ...prev,
               userVerification: event.target.value as UserVerification,
-            }))}
+            }))
+          }
           className="bg-slate-900 border border-slate-700 rounded-lg p-2"
         >
           <option value={UserVerification.Required}>Required</option>
@@ -48,13 +42,12 @@ export const RegistrationSettings = ({
             setRegistrationSettings(prev => ({
               ...prev,
               attachment: event.target.value as AuthenticatorAttachment,
-            }))}
+            }))
+          }
           className="bg-slate-900 border border-slate-700 rounded-lg p-2"
         >
           <option value={AuthenticatorAttachment.All}>All supported</option>
-          <option value={AuthenticatorAttachment.CrossPlatform}>
-            Cross-Platform
-          </option>
+          <option value={AuthenticatorAttachment.CrossPlatform}>Cross-Platform</option>
           <option value={AuthenticatorAttachment.Platform}>Platform</option>
         </select>
       </div>
@@ -67,7 +60,8 @@ export const RegistrationSettings = ({
             setRegistrationSettings(prev => ({
               ...prev,
               residentKey: event.target.value as ResidentKey,
-            }))}
+            }))
+          }
           className="bg-slate-900 border border-slate-700 rounded-lg p-2"
         >
           <option value={ResidentKey.Discouraged}>Discouraged</option>
@@ -84,7 +78,8 @@ export const RegistrationSettings = ({
             setRegistrationSettings(prev => ({
               ...prev,
               attestation: event.target.value as Attestation,
-            }))}
+            }))
+          }
           className="bg-slate-900 border border-slate-700 rounded-lg p-2"
         >
           <option value={Attestation.None}>None</option>
@@ -103,7 +98,9 @@ export const RegistrationSettings = ({
       setRegistrationSettings={setRegistrationSettings}
     />
 
-    <Hints<IRegistrationSettings> settings={registrationSettings} setSettings={setRegistrationSettings} />
-
+    <Hints<IRegistrationSettings>
+      settings={registrationSettings}
+      setSettings={setRegistrationSettings}
+    />
   </div>
 );

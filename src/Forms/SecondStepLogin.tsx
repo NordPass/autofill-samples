@@ -73,19 +73,18 @@ export const SecondStepLogin = () => {
           type="text"
           placeholder="Email or username"
         />
-        {!submit
-          && (
-            <button
-              className="btn btn-outline mt-3"
-              type="submit"
-              onClick={(event) => {
-                event?.preventDefault();
-                setSubmit(true);
-              }}
-            >
-              Continue to sign in
-            </button>
-          )}
+        {!submit && (
+          <button
+            className="btn btn-outline mt-3"
+            type="submit"
+            onClick={event => {
+              event?.preventDefault();
+              setSubmit(true);
+            }}
+          >
+            Continue to sign in
+          </button>
+        )}
         {submit && (
           <>
             <input
@@ -98,15 +97,14 @@ export const SecondStepLogin = () => {
             <button
               className="btn btn-outline mt-3"
               type="submit"
-              onClick={(event) => {
+              onClick={event => {
                 event.preventDefault();
-                // eslint-disable-next-line no-console
+                // oxlint-disable-next-line no-console
                 console.log('here');
 
                 if (username.current?.value === 'error@gmail.com') {
                   errorToast();
-                }
-                else {
+                } else {
                   successToast();
                 }
               }}
@@ -116,8 +114,12 @@ export const SecondStepLogin = () => {
             <ToastContainer />
           </>
         )}
-        <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-        <Link className="pt-2 underline" to="/register">Sign up</Link>
+        <Link className="pt-2 underline" to="/forgotPassword">
+          Forgot your password?
+        </Link>
+        <Link className="pt-2 underline" to="/register">
+          Sign up
+        </Link>
       </form>
     </div>
   );

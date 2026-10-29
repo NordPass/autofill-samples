@@ -4,18 +4,27 @@ export const Frames = () => {
   const iframeSrc = '/autofill-samples/#/?nav=hide';
   const [frameCount, setFrameCount] = useState(3);
 
-  const gridStyle = useMemo(() => ({
-    gridTemplateColumns: `repeat(${Math.min(frameCount, 3)}, 1fr)`,
-  }), [frameCount]);
+  const gridStyle = useMemo(
+    () => ({
+      gridTemplateColumns: `repeat(${Math.min(frameCount, 3)}, 1fr)`,
+    }),
+    [frameCount],
+  );
 
   const frameHeight = frameCount === 1 ? 'h-[75vh]' : frameCount <= 3 ? 'h-[60vh]' : 'h-96';
 
   return (
     <div className="p-6">
       <div className="flex gap-4 mb-4 justify-center items-center">
-        <button className="btn btn-outline" onClick={() => setFrameCount(1)}>One Iframe</button>
-        <button className="btn btn-outline" onClick={() => setFrameCount(3)}>Three Iframes</button>
-        <button className="btn btn-outline" onClick={() => setFrameCount(9)}>Nine Iframes</button>
+        <button className="btn btn-outline" onClick={() => setFrameCount(1)}>
+          One Iframe
+        </button>
+        <button className="btn btn-outline" onClick={() => setFrameCount(3)}>
+          Three Iframes
+        </button>
+        <button className="btn btn-outline" onClick={() => setFrameCount(9)}>
+          Nine Iframes
+        </button>
       </div>
       <div className="flex gap-4 mb-4 justify-center items-center">
         <label className="flex items-center gap-2" htmlFor="frame-count">

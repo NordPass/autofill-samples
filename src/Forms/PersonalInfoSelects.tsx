@@ -110,12 +110,7 @@ export const PersonalInfoSelects = () => {
           type="text"
           placeholder="Last Name"
         />
-        <input
-          ref={email}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="Email"
-        />
+        <input ref={email} className="input w-full max-w-xs" type="text" placeholder="Email" />
         <div className="phone number">
           <select
             name="phone-prefix"
@@ -148,12 +143,7 @@ export const PersonalInfoSelects = () => {
           type="text"
           placeholder="Address 2"
         />
-        <input
-          ref={city}
-          className="input w-full max-w-xs"
-          type="text"
-          placeholder="City"
-        />
+        <input ref={city} className="input w-full max-w-xs" type="text" placeholder="City" />
         <select
           name="states"
           id="select-state"

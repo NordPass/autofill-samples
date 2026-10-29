@@ -19,15 +19,14 @@ export const FormSettings = ({ settings, setSettings }: IFormSettingsProps) => {
 
     if (entries.length > 0) {
       setSettings(Object.fromEntries(entries) as IFormSettings);
-    }
-    else {
+    } else {
       const newParams = new URLSearchParams(searchParams);
       Object.entries(settings).forEach(([key, value]) => {
         newParams.set(`form[${key}]`, value);
       });
       setSearchParams(newParams);
     }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
+    // oxlint-disable-next-line react-hooks/exhaustive-deps
   }, [searchParams]);
 
   const handleChange = (
@@ -57,7 +56,9 @@ export const FormSettings = ({ settings, setSettings }: IFormSettingsProps) => {
               className="select select-bordered w-full"
             >
               {FORM_TYPES.map(type => (
-                <option key={type} value={type}>{type}</option>
+                <option key={type} value={type}>
+                  {type}
+                </option>
               ))}
             </select>
           </div>
@@ -68,12 +69,13 @@ export const FormSettings = ({ settings, setSettings }: IFormSettingsProps) => {
             </label>
             <select
               value={settings.language}
-              onChange={e =>
-                handleChange('language', e.target.value as IFormSettings['language'])}
+              onChange={e => handleChange('language', e.target.value as IFormSettings['language'])}
               className="select select-bordered w-full"
             >
               {LANGUAGES.map(language => (
-                <option key={language} value={language}>{language}</option>
+                <option key={language} value={language}>
+                  {language}
+                </option>
               ))}
             </select>
           </div>

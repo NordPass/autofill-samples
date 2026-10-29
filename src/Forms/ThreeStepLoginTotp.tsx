@@ -64,51 +64,54 @@ export const ThreeStepLoginTotp = () => {
         Clear
       </button>
 
-      <h1 className="text-4xl mb-3">Login form with password and TOTP fields that are not in DOM</h1>
+      <h1 className="text-4xl mb-3">
+        Login form with password and TOTP fields that are not in DOM
+      </h1>
 
-      <form className="flex flex-col items-start mt-3" id={`${submit ? 'totp' : ''}`} onSubmit={event => event.preventDefault()}>
+      <form
+        className="flex flex-col items-start mt-3"
+        id={`${submit ? 'totp' : ''}`}
+        onSubmit={event => event.preventDefault()}
+      >
+        {!showPassword && !submit && (
+          <>
+            <p className="pb-2">Enter your credentials to login.</p>
 
-        {!showPassword && !submit
-          && (
-            <>
-              <p className="pb-2">Enter your credentials to login.</p>
+            <input
+              ref={username}
+              className="input w-full max-w-xs"
+              type="text"
+              placeholder="Email or username"
+            />
+            <button
+              className="btn btn-outline mt-3"
+              type="submit"
+              onClick={() => setTimeout(setShowPassword, 2000, true)}
+            >
+              Continue
+            </button>
+          </>
+        )}
 
-              <input
-                ref={username}
-                className="input w-full max-w-xs"
-                type="text"
-                placeholder="Email or username"
-              />
-              <button
-                className="btn btn-outline mt-3"
-                type="submit"
-                onClick={() => setTimeout(setShowPassword, 2000, true)}
-              >
-                Continue
-              </button>
-            </>
-          )}
-
-        {!submit && showPassword
-          && (
-            <>
-              <p className="pb-2">Enter your credentials to login.</p>
-              <input
-                ref={password}
-                className="input w-full max-w-xs"
-                type="password"
-                placeholder="Password"
-                autoComplete="current-password"
-              />
-              <button
-                className="btn btn-outline mt-3"
-                type="submit"
-                onClick={() => setTimeout(setSubmit, 3000, true)}
-              >
-                Continue
-              </button>
-            </>
-          )}
+        {!submit && showPassword && (
+          <>
+            <p className="pb-2">Enter your credentials to login.</p>
+            <input
+              ref={password}
+              className="input w-full max-w-xs"
+              type="password"
+              placeholder="Password"
+              autoComplete="current-password"
+            />
+            <button
+              className="btn btn-outline mt-3"
+              type="submit"
+              onClick={() => setTimeout(setSubmit, 3000, true)}
+            >
+              Continue
+            </button>
+          </>
+        )}
 
         {submit && (
           <>
@@ -127,15 +130,14 @@ export const ThreeStepLoginTotp = () => {
             <button
               className="btn btn-outline mt-3"
               type="submit"
-              onClick={(event) => {
+              onClick={event => {
                 event.preventDefault();
 
                 if (username.current?.value === 'error@gmail.com') {
                   errorToast();
 
                   return;
-                }
-                else if (!totp.current?.value) {
+                } else if (!totp.current?.value) {
                   errorTotpToast();
 
                   return;
@@ -151,8 +153,12 @@ export const ThreeStepLoginTotp = () => {
         )}
         {!submit && (
           <>
-            <Link className="pt-2 underline" to="/forgotPassword">Forgot your password?</Link>
-            <Link className="pt-2 underline" to="/register">Sign up</Link>
+            <Link className="pt-2 underline" to="/forgotPassword">
+              Forgot your password?
+            </Link>
+            <Link className="pt-2 underline" to="/register">
+              Sign up
+            </Link>
           </>
         )}
       </form>

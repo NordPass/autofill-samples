@@ -8,7 +8,15 @@ export interface ICustomField {
 }
 
 export const FORM_TYPES = ['Login', 'Register'] as const;
-export const LANGUAGES = ['English', 'German', 'Dutch', 'French', 'Italian', 'Spanish', 'Lithuanian'] as const;
+export const LANGUAGES = [
+  'English',
+  'German',
+  'Dutch',
+  'French',
+  'Italian',
+  'Spanish',
+  'Lithuanian',
+] as const;
 
 export interface IFormSettings {
   type: (typeof FORM_TYPES)[number];

@@ -103,55 +103,161 @@ export const Narrow = () => {
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
         <div className="w-full">
           <h2 className="text-2xl mb-4">Controlled Form</h2>
-          <form className="grid grid-cols-1 gap-2 w-full" onSubmit={event => event.preventDefault()}>
+          <form
+            className="grid grid-cols-1 gap-2 w-full"
+            onSubmit={event => event.preventDefault()}
+          >
             <label className="label flex flex-col">
               <span className="label-text">First Name</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
             <label className="label flex flex-col">
               <span className="label-text">Last Name</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
             <label className="label flex flex-col">
               <span className="label-text">Email</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
 
             <label className="label flex flex-col">
               <span className="label-text">Phone number</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
             <label className="label flex flex-col">
               <span className="label-text">Address 1</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
             <label className="label flex flex-col">
               <span className="label-text">Address 2</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
 
             <label className="label flex flex-col">
               <span className="label-text">City</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
             <label className="label flex flex-col">
               <span className="label-text">State</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
             <label className="label flex flex-col">
               <span className="label-text">Zip or Postal code</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
             <label className="label flex flex-col">
               <span className="label-text">Country</span>
-              <input style={{ width: controlWidth, height: `${controlHeight}px`, lineHeight: `${controlHeight}px`, padding: `${controlPadding}px`, margin: `${controlMargin}px` }} className="outline-1 rounded" type="text" />
+              <input
+                style={{
+                  width: controlWidth,
+                  height: `${controlHeight}px`,
+                  lineHeight: `${controlHeight}px`,
+                  padding: `${controlPadding}px`,
+                  margin: `${controlMargin}px`,
+                }}
+                className="outline-1 rounded"
+                type="text"
+              />
             </label>
           </form>
         </div>
 
         <div className="w-full">
           <h2 className="text-2xl mb-4">Reference Form</h2>
-          <form className="grid grid-cols-1 gap-2 w-full" onSubmit={event => event.preventDefault()}>
+          <form
+            className="grid grid-cols-1 gap-2 w-full"
+            onSubmit={event => event.preventDefault()}
+          >
             <label className="label flex flex-col">
               <span className="label-text">First Name</span>
               <input className="border rounded px-3 py-2 w-full" type="text" />
