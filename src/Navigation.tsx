@@ -119,6 +119,9 @@ export const Navigation = () => {
               <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/identityPhone">
                 +Phone
               </Link>
+              <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/identityCompoundNames">
+                +ES names
+              </Link>
               <Link className="btn btn-xs btn-ghost hover:btn-accent" to="/changeEmail">
                 Email
               </Link>

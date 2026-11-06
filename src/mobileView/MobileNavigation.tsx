@@ -119,6 +119,9 @@ export const MobileNavigation = () => {
           <Link className="btn btn-neutral w-[90%]" to="/identityPhone">
             Personal Info 3
           </Link>
+          <Link className="btn btn-neutral w-[90%]" to="/identityCompoundNames">
+            Personal Info (ES names)
+          </Link>
           <Link className="btn btn-neutral w-[90%]" to="/other">
             Other
           </Link>
