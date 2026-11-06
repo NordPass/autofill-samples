@@ -29,6 +29,7 @@ import { OneTimePassword } from './Forms/OneTimePassword.tsx';
 import { Other } from './Forms/Other.tsx';
 import { Passkeys } from './Forms/Passkeys/Passkeys';
 import { PersonalInfo } from './Forms/PersonalInfo.tsx';
+import { PersonalInfoCompoundNames } from './Forms/PersonalInfoCompoundNames.tsx';
 import { PersonalInfoPhone } from './Forms/PersonalInfoPhone.tsx';
 import { PersonalInfoSelects } from './Forms/PersonalInfoSelects.tsx';
 import { Register } from './Forms/Register.tsx';
@@ -83,6 +84,7 @@ ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
               <Route path="/twoLogin" element={<TwoLogin />} />
               <Route path="/modalLogin" element={<ModalLogin />} />
               <Route path="/identityPhone" element={<PersonalInfoPhone />} />
+              <Route path="/identityCompoundNames" element={<PersonalInfoCompoundNames />} />
               <Route path="/loginPhone" element={<LoginPhone />} />
               <Route path="/checkoutForm" element={<CheckoutForm />} />
               <Route path="/changeEmailWithPassword" element={<ChangeEmailWithPassword />} />
