@@ -27,8 +27,12 @@
         align-items: center;
         padding: 10px 16px;
       }
-      header a {
+      header nav {
         margin-left: auto;
+        display: flex;
+        gap: 16px;
+      }
+      header a {
         color: #93c5fd;
       }
       .grid {
@@ -137,7 +141,10 @@
   <body>
     <header>
       <button id="play">Play both</button>
-      <a href="./">← Summary</a>
+      <nav>
+        <a href="./">← Summary</a>
+        <a href="stress/">Stress test page</a>
+      </nav>
     </header>
     <div class="grid">
       <figure>
