@@ -1,0 +1,231 @@
+{
+  "query": "frames=40&ads=24&forms=30&nodes=5000&churn=500",
+  "runs": 5,
+  "settleMs": 15000,
+  "results": {
+    "no-extension": [
+      {
+        "longTasks": 0,
+        "blockedMs": 0,
+        "worstMs": 0,
+        "droppedFrames": 7,
+        "firstIconMs": null,
+        "icons": 0,
+        "framesLoaded": 64,
+        "scriptMs": 76,
+        "taskMs": 5523,
+        "heapMB": 18.9
+      },
+      {
+        "longTasks": 1,
+        "blockedMs": 28,
+        "worstMs": 78,
+        "droppedFrames": 9,
+        "firstIconMs": null,
+        "icons": 0,
+        "framesLoaded": 64,
+        "scriptMs": 71,
+        "taskMs": 5598,
+        "heapMB": 18.9
+      },
+      {
+        "longTasks": 1,
+        "blockedMs": 27,
+        "worstMs": 77,
+        "droppedFrames": 8,
+        "firstIconMs": null,
+        "icons": 0,
+        "framesLoaded": 64,
+        "scriptMs": 74,
+        "taskMs": 5648,
+        "heapMB": 18.9
+      },
+      {
+        "longTasks": 1,
+        "blockedMs": 26,
+        "worstMs": 76,
+        "droppedFrames": 9,
+        "firstIconMs": null,
+        "icons": 0,
+        "framesLoaded": 64,
+        "scriptMs": 64,
+        "taskMs": 5676,
+        "heapMB": 18.9
+      },
+      {
+        "longTasks": 2,
+        "blockedMs": 27,
+        "worstMs": 77,
+        "droppedFrames": 9,
+        "firstIconMs": null,
+        "icons": 0,
+        "framesLoaded": 64,
+        "scriptMs": 64,
+        "taskMs": 5670,
+        "heapMB": 18.9
+      }
+    ],
+    "7.12.16": [
+      {
+        "longTasks": 1,
+        "blockedMs": 267,
+        "worstMs": 317,
+        "droppedFrames": 106,
+        "firstIconMs": 8071,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1670,
+        "taskMs": 5929,
+        "heapMB": 585.1
+      },
+      {
+        "longTasks": 4,
+        "blockedMs": 390,
+        "worstMs": 235,
+        "droppedFrames": 109,
+        "firstIconMs": 3230,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1590,
+        "taskMs": 6753,
+        "heapMB": 545.5
+      },
+      {
+        "longTasks": 2,
+        "blockedMs": 394,
+        "worstMs": 255,
+        "droppedFrames": 108,
+        "firstIconMs": 2630,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1550,
+        "taskMs": 6805,
+        "heapMB": 587.5
+      },
+      {
+        "longTasks": 3,
+        "blockedMs": 404,
+        "worstMs": 264,
+        "droppedFrames": 110,
+        "firstIconMs": 2445,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1522,
+        "taskMs": 6731,
+        "heapMB": 581.3
+      },
+      {
+        "longTasks": 3,
+        "blockedMs": 381,
+        "worstMs": 240,
+        "droppedFrames": 107,
+        "firstIconMs": 2595,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1534,
+        "taskMs": 6778,
+        "heapMB": 587.7
+      }
+    ],
+    "7.13.1": [
+      {
+        "longTasks": 2,
+        "blockedMs": 162,
+        "worstMs": 212,
+        "droppedFrames": 75,
+        "firstIconMs": 1846,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1171,
+        "taskMs": 6015,
+        "heapMB": 441.3
+      },
+      {
+        "longTasks": 2,
+        "blockedMs": 200,
+        "worstMs": 162,
+        "droppedFrames": 75,
+        "firstIconMs": 1792,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1101,
+        "taskMs": 5996,
+        "heapMB": 440.1
+      },
+      {
+        "longTasks": 2,
+        "blockedMs": 194,
+        "worstMs": 159,
+        "droppedFrames": 75,
+        "firstIconMs": 1821,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1106,
+        "taskMs": 6126,
+        "heapMB": 440.6
+      },
+      {
+        "longTasks": 2,
+        "blockedMs": 166,
+        "worstMs": 162,
+        "droppedFrames": 72,
+        "firstIconMs": 1762,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1122,
+        "taskMs": 5971,
+        "heapMB": 439.8
+      },
+      {
+        "longTasks": 2,
+        "blockedMs": 212,
+        "worstMs": 162,
+        "droppedFrames": 73,
+        "firstIconMs": 1792,
+        "icons": 1,
+        "framesLoaded": 64,
+        "scriptMs": 1097,
+        "taskMs": 6089,
+        "heapMB": 441.1
+      }
+    ]
+  },
+  "medians": {
+    "no-extension": {
+      "longTasks": 1,
+      "blockedMs": 27,
+      "worstMs": 77,
+      "droppedFrames": 9,
+      "firstIconMs": null,
+      "icons": 0,
+      "framesLoaded": 64,
+      "scriptMs": 71,
+      "taskMs": 5648,
+      "heapMB": 18.9
+    },
+    "7.12.16": {
+      "longTasks": 3,
+      "blockedMs": 390,
+      "worstMs": 255,
+      "droppedFrames": 108,
+      "firstIconMs": 2630,
+      "icons": 1,
+      "framesLoaded": 64,
+      "scriptMs": 1550,
+      "taskMs": 6753,
+      "heapMB": 585.1
+    },
+    "7.13.1": {
+      "longTasks": 2,
+      "blockedMs": 194,
+      "worstMs": 162,
+      "droppedFrames": 75,
+      "firstIconMs": 1792,
+      "icons": 1,
+      "framesLoaded": 64,
+      "scriptMs": 1106,
+      "taskMs": 6015,
+      "heapMB": 440.6
+    }
+  }
+}
