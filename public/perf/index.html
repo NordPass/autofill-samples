@@ -1,0 +1,487 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Autofill Performance 7.13</title>
+    <style>
+      :root {
+        --bg: #0b0f17;
+        --fg: #f9fafb;
+        --muted: #9ca3af;
+        --line: #1f2937;
+        --card: #111827;
+        --good: #22c55e;
+        --bad: #ef4444;
+        --accent: #93c5fd;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--fg);
+        font:
+          15px/1.5 system-ui,
+          sans-serif;
+      }
+      .wrap {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 24px 16px 48px;
+      }
+      header {
+        display: flex;
+        align-items: baseline;
+        gap: 16px;
+        flex-wrap: wrap;
+      }
+      h1 {
+        font-size: 28px;
+        margin: 0;
+      }
+      header a {
+        margin-left: auto;
+        color: var(--accent);
+      }
+      .sub {
+        color: var(--muted);
+        margin: 4px 0 24px;
+      }
+      .hero {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 12px;
+        margin-bottom: 28px;
+      }
+      .stat {
+        background: var(--card);
+        border-radius: 8px;
+        padding: 18px 20px;
+      }
+      .stat .big {
+        font:
+          700 40px/1.1 system-ui,
+          sans-serif;
+        color: var(--good);
+      }
+      .stat .label {
+        color: var(--muted);
+        margin-top: 6px;
+      }
+      .videos {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+      figure {
+        margin: 0;
+      }
+      /* Crop to the top-left of the recording (badge, live stats, first sign-in frames) at 1.6x. */
+      .crop {
+        overflow: hidden;
+        aspect-ratio: 1440 / 900;
+        border-radius: 6px;
+        background: #000;
+      }
+      .crop video {
+        display: block;
+        width: 160%;
+      }
+      .play {
+        margin: 10px 0 0;
+        font: inherit;
+        padding: 6px 14px;
+      }
+      details {
+        border-top: 1px solid var(--line);
+      }
+      details:last-of-type {
+        border-bottom: 1px solid var(--line);
+      }
+      summary {
+        cursor: pointer;
+        list-style: none;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 16px 4px;
+        font:
+          600 20px system-ui,
+          sans-serif;
+      }
+      summary::-webkit-details-marker {
+        display: none;
+      }
+      summary::before {
+        content: '▸';
+        color: var(--muted);
+        transition: transform 0.15s;
+      }
+      details[open] > summary::before {
+        transform: rotate(90deg);
+      }
+      summary:hover {
+        color: var(--accent);
+      }
+      summary:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 2px;
+        border-radius: 4px;
+      }
+      .body {
+        padding: 0 4px 24px;
+      }
+      .meta {
+        color: var(--muted);
+        font-size: 13px;
+        margin: 0 0 10px;
+        max-width: 760px;
+      }
+      table {
+        border-collapse: collapse;
+        font-variant-numeric: tabular-nums;
+      }
+      th,
+      td {
+        padding: 8px 16px;
+        border-bottom: 1px solid var(--line);
+        text-align: right;
+        white-space: nowrap;
+      }
+      th:first-child,
+      td:first-child {
+        text-align: left;
+      }
+      th {
+        color: var(--muted);
+        font-weight: 500;
+      }
+      td.delta {
+        font-weight: 700;
+      }
+      td small {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        white-space: normal;
+      }
+      .good {
+        color: var(--good);
+      }
+      .bad {
+        color: var(--bad);
+      }
+      .note {
+        max-width: 760px;
+        margin: 10px 0 0;
+        padding: 8px 14px;
+        border-left: 3px solid #f59e0b;
+        background: #1a1f2b;
+        font-size: 13px;
+      }
+      .note.info {
+        border-left-color: #60a5fa;
+      }
+      .subhead {
+        font-size: 16px;
+        margin: 28px 0 4px;
+      }
+      ul {
+        padding-left: 20px;
+        max-width: 760px;
+      }
+      li {
+        margin: 6px 0;
+      }
+      li b {
+        color: var(--good);
+      }
+      footer {
+        margin-top: 40px;
+        color: var(--muted);
+      }
+      footer a {
+        color: var(--accent);
+      }
+      @media (max-width: 720px) {
+        .hero,
+        .videos {
+          grid-template-columns: 1fr;
+        }
+        table {
+          font-size: 13px;
+        }
+        th,
+        td {
+          padding: 6px 8px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="wrap">
+      <header>
+        <h1>Autofill performance: 7.12 → 7.13</h1>
+        <a href="full-stats.html">Full stats →</a>
+      </header>
+      <p class="sub">
+        What users get from the 7.13 autofill changes: a new form-recognition engine and less code
+        on every page.
+      </p>
+
+      <div class="hero" id="hero"></div>
+
+      <!-- Sections share name="section", so opening one closes the others. -->
+      <details name="section" open>
+        <summary>See the difference</summary>
+        <div class="body">
+          <div class="videos">
+            <figure>
+              <div class="crop">
+                <video id="va" src="video/7.12.16-run1.webm" muted playsinline></video>
+              </div>
+            </figure>
+            <figure>
+              <div class="crop">
+                <video id="vb" src="video/7.13.1-run1.webm" muted playsinline></video>
+              </div>
+            </figure>
+          </div>
+          <button class="play" id="play">Play both</button>
+        </div>
+      </details>
+
+      <details name="section">
+        <summary>On a stress test page</summary>
+        <div class="body">
+          <p class="meta" id="busyMeta"></p>
+          <table id="busy"></table>
+          <p class="note info" id="busyNote" hidden></p>
+        </div>
+      </details>
+
+      <details name="section">
+        <summary>On facebook.com</summary>
+        <div class="body">
+          <p class="meta" id="siteMeta"></p>
+          <table id="site"></table>
+          <p class="note" id="siteNote" hidden></p>
+          <div id="slowBlock" hidden>
+            <h3 class="subhead" id="slowTitle"></h3>
+            <p class="meta" id="slowMeta"></p>
+            <table id="slow"></table>
+          </div>
+        </div>
+      </details>
+
+      <details name="section">
+        <summary>Less code on every page</summary>
+        <div class="body">
+          <p class="meta">
+            NordPass loads this code into every page and every embedded frame before it can do
+            anything. Less code means less for the browser to read on each page load, less memory,
+            and shorter freezes. Form recognition is half the size because its TensorFlow engine was
+            replaced with a lightweight custom one, and drawing the icon was moved out of it.
+          </p>
+          <table id="code"></table>
+        </div>
+      </details>
+
+      <details name="section">
+        <summary>Conclusion</summary>
+        <div class="body">
+          <ul id="conclusion"></ul>
+        </div>
+      </details>
+
+      <details name="section">
+        <summary>Possible next steps</summary>
+        <div class="body">
+          <ul>
+            <li>
+              Load the autofill pop-up code only when a pop-up is about to show, instead of on every
+              page. This is the biggest remaining win.
+            </li>
+            <li>Set up form recognition only where the page has a form to fill.</li>
+          </ul>
+        </div>
+      </details>
+
+      <footer>
+        Measured on a MacBook M5 Pro, median of several page loads per version. Method, all metrics
+        and profiling: <a href="full-stats.html">full stats</a>.
+      </footer>
+    </div>
+    <script>
+      const BEFORE = '7.12.16',
+        AFTER = '7.13.1';
+      const $ = id => document.getElementById(id);
+      const vids = [$('va'), $('vb')];
+      $('play').onclick = () =>
+        vids.forEach(v => {
+          v.currentTime = 0;
+          v.play();
+        });
+
+      const time = ms =>
+        ms === null || ms === undefined
+          ? '–'
+          : ms >= 1000
+            ? `${(ms / 1000).toFixed(1)} s`
+            : `${Math.round(ms)} ms`;
+      const mem = mb => (mb >= 100 ? `${Math.round(mb)} MB` : `${mb.toFixed(0)} MB`);
+      const less = (a, z) => Math.round((1 - z / a) * 100);
+      const delta = (a, z) => {
+        if (!a || z === null || z === undefined) return '<td class="delta">–</td>';
+        const pct = Math.round(((z - a) / a) * 100);
+        return `<td class="delta ${pct < 0 ? 'good' : pct > 0 ? 'bad' : ''}">${pct > 0 ? '+' : ''}${pct}%</td>`;
+      };
+      const ROWS = [
+        ['firstIconMs', 'NordPass icon appears after', time],
+        ['blockedMs', 'Time the page is frozen', time],
+        ['worstMs', 'Longest single freeze', time],
+        ['heapMB', 'Memory used', mem],
+      ];
+      const table = (m, withBase) => {
+        const cols = [...(withBase && m['no-extension'] ? ['no-extension'] : []), BEFORE, AFTER];
+        const name = c => (c === 'no-extension' ? 'Without NordPass' : c.replace(/\.\d+$/, ''));
+        return (
+          `<tr><th></th>${cols.map(c => `<th>${name(c)}</th>`).join('')}<th>Change</th></tr>` +
+          ROWS.map(
+            ([k, label, f]) =>
+              `<tr><td>${label}</td>${cols.map(c => `<td>${k === 'firstIconMs' && c === 'no-extension' ? '–' : f(m[c][k])}</td>`).join('')}${delta(m[BEFORE][k], m[AFTER][k])}</tr>`,
+          ).join('')
+        );
+      };
+
+      Promise.all(
+        ['data/stress.json', 'data/site.json', 'data/bundle.json', 'data/site-slow.json'].map(u =>
+          fetch(u)
+            .then(r => r.json())
+            .catch(() => null),
+        ),
+      ).then(([busy, site, code, slow]) => {
+        if (slow?.medians?.[BEFORE] && slow?.medians?.[AFTER]) {
+          $('slowTitle').textContent =
+            `On an older computer (${slow.cpuSlowdown}× slower processor)`;
+          $('slowMeta').textContent =
+            `The same facebook.com test with the processor slowed down ${slow.cpuSlowdown}×, roughly an older or budget laptop.`;
+          $('slow').innerHTML = table(slow.medians, true);
+          $('slowBlock').hidden = false;
+        }
+        const hero = [];
+        if (busy?.medians?.[AFTER]) {
+          const o = busy.medians[BEFORE],
+            n = busy.medians[AFTER];
+          hero.push([
+            `${less(o.blockedMs, n.blockedMs)}%`,
+            'less time frozen on a stress test page',
+          ]);
+          hero.push([`${Math.round(o.heapMB - n.heapMB)} MB`, 'less memory on a stress test page']);
+          const q = Object.fromEntries(new URLSearchParams(busy.query));
+          $('busyMeta').textContent =
+            `A fake page I built for this test, with ${q.frames} embedded login forms, ad banners and changing forms.`;
+          $('busy').innerHTML = table(busy.medians, true);
+          // NordPass's extra memory split across every frame it runs in (the page plus each embedded form).
+          const base = busy.medians['no-extension']?.heapMB;
+          if (base !== undefined) {
+            const copies = Number(q.frames) + 1;
+            const per = v => ((busy.medians[v].heapMB - base) / copies).toFixed(0);
+            $('busyNote').textContent =
+              `Why memory is so high: NordPass runs a separate copy of itself in every frame, and this page has ${copies} of them. Each copy takes about ${per(BEFORE)} MB in 7.12 and ${per(AFTER)} MB in 7.13. A typical page has only a few frames, so it costs far less.`;
+            $('busyNote').hidden = false;
+          }
+        }
+        const total = v => Object.values(code[v]).reduce((s, f) => s + f.raw, 0);
+        if (code?.[BEFORE] && code?.[AFTER]) {
+          hero.push([`${less(total(BEFORE), total(AFTER))}%`, 'less NordPass code on every page']);
+          const mb = n => `${(n / 1e6).toFixed(2)} MB`;
+          const PARTS = {
+            'js/classifier.js': [
+              'Form recognition',
+              'Finds login, sign-up and payment fields on the page',
+            ],
+            'js/content.js': [
+              'Autofill icon and pop-ups',
+              'Draws the icon and the autofill and save pop-ups',
+            ],
+            'js/passkeys.js': ['Passkey support', 'Lets websites use passkeys stored in NordPass'],
+          };
+          // Every all-frames file, except ones too small to matter (the 239 B stylesheet).
+          const files = [
+            ...new Set([...Object.keys(code[BEFORE]), ...Object.keys(code[AFTER])]),
+          ].filter(f => (code[BEFORE][f]?.raw ?? 0) > 10000 || (code[AFTER][f]?.raw ?? 0) > 10000);
+          const row = (label, a, z) =>
+            `<tr><td>${label}</td><td>${mb(a)}</td><td>${mb(z)}</td>${delta(a, z)}</tr>`;
+          $('code').innerHTML =
+            `<tr><th></th><th>7.12</th><th>7.13</th><th>Change</th></tr>` +
+            files
+              .map(f => {
+                const [name, hint] = PARTS[f] ?? [f, ''];
+                return row(
+                  `${name}<small>${hint}</small>`,
+                  code[BEFORE][f]?.raw ?? 0,
+                  code[AFTER][f]?.raw ?? 0,
+                );
+              })
+              .join('') +
+            row('<b>All NordPass code on a page</b>', total(BEFORE), total(AFTER));
+        }
+        $('hero').innerHTML = hero
+          .map(
+            ([big, label]) =>
+              `<div class="stat"><div class="big">${big}</div><div class="label">${label}</div></div>`,
+          )
+          .join('');
+
+        if (site?.medians?.[AFTER]) {
+          $('siteMeta').textContent = 'A normal login page. Smaller numbers, same direction.';
+          $('site').innerHTML = table(site.medians, true);
+          const later = site.medians[AFTER].firstIconMs - site.medians[BEFORE].firstIconMs;
+          if (later >= 50) {
+            $('siteNote').textContent =
+              `The icon shows ${(later / 1000).toFixed(1)} s later here: drawing the icon was moved out of form recognition, so every page loads less code. A small trade for a lighter page.`;
+            $('siteNote').hidden = false;
+          }
+        }
+
+        // Conclusion leads with the real website; the fake stress test page only explains how savings multiply per frame.
+        const bo = busy?.medians?.[BEFORE],
+          bn = busy?.medians?.[AFTER];
+        const so = site?.medians?.[BEFORE],
+          sn = site?.medians?.[AFTER];
+        const lo = slow?.medians?.[BEFORE],
+          ln = slow?.medians?.[AFTER];
+        const sec = ms => `${(Math.abs(ms) / 1000).toFixed(1)} s`;
+        const points = [];
+        if (so && sn)
+          points.push(
+            `On a real login page (facebook.com), the page is frozen <b>${less(so.blockedMs, sn.blockedMs)}% less</b> while it opens and uses <b>${less(so.heapMB, sn.heapMB)}% less memory</b>.`,
+          );
+        if (lo && ln && so && sn)
+          points.push(
+            `On an older computer the gain is bigger: <b>${Math.round(lo.blockedMs - ln.blockedMs)} ms less freezing</b> on every page load, against ${Math.round(so.blockedMs - sn.blockedMs)} ms on a fast MacBook M5 Pro.`,
+          );
+        if (code?.[BEFORE] && code?.[AFTER])
+          points.push(
+            `The main reason: NordPass loads <b>${less(total(BEFORE), total(AFTER))}% less code</b> into every page and every embedded frame.`,
+          );
+        if (bo && bn)
+          points.push(
+            `The saving repeats for every embedded frame on a page. On a test page with ${Object.fromEntries(new URLSearchParams(busy.query)).frames} frames, that added up to <b>${Math.round(bo.heapMB - bn.heapMB)} MB less memory</b>.`,
+          );
+        if (so && sn && lo && ln) {
+          const fast = sn.firstIconMs - so.firstIconMs,
+            slowDiff = ln.firstIconMs - lo.firstIconMs;
+          if (fast >= 50 && slowDiff <= -50)
+            points.push(
+              `The one trade-off: on a fast computer the icon appears ${sec(fast)} later. On an older computer it appears ${sec(slowDiff)} sooner.`,
+            );
+        }
+        $('conclusion').innerHTML = points.map(t => `<li>${t}</li>`).join('');
+      });
+    </script>
+  </body>
+</html>

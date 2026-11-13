@@ -1,0 +1,38 @@
+{
+  "7.12.16": {
+    "js/classifier.js": {
+      "raw": 3518550,
+      "gzip": 1116269
+    },
+    "js/content.js": {
+      "raw": 3861766,
+      "gzip": 1220399
+    },
+    "css/autofill.css": {
+      "raw": 239,
+      "gzip": 162
+    },
+    "js/passkeys.js": {
+      "raw": 184016,
+      "gzip": 76997
+    }
+  },
+  "7.13.1": {
+    "js/classifier.js": {
+      "raw": 1678492,
+      "gzip": 573111
+    },
+    "js/content.js": {
+      "raw": 3340664,
+      "gzip": 1056487
+    },
+    "css/autofill.css": {
+      "raw": 239,
+      "gzip": 162
+    },
+    "js/passkeys.js": {
+      "raw": 188316,
+      "gzip": 78415
+    }
+  }
+}
