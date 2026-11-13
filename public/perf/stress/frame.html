@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Embedded sign-in</title>
+    <style>
+      body {
+        font:
+          13px system-ui,
+          sans-serif;
+        margin: 8px;
+        background: #f6f7f9;
+      }
+      form {
+        display: grid;
+        gap: 6px;
+      }
+      input,
+      button {
+        font: inherit;
+        padding: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <script>
+      // Each frame gets a different form shape so the classifier does real work in every one.
+      const i = Number(new URLSearchParams(location.search).get('i') ?? 0);
+      const kinds = [
+        [
+          'Sign in',
+          '<input type="email" name="email" autocomplete="username" placeholder="Email"><input type="password" name="password" autocomplete="current-password" placeholder="Password">',
+        ],
+        [
+          'Create account',
+          '<input name="first_name" placeholder="First name"><input name="last_name" placeholder="Last name"><input type="email" name="email" placeholder="Email"><input type="password" name="new_password" autocomplete="new-password" placeholder="Password"><input type="password" name="confirm_password" placeholder="Repeat password">',
+        ],
+        [
+          'Payment',
+          '<input name="cardholder" autocomplete="cc-name" placeholder="Name on card"><input name="cardnumber" autocomplete="cc-number" inputmode="numeric" placeholder="Card number"><input name="exp" autocomplete="cc-exp" placeholder="MM / YY"><input name="cvc" autocomplete="cc-csc" placeholder="CVC">',
+        ],
+        [
+          'Verify',
+          '<input name="otp" autocomplete="one-time-code" inputmode="numeric" maxlength="6" placeholder="6-digit code">',
+        ],
+        [
+          'Username',
+          '<input name="username" autocomplete="username" placeholder="Username"><input type="password" name="pass" placeholder="Password">',
+        ],
+      ];
+      const [title, fields] = kinds[i % kinds.length];
+      document.title = `${title} #${i}`;
+      document.body.innerHTML = `<h4>${title} #${i}</h4><form action="#" onsubmit="return false">${fields}<button>Continue</button></form>`;
+
+      new MutationObserver(() => {
+        if (document.querySelector('nordpass-icon'))
+          parent.postMessage({ type: 'np-icon', i }, '*');
+      }).observe(document.documentElement, { childList: true, subtree: true });
+    </script>
+  </body>
+</html>
