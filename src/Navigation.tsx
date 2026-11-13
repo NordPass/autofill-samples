@@ -204,13 +204,6 @@ export const Navigation = () => {
               <Link className="btn btn-xs btn-ghost hover:btn-neutral" to="/shadowDom">
                 Shadow DOM
               </Link>
-              {/* Static page in public/perf, outside the router */}
-              <a
-                className="btn btn-xs btn-ghost hover:btn-neutral"
-                href={`${import.meta.env.BASE_URL}perf/full-stats.html`}
-              >
-                Perf Metrics
-              </a>
             </div>
           </div>
 
