@@ -1,4 +1,37 @@
-import { useRef } from 'react';
+import { type FormEvent, useRef, useState } from 'react';
+
+// `#` takes a digit; any other character is printed as is, and a literal digit also takes a matching typed digit,
+// so `+1 (###) ###-####` accepts both 15551234567 and 5551234567. Reformats on input like IMask or Inputmask.
+const PHONE_MASKS = Object.freeze({
+  none: '',
+  national: '(###) ###-####',
+  withCountryCode: '+1 (###) ###-####',
+} as const);
+
+type TPhoneMask = keyof typeof PHONE_MASKS;
+
+const formatPhone = (value: string, pattern: string) => {
+  const digits = [...value.replaceAll(/\D/g, '')];
+  let formatted = '';
+
+  for (const char of pattern) {
+    if (!digits.length) {
+      break;
+    }
+
+    if (char === '#') {
+      formatted += digits.shift();
+    } else {
+      if (/\d/.test(char) && digits[0] === char) {
+        digits.shift();
+      }
+
+      formatted += char;
+    }
+  }
+
+  return formatted;
+};
 
 export const PersonalInfo = () => {
   const firstName = useRef<HTMLInputElement>(null);
@@ -11,6 +44,15 @@ export const PersonalInfo = () => {
   const state = useRef<HTMLInputElement>(null);
   const zip = useRef<HTMLInputElement>(null);
   const country = useRef<HTMLInputElement>(null);
+  const [phoneMask, setPhoneMask] = useState<TPhoneMask>('none');
+
+  const onPhoneInput = (event: FormEvent<HTMLInputElement>) => {
+    const pattern = PHONE_MASKS[phoneMask];
+
+    if (pattern) {
+      event.currentTarget.value = formatPhone(event.currentTarget.value, pattern);
+    }
+  };
 
   return (
     <div className="ml-3 justify-items-start">
@@ -86,6 +128,21 @@ export const PersonalInfo = () => {
       >
         Clear
       </button>
+      <label className="ml-3">
+        Phone mask:{' '}
+        <select
+          className="select select-bordered select-sm"
+          value={phoneMask}
+          onChange={event => {
+            setPhoneMask(event.target.value as TPhoneMask);
+            phoneNumber.current!.value = '';
+          }}
+        >
+          <option value="none">None</option>
+          <option value="national">{PHONE_MASKS.national}</option>
+          <option value="withCountryCode">{PHONE_MASKS.withCountryCode}</option>
+        </select>
+      </label>
 
       <h1 className="text-4xl mt-3">Personal Info Form</h1>
 
@@ -109,7 +166,8 @@ export const PersonalInfo = () => {
           ref={phoneNumber}
           className="input w-full max-w-xs"
           type="text"
-          placeholder="Phone number"
+          placeholder={PHONE_MASKS[phoneMask] || 'Phone number'}
+          onInput={onPhoneInput}
         />
         <input
           ref={address1}
