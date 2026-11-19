@@ -166,7 +166,7 @@ export const PersonalInfo = () => {
           ref={phoneNumber}
           className="input w-full max-w-xs"
           type="text"
-          placeholder={PHONE_MASKS[phoneMask] || 'Phone number'}
+          placeholder="Phone number"
           onInput={onPhoneInput}
         />
         <input
